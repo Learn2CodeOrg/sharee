@@ -19,6 +19,8 @@ gem 'bourbon' # sass mixins
 gem 'neat' # grid system
 gem 'refills' # frontend components
 
+gem 'high_voltage', '~> 2.2.1' # static site routing
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
