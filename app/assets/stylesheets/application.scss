@@ -1,10 +1,16 @@
 /*
  * Only @import partials here
+ * - SASS partials (files starting with_) only with file name (w/o extension)
+ * - other files with full name and extension
  */
 
+ @import "normalize.css";
  @import "bourbon";
  @import "grid-settings";
  @import "neat";
 
 @import "variables";
-@import "buttons";
+@import "global";
+
+@import "components/buttons";
+@import "components/navbar";
