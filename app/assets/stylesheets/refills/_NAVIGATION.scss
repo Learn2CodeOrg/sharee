@@ -1,21 +1,11 @@
 header.navigation {
-  ///////////////////////////////////////////////////////////////////////////////////
-  $base-accent-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $large-screen: $tablet-width;
-
-  a {
-    text-decoration: none;
-  }
-  //////////////////////////////////////////////////////////////////////////////////
-
-  $navigation-padding: 1em;
+  $navigation-padding: 16px;
   $navigation-background: white;
   $navigation-color: $primary-blue;
   $navigation-color-hover: $primary-green;
   $navigation-height: 50px;
   $navigation-active-link-color: $primary-green;
-  $horizontal-bar-mode: $large-screen;
+  $horizontal-bar-mode: $tablet-width;
 
   background-color: $navigation-background;
   box-shadow: $base-box-shadow;
@@ -34,7 +24,7 @@ header.navigation {
     float: left;
     max-height: $navigation-height;
     padding-left: $navigation-padding;
-    padding-right: 2em;
+    padding-right: 2*$navigation-padding;
 
     img {
       max-height: $navigation-height;
@@ -43,9 +33,9 @@ header.navigation {
   }
 
   a {
+    text-decoration: none;
     color: $navigation-color;
 
-    &:focus,
     &:hover {
       color: $navigation-color-hover;
     }
@@ -79,12 +69,12 @@ header.navigation {
 
   ul.navigation-menu {
     -webkit-transform-style: preserve-3d; // stop webkit flicker
-    clear: both;
     display: none;
     margin: 0 auto;
     overflow: visible;
     padding: 0;
-    width: 100%;
+    //width: 100%;
+    clear: both;
     z-index: 9999;
 
     &.show {
