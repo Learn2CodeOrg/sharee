@@ -6,14 +6,16 @@
   text-decoration: none;
 }
 
-.btn.btn-medium {
+.btn-medium {
+  @extend .btn;
   font-size: 13px;
   line-height: 1;
   height: 32px;
   padding: 9px 13px;
 }
 
-.btn.btn-primary-blue {
+.btn-primary-blue {
+  @extend .btn;
   background: $primary-blue;
   color: white;
   border: 1px solid $primary-blue;
@@ -24,7 +26,8 @@
   }
 }
 
-.btn.btn-primary-green {
+.btn-primary-green {
+  @extend .btn;
   background: $primary-green;
   color: white;
   border: 1px solid $primary-green;
@@ -35,7 +38,8 @@
   }
 }
 
-.btn.btn-secondary-white {
+.btn-secondary-white {
+  @extend .btn;
   background: transparent;
   color: white;
   border: 1px solid white;
