@@ -1,0 +1,29 @@
+section.intro {
+  background: image-url("intro-bg.jpg");
+  background-size: cover;
+  min-height: 500px;
+  color: white;
+}
+
+.lead {
+  font-family: $heading-font-family;
+  font-size: 36px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 75px;
+  text-align: center;
+}
+
+.sublead {
+  font-size: 18px;
+  text-align: center;
+  max-width: 635px;
+  margin: 0 auto;
+  padding-top: 45px;
+}
+
+.video {
+  max-width: 565px;
+  margin: 35px auto 0 auto;
+  padding-bottom: 25px;
+}

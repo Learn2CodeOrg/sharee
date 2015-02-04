@@ -3,21 +3,45 @@
   border-radius: $base-border-radius;
   font-family: $base-font-family;
   box-shadow: $base-box-shadow;
+  text-decoration: none;
 }
 
 .btn.btn-medium {
   font-size: 13px;
   line-height: 1;
   height: 32px;
+  padding: 9px 13px;
 }
 
-.btn.btn-primary {
+.btn.btn-primary-blue {
   background: $primary-blue;
   color: white;
-  padding: 9px 13px;
+  border: 1px solid $primary-blue;
 
   &:hover {
     color: white;
     background: lighten($primary-blue, 5);
+  }
+}
+
+.btn.btn-primary-green {
+  background: $primary-green;
+  color: white;
+  border: 1px solid $primary-green;
+
+  &:hover {
+    color: white;
+    background: lighten($primary-green, 5);
+  }
+}
+
+.btn.btn-secondary-white {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+
+  &:hover {
+    color: $primary-blue;
+    background: white;
   }
 }
