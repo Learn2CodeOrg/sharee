@@ -57,6 +57,10 @@ header.navigation {
     @include media ($horizontal-bar-mode) {
       display: none;
     }
+
+    &:hover {
+      color: $primary-green;
+    }
   }
 
   // Nav menu

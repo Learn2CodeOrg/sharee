@@ -8,6 +8,14 @@ body {
   background: $bg-gray;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-green;
+  }
+}
+
 .container {
   @include outer-container;
 }
@@ -23,8 +31,7 @@ body {
 .video-wrapper {
   height: 0;
   overflow: hidden;
-  padding-bottom: 56.25%;
-// For ratio 16:9. 75% if ratio is 4:3
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
   position: relative;
 
   embed,
