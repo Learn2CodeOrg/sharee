@@ -1,0 +1,23 @@
+.btn {
+  display: inline-block;
+  border-radius: $base-border-radius;
+  font-family: $base-font-family;
+  box-shadow: $base-box-shadow;
+}
+
+.btn.btn-medium {
+  font-size: 13px;
+  line-height: 1;
+  height: 32px;
+}
+
+.btn.btn-primary {
+  background: $primary-blue;
+  color: white;
+  padding: 9px 13px;
+
+  &:hover {
+    color: white;
+    background: lighten($primary-blue, 5);
+  }
+}

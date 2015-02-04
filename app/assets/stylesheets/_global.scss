@@ -1,9 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Dosis:400,500|Open+Sans:400,300&subset=latin,latin-ext);
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $base-font-family;
 }
 
 body {
-  background: #F3F3F3;
+  background: $bg-gray;
+}
+
+.container {
+  @include outer-container;
 }
