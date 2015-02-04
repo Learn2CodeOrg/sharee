@@ -3,7 +3,7 @@
 <%= render 'refills/navigation' %>
 
 <section class="intro">
-  <p class="lead">Umožnite svojim návštevníkom stať sa Vašimi partnermi jednoducho</p>
+  <h1 class="lead">Umožnite svojim návštevníkom stať sa Vašimi partnermi jednoducho</h1>
   <p class="sublead">Sharee je prehľadný affiliate systém, do ktorého môžete zapojiť každého návštevníka</p>
 
   <div class="centered padding-top">
@@ -15,5 +15,31 @@
     <div class="video-wrapper">
         <iframe src="http://www.youtube.com/embed/8ItNE_DX6Cc?showinfo=0&iv_load_policy=3&controls=0" frameborder="0" allowfullscreen></iframe>
     </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container centered">
+    <h2 class="landing-heading">Sharee pomáha zvýšiť predaj</h2>
+    <hr class="under-heading">
+
+    <div class="col-4 column centered">
+      <%= image_tag asset_path('heart.svg') %>
+      <h3>Jednoducho</h3>
+      <p class="light">Žiadne zdĺhavé registrácie, partneri za minútu</p>
+    </div>
+    <div class="col-4 column centered">
+      <%= image_tag asset_path('dashboard.svg') %>
+      <h3>Merateľne</h3>
+      <p class="light">Prehľadné štatistiky a flexibilita nastavenia kampane</p>
+    </div>
+    <div class="col-4 column centered">
+      <%= image_tag asset_path('shield.svg') %>
+      <h3>Bez rizika</h3>
+      <p class="light">Platíte iba províziu z predaja získaného cez Sharee</p>
+    </div>
+  </div>
+  <div class="container centered">
+    <a href="#" class="btn btn-big btn-primary-green space-around">Vyskúšať hneď</a>
   </div>
 </section>

@@ -4,14 +4,21 @@
   font-family: $base-font-family;
   box-shadow: $base-box-shadow;
   text-decoration: none;
+  line-height: 1;
 }
 
 .btn-medium {
   @extend .btn;
   font-size: 13px;
-  line-height: 1;
   height: 32px;
   padding: 9px 13px;
+}
+
+.btn-big {
+  @extend .btn;
+  font-size: 15px;
+  height: 40px;
+  padding: 12px 14px;
 }
 
 .btn-primary-blue {

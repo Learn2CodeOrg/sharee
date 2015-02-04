@@ -16,12 +16,39 @@ a {
   }
 }
 
-.container {
-  @include outer-container;
+h2 {
+  font-family: $heading-font-family;
+  font-weight: normal;
+  margin: 0;
+  font-size: 30px;
+}
+
+h3 {
+  font-family: $heading-font-family;
+  font-weight: bolder;
+  color: $primary-blue;
+  font-size: 22px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  max-width: 170px;
+  margin: 0 auto;
+  background-color: $primary-blue;
 }
 
 .centered {
   text-align: center;
+}
+
+.light {
+  font-weight: lighter;
+}
+
+.space-around {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .padding-top {
