@@ -26,4 +26,8 @@ section.intro {
   max-width: 565px;
   margin: 35px auto 0 auto;
   padding-bottom: 25px;
+
+  .video-wrapper {
+    box-shadow: $base-box-shadow;
+  }
 }
