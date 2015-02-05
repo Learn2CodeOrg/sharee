@@ -45,6 +45,18 @@
   }
 }
 
+.btn-primary-white {
+  @extend .btn;
+  background: white;
+  color: $primary-blue;
+  border: 1px solid white;
+
+  &:hover {
+    color: $primary-blue;
+    background: darken(white, 5%);
+  }
+}
+
 .btn-secondary-white {
   @extend .btn;
   background: transparent;

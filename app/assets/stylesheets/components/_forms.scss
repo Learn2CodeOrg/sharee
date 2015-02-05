@@ -1,0 +1,14 @@
+form.inline-form {
+  display: inline-block;
+}
+
+.form-input {
+  border: none;
+  border-radius: $base-border-radius;
+}
+
+.form-input-big {
+  @extend .form-input;
+  height: 40px;
+  padding: 5px 10px;
+}

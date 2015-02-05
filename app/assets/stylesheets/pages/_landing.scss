@@ -101,13 +101,17 @@ section.social {
   padding: 0 10px;
 
   h3 {
-    display: block;
+    display: inline-block;
     float: left;
     color: white;
     font-weight: normal;
     font-size: 24px;
     margin: 0;
     line-height: 3.5;
+
+    @include media($mobile) {
+      float: none;
+    }
   }
 
   .icons {
@@ -122,6 +126,33 @@ section.social {
 
     a:hover {
       color: transparentize(white, 0.2);
+    }
+  }
+}
+
+.social-icons-wrapper {
+  width: 190px;
+  float: left;
+
+  @include media($mobile) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.newsletter-form {
+  padding-top: 24px;
+  float: right;
+
+  @include media($mobile) {
+    float: none;
+    width: 100%;
+    padding-bottom: 24px;
+
+    form {
+      max-width: 300px;
+      display: block;
+      margin: 0 auto;
     }
   }
 }
