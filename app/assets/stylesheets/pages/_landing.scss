@@ -98,14 +98,31 @@ section.pricing {
 section.social {
   background: $primary-red;
   min-height: 90px;
+  padding: 0 10px;
 
   h3 {
-    display: inline-block;
+    display: block;
+    float: left;
     color: white;
     font-weight: normal;
     font-size: 24px;
     margin: 0;
     line-height: 3.5;
+  }
+
+  .icons {
+    display: inline-block;
+    padding-top: 18px;
+    padding-left: 20px;
+
+    a {
+      font-size: 40px;
+      color: white;
+    }
+
+    a:hover {
+      color: transparentize(white, 0.2);
+    }
   }
 }
 
