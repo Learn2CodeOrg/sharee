@@ -57,6 +57,18 @@
   }
 }
 
+.btn-primary-red {
+  @extend .btn;
+  background: $primary-red;
+  color: white;
+  border: 1px solid $primary-red;
+
+  &:hover {
+    color: white;
+    background: lighten($primary-red, 5);
+  }
+}
+
 .btn-secondary-white {
   @extend .btn;
   background: transparent;

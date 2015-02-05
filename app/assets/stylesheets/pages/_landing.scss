@@ -160,4 +160,50 @@ section.social {
 section.footer {
   background: $primary-blue;
   min-height: 240px;
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+
+  .logo img {
+    height: 25px;
+  }
+
+  p {
+    color: white;
+    margin-top: 0;
+  }
+
+  .footer-nav {
+    padding-top: 20px;
+
+    a {
+      color: white;
+
+      &:hover {
+        color: $primary-green;
+      }
+    }
+  }
+
+  .footer-nav ul {
+    list-style-type: none;
+
+    li {
+      display: inline;
+
+      &::after {
+        content: ' |';
+      }
+
+      &:last-child::after {
+        content: '';
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 14px;
+    color: darken(white, 20%);
+    margin-bottom: 0;
+  }
 }
