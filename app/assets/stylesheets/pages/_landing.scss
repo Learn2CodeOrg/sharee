@@ -33,16 +33,16 @@ section.intro {
   }
 }
 
-.benefits {
+.column {
+  margin-top: 40px;
+}
+
+section.benefits {
   background: white;
 
-  .column {
-    margin-top: 50px;
-
-    p {
-      max-width: 220px;
-      margin: 0 auto;
-    }
+  .column p {
+    max-width: 220px;
+    margin: 0 auto;
   }
 }
 
@@ -52,4 +52,45 @@ h2.landing-heading {
 
 hr.under-heading {
   margin-top: 16px;
+}
+
+section.steps {
+  min-height: 400px;
+}
+
+
+section.pricing {
+  background: white;
+  min-height: 400px;
+}
+
+.box {
+  background: $primary-blue;
+  color: white;
+  max-width: 240px;
+  margin: 0 auto;
+
+  .box-head {
+    border-bottom: 1px solid transparentize(white, 0.8);
+
+    h4 {
+      line-height: 3;
+      margin: 0;
+    }
+  }
+
+  .box-body {
+    padding: 0 10px 10px 10px;
+
+    .price {
+      color: lighten($primary-green, 8%);
+      font-weight: normal;
+      font-size: 57px;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+  }
 }

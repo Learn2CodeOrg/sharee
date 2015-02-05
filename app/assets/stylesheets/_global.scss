@@ -30,11 +30,17 @@ h3 {
   font-size: 22px;
 }
 
+h4 {
+  font-family: $heading-font-family;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
 hr {
   border: 0;
   height: 1px;
   max-width: 170px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   background-color: $primary-blue;
 }
 
