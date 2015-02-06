@@ -30,7 +30,7 @@ window.Sharee = (function () {
     };
 
     var getShareeButtonHtml = function() {
-        $.get('http://localhost:3000/sharee_button.html', function(data) {
+        $.get('/sharee_button.html', function(data) {
             $('.sharee-button').html(data);
 
             initShareeButtonClickEvent();
@@ -117,7 +117,7 @@ window.Sharee = (function () {
         var email = $shareeThank.data('email');
         var price = $shareeThank.data('price');
 
-        var posting = $.post('http://localhost:3000/api/v1/sell_actions', {
+        var posting = $.post('/api/v1/sell_actions', {
             link: link,
             code: code,
             email: email,

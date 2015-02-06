@@ -44,6 +44,11 @@ hr {
   background-color: $primary-blue;
 }
 
+.notice,
+.alert {
+  margin: 0;
+}
+
 .centered {
   text-align: center;
 }
