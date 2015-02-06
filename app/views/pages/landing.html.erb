@@ -1,5 +1,6 @@
 <%= content_for :page_title, 'Sharee - landing' %>
 
+<div class="everything">
 <%= render 'refills/navigation' %>
 
 <section class="intro">
@@ -124,7 +125,7 @@
 
     <nav class="footer-nav">
       <ul>
-        <li><a href="#">Kontakt</a></li>
+        <li><a href="javascript:void(0)" id="trigger-overlay">Kontakt</a></li>
         <li><a href="#">Obchodné podmienky</a></li>
         <li><a href="#">Ochrana osobných údajov</a></li>
         <li><a href="#">FAQ</a></li>
@@ -135,3 +136,14 @@
 
   <p class="copyright">&copy; Learn2Code 2015</p>
 </section>
+
+</div> <!-- Everything container -->
+
+<div class="overlay overlay-contentscale">
+  <button type="button" class="overlay-close">Close</button>
+  <div class="overlay-content">
+    <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio similique voluptas recusandae, laborum, accusamus fugit consectetur. Ipsum reiciendis aspernatur, in magni, architecto ducimus facilis voluptates non, perferendis corporis necessitatibus!</p>
+    </div>
+  </div>
+</div>
