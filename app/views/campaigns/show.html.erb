@@ -1,0 +1,20 @@
+<h1>Kampan <%= @campaign.name %></h1>
+
+URL: <%= @campaign.url %><br/>
+Zdielani: <%= @campaign.links.count %><br/>
+Otvoreni: <%= OpenAction.where(link_id: @campaign.links.pluck(:id)).count %><br/>
+Predajov: <%= SellAction.where(link_id: @campaign.links.pluck(:id)).count %><br/>
+
+
+<br/><br/>
+
+<%= link_to 'Edituj kampan', edit_campaign_path(@campaign) %>
+<%= link_to 'Spat na zoznam kampani', campaigns_path %>
+
+
+<h3>Linky</h3>
+<% @campaign.links.each do |link| %>
+<%= link_to link.url, link.url %>, <%= link.open_actions.count %> otvoreni, <%= link.sell_actions.count %> predajov<br/>
+<% end %>
+
+<br/><br/>

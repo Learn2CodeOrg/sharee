@@ -1,0 +1,71 @@
+<html>
+<head>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+
+        .sharee-button-block {
+            display: inline-block;
+        }
+
+        .sharee-button-block button,
+        .sharee-button-block form input[type=submit] {
+            padding: 8px;
+            border: 1px solid #c04c4c;
+            border-radius: 3px;
+            background: #c04c4c;
+            color: white;
+            cursor: pointer;
+        }
+
+        .sharee-button-block form input {
+            padding: 8px;
+        }
+
+        .sharee-button-core {
+            display: inline-block;
+            padding: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            background: #c04c4c;
+            color: white;
+        }
+
+        .sharee-button-core:hover {
+            background: white;
+            color: #c04c4c;
+        }
+
+        .sharee-button-core,
+        .sharee-button-form,
+        .sharee-button-success-block {
+            display: inline-block;
+            padding: 8px;
+            border: 1px solid #c04c4c;
+            border-radius: 3px;
+        }
+
+        .sharee-button-form,
+        .sharee-button-success-block {
+            display: none;
+        }
+    </style>
+</head>
+
+<div class="sharee-button-block">
+    <div class="sharee-button-core">Sharee</div>
+
+    <form class="sharee-button-form" action="http://localhost:3000/api/v1/links" method="post">
+        Email:
+        <input type="text" name="email" value="iveta@pekna.sk">
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="sharee-button-success-block">
+        <p>Link: <span class="url bold"></span></p>
+        <button class="button back-button">Back</button>
+    </div>
+</div>
+
+</html>

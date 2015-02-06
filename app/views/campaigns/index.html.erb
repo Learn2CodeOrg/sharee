@@ -1,0 +1,14 @@
+<h1>Kampane</h1>
+
+<% @campaigns.each do |campaign| %>
+<p>
+  Nazov: <%= link_to campaign.name, campaign %>;
+  URL: <%= campaign.url %>;
+  User: <%= campaign.user.id %>;
+  <br/>
+  Zdielani: <%= campaign.links.count %>;
+  Kliknuti: <%= OpenAction.where(link_id: campaign.links.pluck(:id)).count %>;
+  Predajov: <%= SellAction.where(link_id: campaign.links.pluck(:id)).count %>;
+  <%= link_to 'Edituj kampan', edit_campaign_path(campaign) %>
+</p><br/>
+<% end %>

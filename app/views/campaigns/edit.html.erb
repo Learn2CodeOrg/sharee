@@ -1,0 +1,9 @@
+<%= form_for @campaign, url: {action: 'update'}, html: {class: ''} do |f| %>
+    Name: <%= f.text_field :name %><br/>
+    URL: <%= f.text_field :url %><br/>
+
+    <%= f.submit 'Aktualizuj' %>
+<% end %>
+
+<%= link_to 'Spat na kampan', campaign_path(@campaign) %>
+<%= link_to 'Spat na zoznam kampani', campaigns_path %>

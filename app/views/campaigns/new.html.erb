@@ -1,0 +1,6 @@
+<%= form_for @campaign, url: {action: 'create'}, html: {class: ''} do |f| %>
+    Name: <%= f.text_field :name %><br/>
+    URL: <%= f.text_field :url %><br/>
+
+    <%= f.submit 'Create' %>
+<% end %>

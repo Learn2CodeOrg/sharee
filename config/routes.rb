@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  
+
+  root 'welcome#index'
+  get 'redirect_controller/index'
+
+  resources :campaigns
+  resources :thanks
+
+  namespace :api do
+    namespace :v1 do
+      resources :links, only: :create
+      resources :sell_actions, only: :create
+    end
+  end
+
+  get '*path', to: 'redirects#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
