@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'welcome#index'
+  #root 'welcome#index'
   get 'redirect_controller/index'
 
   resources :campaigns
