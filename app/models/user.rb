@@ -3,4 +3,15 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :campaigns
+
+  def self.get_or_create_by_email(email)
+    user = User.where(email: email).first
+    unless user
+      user = User.new(email: email, password: 'password', password_confirmation: 'password')
+      user.save!
+    end
+    user
+  end
 end
