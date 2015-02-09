@@ -17,6 +17,7 @@ ready = ->
     if menuShown
       $("#js-navigation-menu").hide()
       menuShown = false
+      return
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

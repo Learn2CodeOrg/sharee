@@ -5,6 +5,7 @@
   box-shadow: $base-box-shadow;
   text-decoration: none;
   line-height: 1;
+  cursor: pointer;
 }
 
 .btn-medium {
@@ -19,6 +20,12 @@
   font-size: 15px;
   height: 40px;
   padding: 12px 14px;
+}
+
+.btn-jumbo {
+  font-size: 20px;
+  height: 46px;
+  padding: 12px 20px;
 }
 
 .btn-primary-blue {

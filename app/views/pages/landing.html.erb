@@ -9,7 +9,9 @@
 
   <div class="centered padding-top">
     <a href="#steps" class="btn btn-medium btn-secondary-white">Ako to funguje?</a>
-    <a href="#social" class="btn btn-medium btn-primary-green">Vyskúšať hneď</a>
+    <label for="modal-1">
+      <div class="btn btn-medium btn-primary-green">Mám záujem</div>
+    </label>
   </div>
 
   <div class="video">
@@ -41,7 +43,9 @@
     </div>
   </div>
   <div class="container centered">
-    <a href="#social" class="btn btn-big btn-primary-green space-around">Vyskúšať hneď</a>
+    <label for="modal-1">
+      <div class="btn btn-big btn-primary-green space-around">Mám záujem</div>
+    </label>
   </div>
 </section>
 
@@ -97,21 +101,7 @@
 
 <section class="social" id="social">
   <div class="container">
-    <div class="social-icons-wrapper">
-      <h3>Novinky:</h3>
-      <span class="icons">
-        <a href="#"><span class="icon icon-facebook-with-circle"></span></a>
-        <a href="#"><span class="icon icon-twitter-with-circle"></span></a>
-      </span>
-    </div>
-
-    <div class="newsletter-form">
-      <span>Budeme Vás informovať o spustení služby:</span>
-      <form class="inline-form">
-        <input type="email" class="form-input form-input-big" placeholder="Váš email" required>
-        <input type="submit" class="btn btn-big btn-primary-white" value="Vyskúšať">
-      </form>
-    </div>
+    <%= render 'refills/modal' %>
   </div>
 </section>
 
@@ -122,7 +112,10 @@
     <% end %>
     <p class="light">Umožnite svojim návštevníkom stať sa Vašimi partnermi jednoducho</p>
 
-    <a href="#" class="btn btn-medium btn-primary-red">Vyskúšať hneď</a>
+    <span class="icons">
+      <a href="#"><span class="icon icon-facebook-with-circle"></span></a>
+      <a href="#"><span class="icon icon-twitter-with-circle"></span></a>
+    </span>
 
     <nav class="footer-nav">
       <ul>
