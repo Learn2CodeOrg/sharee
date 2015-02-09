@@ -4,9 +4,9 @@ ready = ->
     e.preventDefault()
     $("#js-navigation-menu").slideToggle "fast", ->
       $("#js-navigation-menu").addClass "show"
-      return
-    return
-  return
+  $(document).on "click", (e) ->
+    $("#js-navigation-menu").slideToggle "fast", ->
+      $("#js-navigation-menu").removeClass "show"
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
