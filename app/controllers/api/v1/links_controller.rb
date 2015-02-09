@@ -5,10 +5,14 @@ module API
 
       def create
         # Get parameters
+        campaign_id = params[:campaign]
         url = params[:url]
         email = params[:email]
 
         # Check parameters
+        unless campaign_id
+          return render json: { 'Error' => 'Missing campaign id!' }, status: 422
+        end
         unless url
           return render json: { 'Error' => 'Missing url!' }, status: 422
         end
@@ -17,7 +21,7 @@ module API
         end
 
         # Get campaign
-        campaign = Campaign.find_first_by_host(request.host)
+        campaign = Campaign.find(campaign_id)
 
         # Check campaign
         unless campaign

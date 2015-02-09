@@ -31,7 +31,10 @@ window.Sharee = (function () {
 
     var getShareeButtonHtml = function() {
         $.get('/sharee_button.html', function(data) {
-            $('.sharee-button').html(data);
+            var $button = $('.sharee-button'),
+                campaign = $button.data('campaign');
+
+            $button.html(data).find('input[name="campaign"]').val(campaign);
 
             initShareeButtonClickEvent();
             initShareeButtonFormsEvents();
@@ -53,15 +56,13 @@ window.Sharee = (function () {
 
             var $form = $(event.target),
                 actionUrl = $form.attr('action'),
-                email = $form.find("input[name='email']").val();
-
-            var url = getUrl();
-            var sharing_url = getSharingUrl();
-
-            console.log('URL: ' + url);
-            console.log('Sharing URL: ' + sharing_url);
+                campaign = $form.find("input[name='campaign']").val(),
+                email = $form.find("input[name='email']").val(),
+                url = getUrl(),
+                sharing_url = getSharingUrl();
 
             var posting = $.post(actionUrl, {
+                campaign: campaign,
                 url: sharing_url,
                 email: email
             });
