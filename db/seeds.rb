@@ -16,10 +16,10 @@ user3 = User.create!(email: 'jozefina@example.com', password: 'password', passwo
 
 # Create campaign
 
-campaign1 = Campaign.create!(user: user1, name: 'DSL', url: 'www.dsl.sk')
-campaign2 = Campaign.create!(user: user1, name: 'Wikipedia', url: 'www.wikipedia.sk')
-campaign3 = Campaign.create!(user: user1, name: 'Mojevideo', url: 'www.mojevideo.sk')
-campaign4 = Campaign.create!(user: user1, name: 'Localhost', url: 'localhost:3000')
+campaign1 = Campaign.create!(user: user1, name: 'DSL', url: 'www.dsl.sk', commission: '10')
+campaign2 = Campaign.create!(user: user1, name: 'Wikipedia', url: 'www.wikipedia.sk', commission: '15')
+campaign3 = Campaign.create!(user: user1, name: 'Mojevideo', url: 'www.mojevideo.sk', commission: '15')
+campaign4 = Campaign.create!(user: user1, name: 'Localhost', url: 'localhost:3000', commission: '20')
 
 
 # Create sharing link
