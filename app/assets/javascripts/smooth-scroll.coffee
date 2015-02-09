@@ -1,5 +1,6 @@
 ready = ->
   $('a[href*=#]').click ->
+    $("#js-navigation-menu").hide()
     target = $(this.hash)
     if (target.length)
       $('html,body').animate

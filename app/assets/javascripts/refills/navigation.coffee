@@ -5,7 +5,7 @@ ready = ->
     $("#js-navigation-menu").slideToggle "fast", ->
       $("#js-navigation-menu").addClass "show"
   $(document).on "click", (e) ->
-    $("#js-navigation-menu").slideToggle "fast", ->
+    $("#js-navigation-menu").slideUp "fast", ->
       $("#js-navigation-menu").removeClass "show"
 
 $(document).ready(ready)
