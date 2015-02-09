@@ -10,12 +10,26 @@ $(function() {
 window.Sharee = (function () {
     'use strict';
 
+    var HOST = "";
+
     function Sharee() {
+        if (!HOST) {
+            console.log('Sharee: HOST missing!');
+            return false;
+        }
         saveCookies();
         getShareeButtonHtml();
         initShareeButtonFormsEvents();
         createSellAction();
     }
+
+    Sharee.setHost = function(host) {
+        HOST = host;
+    };
+
+    Sharee.getHost = function() {
+        return HOST;
+    };
 
     var saveCookies = function() {
         var param = QueryString.sharee;
@@ -30,7 +44,7 @@ window.Sharee = (function () {
     };
 
     var getShareeButtonHtml = function() {
-        $.get('/sharee_button.html', function(data) {
+        $.get(Sharee.getHost() + '/sharee_button.html', function(data) {
             var $button = $('.sharee-button'),
                 campaign = $button.data('campaign');
 
@@ -55,7 +69,7 @@ window.Sharee = (function () {
             console.log('Clicked on submit button!');
 
             var $form = $(event.target),
-                actionUrl = $form.attr('action'),
+                actionUrl = Sharee.getHost() + '/api/v1/links',
                 campaign = $form.find("input[name='campaign']").val(),
                 email = $form.find("input[name='email']").val(),
                 url = getUrl(),
@@ -118,7 +132,7 @@ window.Sharee = (function () {
         var email = $shareeThank.data('email');
         var price = $shareeThank.data('price');
 
-        var posting = $.post('/api/v1/sell_actions', {
+        var posting = $.post(Sharee.getHost() + '/api/v1/sell_actions', {
             link: link,
             code: code,
             email: email,
