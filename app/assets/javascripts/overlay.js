@@ -85,8 +85,6 @@ ready = function() {
     transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
     support = { transitions : Modernizr.csstransitions };
 
-    console.log(transEndEventName);
-
   function toggleOverlay() {
     if (classie.has (body, 'noscroll')) {
       classie.remove(body, 'noscroll');
