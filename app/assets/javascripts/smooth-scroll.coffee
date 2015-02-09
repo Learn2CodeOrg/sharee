@@ -1,7 +1,5 @@
 ready = ->
   $('a[href*=#]').click ->
-    $("#js-navigation-menu").slideToggle "fast", ->
-      $("#js-navigation-menu").removeClass "show"
     target = $(this.hash)
     if (target.length)
       $('html,body').animate
