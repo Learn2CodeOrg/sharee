@@ -7,10 +7,11 @@ ready = ->
     $("#js-navigation-menu").slideToggle "fast", ->
       $("#js-navigation-menu").addClass "show"
 
-  ###$(document).on "click", (e) ->
+  $('section').on "click", (e) ->
     if menuShown
       $("#js-navigation-menu").slideUp "fast", ->
-        $("#js-navigation-menu").removeClass "show"###
+        $("#js-navigation-menu").removeClass "show"
+        menuShown = false
 
   $(".js-nav-link").on "click", (e) ->
     if menuShown
