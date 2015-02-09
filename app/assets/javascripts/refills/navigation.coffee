@@ -1,8 +1,8 @@
 ready = ->
   menuToggle = $("#js-mobile-menu").unbind()
-  menuToggle.on "click", (e) ->
+  menuToggle.on "touchstart", (e) ->
     e.preventDefault()
-    $("#js-navigation-menu").slideToggle ->
+    $("#js-navigation-menu").slideToggle "fast", ->
       $("#js-navigation-menu").addClass "show"
       return
     return

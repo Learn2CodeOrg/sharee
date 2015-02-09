@@ -1,5 +1,9 @@
 form.inline-form {
   display: inline-block;
+
+  @include media($mobile) {
+    text-align: center;
+  }
 }
 
 .form-input {
@@ -11,4 +15,9 @@ form.inline-form {
   @extend .form-input;
   height: 40px;
   padding: 5px 10px;
+
+  @include media($mobile) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
