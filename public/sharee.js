@@ -10,7 +10,7 @@ $(function() {
 window.Sharee = (function () {
     'use strict';
 
-    var HOST = "";
+    var HOST = 'http://shareeio.herokuapp.com';
 
     function Sharee() {
         if (!HOST) {
