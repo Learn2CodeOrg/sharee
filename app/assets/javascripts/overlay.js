@@ -70,8 +70,11 @@ var ready;
 
 ready = function() {
 
-  var container = document.querySelector( 'div.everything' ),
-    triggerBttn = document.getElementById( 'trigger-overlay' ),
+  var container = document.querySelector( 'div.everything' );
+  if (!container) {
+      return false;
+  }
+  var triggerBttn = document.getElementById( 'trigger-overlay' ),
     overlay = document.querySelector( 'div.overlay' ),
     body = document.querySelector( 'body' ),
     closeBttn = overlay.querySelector( 'button.overlay-close' );
