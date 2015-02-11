@@ -12,3 +12,7 @@
 <code><%=raw CGI.escape_html @sharee_script_html %></code>
 
 <h3>You are ready to go!</h3>
+
+
+<%= render partial: 'shared/sharee_button', locals: { campaign: @samples[:last_campaign_id] } %>
+<%= render partial: 'shared/sharee_thank', locals: { code: @samples[:code], email: @samples[:email], price: @samples[:price] } %>
