@@ -66,7 +66,7 @@ window.Sharee = (function () {
     var initShareeButtonClickEvent = function() {
         $('.sharee-button-core').on('click', function() {
             console.log('Clicked on button!');
-            $(this).hide();
+            //$(this).hide();
             $('.sharee-button-form').show();
         });
     };
@@ -92,8 +92,14 @@ window.Sharee = (function () {
             posting.done(function( data ) {
                 console.log(data);
                 $('.sharee-button-form').hide();
-                $('.sharee-button-success-block').show().find(".url").text(data.special_url);
+                $('.sharee-button-success-block').show().find(".url").val(data.special_url).select();
             });
+        });
+
+        $('.sharee-close').on('click', function(event) {
+            $('.sharee-button-form').hide();
+            $('.sharee-button-success-block').hide();
+            return false;
         });
 
         var getUrl = function() {
@@ -117,11 +123,11 @@ window.Sharee = (function () {
             return sharing_url;
         }
 
-        $('.back-button').on('click', function(event) {
+        $('.sharee-back-button').on('click', function(event) {
             event.preventDefault();
             console.log('Clicked on back button!');
             var $block = $(this).closest('.sharee-button-block');
-            $block.find('.sharee-button-core').show();
+            $block.find('.sharee-button-form').show();
             $block.find('.sharee-button-success-block').hide();
         });
     };
