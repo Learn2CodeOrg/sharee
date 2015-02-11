@@ -25,7 +25,7 @@ module API
         end
 
         # Get link
-        link = Link.where(id: link_id)
+        link = Link.find_by(id: link_id)
 
         # Check link
         unless link
