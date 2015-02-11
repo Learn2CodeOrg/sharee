@@ -21,6 +21,7 @@ gem 'refills' # frontend components
 
 gem 'high_voltage', '~> 2.2.1' # static site routing
 gem 'foreman'
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

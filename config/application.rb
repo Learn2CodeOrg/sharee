@@ -34,5 +34,12 @@ module Sharee
 
     # Load fonts directory to asset pipeline
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end
