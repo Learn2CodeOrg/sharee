@@ -10,7 +10,7 @@ $(function() {
 window.Sharee = (function () {
     'use strict';
 
-    var HOST = "";
+    var HOST = 'http://shareeio.herokuapp.com';
 
     function Sharee() {
         if (!HOST) {
@@ -31,6 +31,10 @@ window.Sharee = (function () {
         return HOST;
     };
 
+    Sharee.deleteCookie = function() {
+        delete_cookie('sharee');
+    }
+
     var saveCookies = function() {
         var param = QueryString.sharee;
         if (!param) {
@@ -41,6 +45,10 @@ window.Sharee = (function () {
             return false;
         }
         document.cookie = 'sharee=' + param + '; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
+    };
+
+    var delete_cookie = function(name) {
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     };
 
     var getShareeButtonHtml = function() {
