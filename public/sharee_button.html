@@ -20,9 +20,9 @@
         .sharee-button-block button,
         .sharee-button-block form input[type=submit] {
             padding: 4px 6px;
-            border: 1px solid #c04c4c;
+            border: 1px solid #4AB19D;
             border-radius: 2px;
-            background: #c04c4c;
+            background: #4AB19D;
             color: white;
             cursor: pointer;
             font-family: Arial, sans-serif;
@@ -44,24 +44,36 @@
 
         .sharee-button-core {
             display: inline-block;
-            padding: 8px;
             cursor: pointer;
-            background: #c04c4c;
+            background: #4AB19D;
             color: white;
         }
 
         .sharee-button-core:hover {
-            background: white;
-            color: #c04c4c;
+            background: #5EB9A8;
         }
 
         .sharee-button-core,
         .sharee-button-form,
         .sharee-button-success-block {
             display: inline-block;
-            padding: 2px 6px;
-            border: 1px solid #c04c4c;
+            border: 1px solid #4AB19D;
             border-radius: 2px;
+        }
+
+        .sharee-button-core img {
+            height: 15px;
+            display: inline-block;
+            margin-top: 3px;
+            padding: 0;
+            margin-left: 3px;
+        }
+
+        .sharee-button-core .sharee-cta {
+            padding-left: 3px;
+            padding-right: 5px;
+            position: relative;
+            top: -2px;
         }
 
         .sharee-button-form,
@@ -92,7 +104,7 @@
 </head>
 
 <div class="sharee-button-block">
-    <div class="sharee-button-core">Propaguj</div>
+    <div class="sharee-button-core"><img src="symbol.svg" alt=""><span class="sharee-cta">Propaguj</span></div>
 
     <form class="sharee-button-form" action="" method="post">
         <input type="hidden" name="campaign" value="">
