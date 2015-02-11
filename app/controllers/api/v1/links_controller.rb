@@ -48,7 +48,7 @@ module API
         end
 
         # COOL!
-        return render json: { id: link.id, url: link.url, special_url: link.special_url }, status: 201
+        return render json: { id: link.id, url: link.url, special_url: 'http://' + request.host_with_port + '/' + link.special_url }, status: 201
       end
     end
   end

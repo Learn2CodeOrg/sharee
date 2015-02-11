@@ -24,7 +24,7 @@ class Link < ActiveRecord::Base
   end
 
   def special_url
-    'sharee.io/' + self.id.to_s
+    id.to_s
   end
 
   def update_code
