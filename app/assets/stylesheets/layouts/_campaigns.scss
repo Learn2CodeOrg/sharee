@@ -1,5 +1,5 @@
 .campaigns-body {
-  background-color: #F3F3F3;
+  background-color: $bg-gray;
 
   section.campaigns {
     background-color: white;
@@ -14,5 +14,54 @@
     color: $primary-blue;
     font-weight: bolder;
     font-size: 28px;
+  }
+
+  .campaigns-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+
+  .one-campaign {
+    padding: 10px 0;
+    border-top: 1px solid $bg-gray;
+    position: relative;
+
+    .name a {
+      color: $primary-green;
+      font-size: 16px;
+      font-weight: normal;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .url {
+      color: #7D7D7D;
+      font-weight: lighter;
+      font-size: 14px;
+    }
+
+    .edit-campaign-btn {
+      position: absolute;
+      right: 1.5em;
+      top: 27px;
+    }
+
+    .number {
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .description {
+      font-size: 14px;
+      font-weight: lighter;
+    }
+
+    .separator {
+      font-weight: lighter;
+      color: darken($bg-gray, 30%);
+    }
   }
 }
