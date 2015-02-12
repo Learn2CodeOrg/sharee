@@ -1,5 +1,5 @@
 header.account-navigation {
-  $navigation-padding: 16px;
+  $navigation-padding: 1.5em;
   $navigation-background: transparent;
   $navigation-color: $primary-blue;
   $navigation-color-hover: $primary-green;
@@ -81,7 +81,7 @@ header.account-navigation {
     a {
       display: inline-block;
       font-weight: 400;
-      padding-right: 1em;
+      padding-right: $navigation-padding;
     }
   }
 
