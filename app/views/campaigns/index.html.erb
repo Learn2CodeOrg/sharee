@@ -21,7 +21,8 @@
       <%= SellAction.where(link_id: campaign.links.pluck(:id)).count %>
     </span> <span class="description">Predajov</span>
 
-    <%= link_to 'Upraviť', edit_campaign_path(campaign), class: "btn-medium btn-primary-blue edit-campaign-btn" %>
+    <%= link_to 'Upraviť', edit_campaign_path(campaign), class: "btn-medium btn-link-blue edit-campaign-btn" %>
+    <%= link_to 'Prehľad', campaign, class: "btn-medium btn-primary-blue show-campaign-btn" %>
   </li>
   <% end %>
 </ul>

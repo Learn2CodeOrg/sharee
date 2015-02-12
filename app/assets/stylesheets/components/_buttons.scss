@@ -83,3 +83,27 @@
     background: white;
   }
 }
+
+.btn-secondary-blue {
+  background: transparent;
+  color: $primary-blue;
+  border: 1px solid $primary-blue;
+
+  &:hover {
+    color: white;
+    background: $primary-blue;
+  }
+}
+
+.btn-link-blue {
+  background: transparent;
+  color: $primary-blue;
+  border: none;
+  box-shadow: none;
+
+  &:hover {
+    color: $primary-blue;
+    background: transparent;
+    text-decoration: underline;
+  }
+}
