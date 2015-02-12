@@ -23,13 +23,13 @@
 }
 
 .btn-jumbo {
+  @extend .btn;
   font-size: 20px;
   height: 46px;
   padding: 12px 20px;
 }
 
 .btn-primary-blue {
-  @extend .btn;
   background: $primary-blue;
   color: white;
   border: 1px solid $primary-blue;
@@ -41,7 +41,6 @@
 }
 
 .btn-primary-green {
-  @extend .btn;
   background: $primary-green;
   color: white;
   border: 1px solid $primary-green;
@@ -53,7 +52,6 @@
 }
 
 .btn-primary-white {
-  @extend .btn;
   background: white;
   color: $primary-blue;
   border: 1px solid white;
@@ -65,7 +63,6 @@
 }
 
 .btn-primary-red {
-  @extend .btn;
   background: $primary-red;
   color: white;
   border: 1px solid $primary-red;
@@ -77,7 +74,6 @@
 }
 
 .btn-secondary-white {
-  @extend .btn;
   background: transparent;
   color: white;
   border: 1px solid white;

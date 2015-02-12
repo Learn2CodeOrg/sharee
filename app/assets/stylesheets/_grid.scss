@@ -13,3 +13,12 @@
     @include span-columns(4);
   }
 }
+
+.col-offset-4 {
+  @include shift(4 of 12);
+
+  @include media($mobile) {
+    @include shift(0);
+    padding: 2em;
+  }
+}
