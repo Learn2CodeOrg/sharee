@@ -1,0 +1,131 @@
+header.account-navigation {
+  $navigation-padding: 16px;
+  $navigation-background: transparent;
+  $navigation-color: $primary-blue;
+  $navigation-color-hover: $primary-green;
+  $navigation-height: 50px;
+  $navigation-active-link-color: $primary-green;
+  $horizontal-bar-mode: $tablet-width;
+
+  background-color: $navigation-background;
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .logo {
+    float: left;
+    max-height: $navigation-height;
+    padding-left: $navigation-padding;
+    padding-right: 2*$navigation-padding;
+
+    img {
+      max-height: $navigation-height;
+      padding: 14px 0;
+    }
+  }
+
+  a.text-link {
+    text-decoration: none;
+    color: $navigation-color;
+
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    float: none;
+    min-height: $navigation-height;
+    z-index: 9999999;
+  }
+
+  ul.navigation-menu {
+    -webkit-transform-style: preserve-3d; // stop webkit flicker
+    display: inline;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    //width: 100%;
+    clear: both;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  // The nav items
+
+  .nav-link {
+    background: $navigation-background;
+    display: inline;
+    line-height: $navigation-height;
+    font-size: 14px;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: auto;
+    z-index: 9999;
+    position: relative;
+
+    a {
+      display: inline-block;
+      font-weight: 400;
+      padding-right: 1em;
+    }
+  }
+
+  .active a {
+    color: $navigation-active-link-color;
+  }
+
+  // Elements on the far right
+
+  .on-right {
+    float: right;
+  }
+
+  // Dropdown
+
+  ul.dropdown-menu {
+    position: absolute;
+    background-color: white;
+    list-style-type: none;
+    padding: 0;
+    width: 200px;
+    right: 15px;
+    border-top: 2px solid $primary-blue;
+    border-radius: $base-border-radius;
+    display: none;
+    box-shadow: $base-box-shadow;
+    text-align: left;
+
+    li {
+      line-height: 33px;
+      height: 33px;
+
+      a {
+        color: $primary-blue;
+        padding-left: 5px;
+        width: 100%;
+        font-size: 15px;
+        font-weight: lighter;
+
+        &:hover {
+          color: white;
+          background-color: $primary-blue;
+        }
+      }
+    }
+  }
+}
+

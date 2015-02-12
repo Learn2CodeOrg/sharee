@@ -1,0 +1,36 @@
+<header class="account-navigation" role="banner">
+  <div class="navigation-wrapper">
+    <%= link_to campaigns_path, class: 'logo' do %>
+      <%= image_tag asset_path 'logo.svg' %>
+    <% end %>
+    <nav role="navigation">
+      <ul class="navigation-menu">
+        <li class="nav-link"><a href="#" class="text-link">Moje kampane</a></li>
+        <div class="on-right">
+          <li class="nav-link">
+            <a href="javascript:void(0)" class="text-link js-dropdown-menu-toggle">
+              <% if user_signed_in? %>
+                <%= current_user.email %> <span class="icon icon-chevron-thin-down"></span>
+              <% else %>
+                <%= link_to 'Login', new_user_session_path %>
+              <% end %>
+            </a>
+
+            <ul class="dropdown-menu js-dropdown-menu">
+              <li>
+                <%= link_to edit_user_registration_path do %>
+                  <span class="icon icon-cog"></span> Nastavenia účtu
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, :method => :delete do %>
+                  <span class="icon icon-log-out"></span> Odhlásiť sa
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </div>
+      </ul>
+    </nav>
+  </div>
+</header>
