@@ -1,3 +1,18 @@
 .campaigns-body {
   background-color: #F3F3F3;
+
+  section.campaigns {
+    background-color: white;
+    margin-bottom: 30px;
+    box-shadow: $base-box-shadow;
+    border-radius: $base-border-radius;
+    padding: 25px;
+  }
+
+  h1 {
+    margin: 0;
+    color: $primary-blue;
+    font-weight: bolder;
+    font-size: 28px;
+  }
 }

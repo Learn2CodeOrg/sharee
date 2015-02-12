@@ -11,6 +11,7 @@ header.account-navigation {
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
+  margin-bottom: 20px;
 
   .navigation-wrapper {
     @include clearfix;
