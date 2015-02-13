@@ -1,9 +1,24 @@
-<%= form_for @campaign, url: {action: 'update'}, html: {class: ''} do |f| %>
-    Name: <%= f.text_field :name %><br/>
-    URL: <%= f.text_field :url %><br/>
+<%= content_for :page_title, "Nastavenia kampane #{@campaign.name}" %>
 
-    <%= f.submit 'Aktualizuj' %>
-<% end %>
+<h1>Nastavenia kampane <%= @campaign.name %></h1>
 
-<%= link_to 'Spat na kampan', campaign_path(@campaign) %>
-<%= link_to 'Spat na zoznam kampani', campaigns_path %>
+<div class="padding-top col-4">
+  <%= form_for @campaign, url: {action: 'update'}, html: {class: ''} do |f| %>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :url %><br>
+      <%= f.text_field :url %>
+    </div>
+    <%= f.submit 'Aktualizovať', class: "btn-medium btn-primary-blue" %>
+  <% end %>
+</div>
+
+<div class="controls">
+  <%= link_to campaign_path(@campaign), class: "btn-medium btn-link-blue" do %>
+    <span class="icon icon-chevron-thin-left"></span> Späť na kampaň
+  <% end %>
+  <%#= link_to 'Spat na zoznam kampani', campaigns_path %>
+</div>
