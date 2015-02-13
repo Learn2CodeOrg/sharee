@@ -1,15 +1,29 @@
-<h1>Kampan <%= @campaign.name %></h1>
+<%= content_for :page_title, "Kampaň #{@campaign.name}" %>
 
-URL: <%= @campaign.url %><br/>
-Zdielani: <%= @campaign.links.count %><br/>
-Otvoreni: <%= OpenAction.where(link_id: @campaign.links.pluck(:id)).count %><br/>
-Predajov: <%= SellAction.where(link_id: @campaign.links.pluck(:id)).count %><br/>
+<h1>Kampaň <%= @campaign.name %></h1>
 
+<div class="padding-top ">
+  <span class="url"><%= @campaign.url %></span><br>
 
-<br/><br/>
+  <span class="number">
+    <%= @campaign.links.count %>
+  </span> <span class="description">Zdieľaní</span> <span class="separator">|</span>
 
-<%= link_to 'Edituj kampan', edit_campaign_path(@campaign) %>
-<%= link_to 'Spat na zoznam kampani', campaigns_path %>
+  <span class="number">
+    <%= OpenAction.where(link_id: @campaign.links.pluck(:id)).count %>
+  </span> <span class="description">Kliknutí</span> <span class="separator">|</span>
+
+  <span class="number">
+    <%= SellAction.where(link_id: @campaign.links.pluck(:id)).count %>
+  </span> <span class="description">Predajov</span>
+</div>
+
+<div class="controls">
+  <%= link_to campaigns_path, class: "btn-medium btn-link-blue" do %>
+    <span class="icon icon-chevron-thin-left"></span> Späť na zoznam kampaní
+  <% end %>
+  <%= link_to 'Edituj kampan', edit_campaign_path(@campaign), class: "btn-medium btn-primary-blue" %>
+</div>
 
 
 <h3>Linky</h3>

@@ -7,6 +7,7 @@
     box-shadow: $base-box-shadow;
     border-radius: $base-border-radius;
     padding: 1.5em;
+    position: relative;
   }
 
   h1 {
@@ -40,38 +41,48 @@
         text-decoration: underline;
       }
     }
+  }
 
-    .url {
-      color: #7D7D7D;
-      font-weight: lighter;
-      font-size: 14px;
-    }
+  .url {
+    color: #7D7D7D;
+    font-weight: lighter;
+    font-size: 14px;
+  }
 
-    .edit-campaign-btn {
-      position: absolute;
-      right: 0.5em;
-      top: 27px;
-    }
+  .edit-campaign-btn {
+    position: absolute;
+    right: 0.5em;
+    top: 27px;
+  }
 
-    .show-campaign-btn {
-      position: absolute;
-      right: 6.5em;
-      top: 27px;
-    }
+  .show-campaign-btn {
+    position: absolute;
+    right: 6.5em;
+    top: 27px;
+  }
 
-    .number {
-      font-size: 14px;
-      font-weight: normal;
-    }
+  .number {
+    font-size: 14px;
+    font-weight: normal;
+  }
 
-    .description {
-      font-size: 14px;
-      font-weight: lighter;
-    }
+  .description {
+    font-size: 14px;
+    font-weight: lighter;
+  }
 
-    .separator {
-      font-weight: lighter;
-      color: darken($bg-gray, 30%);
+  .separator {
+    font-weight: lighter;
+    color: darken($bg-gray, 30%);
+  }
+
+  .controls {
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+
+    .icon {
+      font-size: 11px;
     }
   }
 }
