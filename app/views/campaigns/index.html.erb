@@ -2,6 +2,10 @@
 
 <h1>Kampane</h1>
 
+<div class="controls one-button">
+  <%= link_to 'Nová kampaň', new_campaign_path, class: "btn-big btn-primary-green" %>
+</div>
+
 <ul class="campaigns-list">
   <% @campaigns.each do |campaign| %>
   <li class="one-campaign">
