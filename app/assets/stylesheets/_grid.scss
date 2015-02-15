@@ -16,6 +16,9 @@
 
 .col-10 {
   @include span-columns(10);
+  @include media($mobile) {
+    @include span-columns(4);
+  }
 }
 
 .col-offset-1 {

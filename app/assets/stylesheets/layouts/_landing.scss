@@ -62,6 +62,10 @@ section.steps {
     counter-reset: li;
     padding-left: 0;
 
+    @include media($mobile) {
+      padding-left: 2em;
+    }
+
     .step-list-item {
       position: relative;
       list-style: none;
@@ -116,8 +120,11 @@ section.steps {
       max-width: 470px;
     }
 
-    .step-img-right {
+    .step-img {
       float: right;
+      @include media($mobile) {
+        display: none;
+      }
     }
 
     .middle-message {
