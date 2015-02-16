@@ -96,4 +96,17 @@
     color: transparentize($primary-green, 0.3);
     margin-bottom: 10px;
   }
+
+  .highlighted-icon {
+    display: inline-block;
+    padding: 10px;
+    border-radius: $base-border-radius;
+    border: 1px solid $primary-yellow;
+    background-color: transparentize($primary-yellow, 0.98);
+
+    &:hover {
+      background-color: transparentize($primary-yellow, 0.9);
+      cursor: pointer;
+    }
+  }
 }
