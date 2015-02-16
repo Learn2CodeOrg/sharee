@@ -85,4 +85,15 @@
       font-size: 11px;
     }
   }
+
+  .overview-icons {
+    padding-top: 50px;
+  }
+
+  .big-icon {
+    display: inline-block;
+    font-size: 50px;
+    color: transparentize($primary-green, 0.3);
+    margin-bottom: 10px;
+  }
 }
