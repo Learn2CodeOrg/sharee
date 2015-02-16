@@ -1,7 +1,7 @@
 class CampaignsController < ApplicationController
 
   def index
-    @campaigns = Campaign.all.order(:name)
+    @campaigns = Campaign.where(user: current_user).order(:name)
   end
 
   def new
