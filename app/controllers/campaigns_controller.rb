@@ -38,6 +38,6 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :url)
+    params.require(:campaign).permit(:name, :url, :commission)
   end
 end
