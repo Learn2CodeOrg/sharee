@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource)
+    get_role_path
+  end
+
+  protected
+
+  def get_role_path
     current_user.merchant? ? campaigns_path : links_path
   end
 end
