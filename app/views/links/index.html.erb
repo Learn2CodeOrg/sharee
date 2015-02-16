@@ -1,11 +1,19 @@
 <%= content_for :page_title, 'Zdieľané odkazy' %>
 
+<%
+   total_commission = 0
+   @links.group_by(&:campaign).each do |campaign, links|
+     total_commission += SellAction.where(link_id: links).sum(:price) * campaign.zero_based_commission
+   end
+%>
+
 <h1>Zdieľané odkazy</h1>
 
 <p>
     <strong>Odkazov:</strong> <%= @links.count %><br/>
     <strong>Otvorení:</strong> <%= OpenAction.where(link_id: @links).count %><br/>
     <strong>Predajov:</strong> <%= SellAction.where(link_id: @links).count %><br/>
+    <strong>Provizia:</strong> <%= total_commission %> &euro;<br/>
 </p>
 
 <ul class="campaigns-list">
@@ -23,7 +31,11 @@
 
       <span class="number">
         <%= SellAction.where(link_id: links).count %>
-      </span> <span class="description">Predajov</span>
+      </span> <span class="description">Predajov</span> <span class="separator">|</span>
+
+      <span class="number">
+        <%= SellAction.where(link_id: links).sum(:price) * campaign.zero_based_commission %> &euro;
+      </span> <span class="description">Provizie</span>
     </li>
   <% end %>
 </ul>
