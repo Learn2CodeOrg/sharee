@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :welcome
   resources :campaigns
   resources :links
+  get 'roles/change'
   resources :thanks
 
   namespace :api do
