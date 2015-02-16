@@ -12,7 +12,7 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(campaign_params)
-    @campaign.user = User.last
+    @campaign.user = current_user
     if @campaign.save
       redirect_to @campaign
     else
