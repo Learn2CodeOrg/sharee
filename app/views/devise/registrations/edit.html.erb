@@ -8,6 +8,21 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :iban %><br />
+    <%= f.text_field :iban, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :swift %><br />
+    <%= f.text_field :swift, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paypal %><br />
+    <%= f.text_field :paypal, autocomplete: "off" %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
