@@ -1,16 +1,29 @@
-<h1>Celkovo</h1>
+<%= content_for :page_title, 'Zdieľané odkazy' %>
+
+<h1>Zdieľané odkazy</h1>
+
 <p>
-    Liniek: <%= @links.count %><br/>
-    Otvoreni: <%= OpenAction.where(link_id: @links).count %><br/>
-    Predajov: <%= SellAction.where(link_id: @links).count %><br/>
+    <strong>Odkazov:</strong> <%= @links.count %><br/>
+    <strong>Otvorení:</strong> <%= OpenAction.where(link_id: @links).count %><br/>
+    <strong>Predajov:</strong> <%= SellAction.where(link_id: @links).count %><br/>
 </p>
 
-<h1>Podla kampani</h1>
-<% @links.group_by(&:campaign).each do |campaign, links| %>
-    <p>
-        Kampan: <%= campaign.name %><br/>
-        Linkov: <%= links.count %><br/>
-        Otvoreni: <%= OpenAction.where(link_id: links).count %><br/>
-        Predajov: <%= SellAction.where(link_id: links).count %><br/>
-    </p>
-<% end %>
+<ul class="campaigns-list">
+  <% @links.group_by(&:campaign).each do |campaign, links| %>
+    <li class="one-campaign">
+      <span class="name"><%= campaign.name %></span><br>
+
+      <span class="number">
+        <%= links.count %>
+      </span> <span class="description">Odkazov</span> <span class="separator">|</span>
+
+      <span class="number">
+        <%= OpenAction.where(link_id: links).count %>
+      </span> <span class="description">Otvorení</span> <span class="separator">|</span>
+
+      <span class="number">
+        <%= SellAction.where(link_id: links).count %>
+      </span> <span class="description">Predajov</span>
+    </li>
+  <% end %>
+</ul>

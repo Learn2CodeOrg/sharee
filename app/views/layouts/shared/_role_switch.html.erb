@@ -1,8 +1,7 @@
 <% user = current_user %>
 
 <% if user %>
-<% role = user.merchant? ? :referer : :merchant %>
-<li class="nav-link">
-  <a href="<%= roles_change_path(role: role) %>" data-remote="true" class="text-link">Vystupovat ako <b><%= role %></b></a>
-</li>
+  <% role = user.merchant? ? :referer : :merchant %>
+    <a href="<%= roles_change_path(role: role) %>" data-remote="true" class="text-link">
+    <span class="icon icon-users"></span> <%= role.capitalize %> Účet</a>
 <% end %>
