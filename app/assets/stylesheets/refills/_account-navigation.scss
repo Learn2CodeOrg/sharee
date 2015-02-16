@@ -110,6 +110,11 @@ header.account-navigation {
     box-shadow: $base-box-shadow;
     text-align: left;
 
+    .icon {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+
     li {
       line-height: 33px;
       height: 33px;
