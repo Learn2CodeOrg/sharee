@@ -9,8 +9,8 @@ SellAction.delete_all
 
 # Create users
 
-user1 = User.create!(email: 'merchant@sharee.io', password: 'password', password_confirmation: 'password')
-user2 = User.create!(email: 'referer@sharee.io',  password: 'password', password_confirmation: 'password', role: :referer)
+user1 = User.create!(email: 'merchant@sharee.io', password: 'password', password_confirmation: 'password', iban: 'SK31 1200 0000 1987 4263 1111', swift: 'SKBCAB11', paypal: 'merchant@paypal.com')
+user2 = User.create!(email: 'referer@sharee.io',  password: 'password', password_confirmation: 'password', iban: 'SK31 1200 0000 1987 4263 2222', swift: 'SKBCAB22', paypal: 'referer@paypal.com', role: :referer)
 
 
 # Create campaigns
