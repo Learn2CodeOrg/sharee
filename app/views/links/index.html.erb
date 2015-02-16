@@ -1,0 +1,16 @@
+<h1>Celkovo</h1>
+<p>
+    Liniek: <%= @links.count %><br/>
+    Otvoreni: <%= OpenAction.where(link_id: @links).count %><br/>
+    Predajov: <%= SellAction.where(link_id: @links).count %><br/>
+</p>
+
+<h1>Podla kampani</h1>
+<% @links.group_by(&:campaign).each do |campaign, links| %>
+    <p>
+        Kampan: <%= campaign.name %><br/>
+        Linkov: <%= links.count %><br/>
+        Otvoreni: <%= OpenAction.where(link_id: links).count %><br/>
+        Predajov: <%= SellAction.where(link_id: links).count %><br/>
+    </p>
+<% end %>

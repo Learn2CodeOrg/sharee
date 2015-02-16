@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :welcome
   resources :campaigns
+  resources :links
   resources :thanks
 
   namespace :api do
