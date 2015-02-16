@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :campaigns
+  has_many :links
 
   def self.get_or_create_by_email(email)
     user = User.where(email: email).first
