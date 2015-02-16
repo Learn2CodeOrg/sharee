@@ -9,37 +9,32 @@ SellAction.delete_all
 
 # Create users
 
-user1 = User.create!(email: 'janko@example.com', password: 'password', password_confirmation: 'password')
-user2 = User.create!(email: 'marienka@example.com', password: 'password', password_confirmation: 'password')
-user3 = User.create!(email: 'jozefina@example.com', password: 'password', password_confirmation: 'password')
+user1 = User.create!(email: 'merchant@sharee.io', password: 'password', password_confirmation: 'password')
+user2 = User.create!(email: 'referer@sharee.io',  password: 'password', password_confirmation: 'password', role: :referer)
 
 
-# Create campaign
+# Create campaigns
 
-campaign1 = Campaign.create!(user: user1, name: 'DSL', url: 'www.dsl.sk', commission: '10')
-campaign2 = Campaign.create!(user: user1, name: 'Wikipedia', url: 'www.wikipedia.sk', commission: '15')
-campaign3 = Campaign.create!(user: user1, name: 'Mojevideo', url: 'www.mojevideo.sk', commission: '15')
-campaign4 = Campaign.create!(user: user1, name: 'Localhost', url: 'localhost:3000', commission: '20')
-
-
-# Create sharing link
-
-link1 = Link.create!(campaign: campaign1, user: user2, url: 'http://dsl.sk/article.php?article=16634')
-link2 = Link.create!(campaign: campaign1, user: user3, url: 'http://www.dsl.sk/article.php?article=16616')
+campaign1 = Campaign.create!(user: user1, name: 'DSL',       url: 'http://www.dsl.sk',       commission: '10')
+campaign2 = Campaign.create!(user: user1, name: 'Wikipedia', url: 'http://www.wikipedia.sk', commission: '15')
+campaign3 = Campaign.create!(user: user1, name: 'Mojevideo', url: 'http://www.mojevideo.sk', commission: '15')
+campaign4 = Campaign.create!(user: user1, name: 'Localhost', url: 'http://localhost:3000',   commission: '20')
+campaign5 = Campaign.create!(user: user1, name: 'Rebelik',   url: 'http://webrebel.sk',      commission: '20')
 
 
-# Create open actions
+# Create links
 
-OpenAction.create!(link: link1)
-OpenAction.create!(link: link1)
-OpenAction.create!(link: link1)
-OpenAction.create!(link: link1)
+[campaign1, campaign2, campaign3, campaign4, campaign5].each do |campaign|
+  (1..30).each do |number|
 
-OpenAction.create!(link: link2)
-OpenAction.create!(link: link2)
+    link = Link.create!(campaign: campaign, user: user2, url: "#{campaign.url}/article.php?article=#{number}")
 
+    if (number % 2 == 0)
+      OpenAction.create!(link: link)
+    end
 
-# Create sell action
-
-SellAction.create!(link: link1, code: '001', email: 'spokojny@gmail.com', price: '125')
-SellAction.create!(link: link2, code: '002', email: 'velmispokojny@gmail.com', price: '105')
+    if (number % 4 == 0)
+      SellAction.create!(link: link, code: "sell_#{link.id}_#{number}", email: 'buyer@sharee.io', price: rand(50..300))
+    end
+  end
+end
