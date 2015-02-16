@@ -1,5 +1,7 @@
 class CampaignsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @campaigns = Campaign.where(user: current_user).order(:name)
   end
