@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :campaigns
   has_many :links
 
+  enum role: { merchant: 0, referer: 1 }
+
   def self.get_or_create_by_email(email)
     user = User.where(email: email).first
     unless user
