@@ -25,7 +25,7 @@ campaign5 = Campaign.create!(user: user1, name: 'Rebelik',   url: 'http://webreb
 # Create links
 
 [campaign1, campaign2, campaign3, campaign4, campaign5].each do |campaign|
-  (1..30).each do |number|
+  (1..60).each do |number|
 
     link = Link.create!(campaign: campaign, user: user2, url: "#{campaign.url}/article.php?article=#{number}")
 
@@ -34,7 +34,13 @@ campaign5 = Campaign.create!(user: user1, name: 'Rebelik',   url: 'http://webreb
     end
 
     if (number % 4 == 0)
-      SellAction.create!(link: link, code: "sell_#{link.id}_#{number}", email: 'buyer@sharee.io', price: rand(50..300))
+      sell_action = SellAction.getOrCreate("sell_#{link.id}_#{number}", link, 'buyer@sharee.io', rand(50..300))
+
+      if (number % 8 == 0)
+        sell_action.pay
+      end
+
+      sell_action.save!
     end
   end
 end
