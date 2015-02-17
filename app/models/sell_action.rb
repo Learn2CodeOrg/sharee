@@ -9,4 +9,8 @@ class SellAction < ActiveRecord::Base
     end
     sell_action
   end
+
+  def pay
+    self.paid = true
+  end
 end
