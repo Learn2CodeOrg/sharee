@@ -33,7 +33,7 @@ module API
         end
 
         # Create SellAction
-        sell_action = SellAction.getOrCreate(code, link_id, email, price)
+        sell_action = SellAction.getOrCreate(code, link, email, price)
 
         # COOL!
         return render json: { id: sell_action.id }, status: 201
