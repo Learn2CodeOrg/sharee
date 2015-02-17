@@ -21,7 +21,7 @@ class LinksController < ApplicationController
         open_count: OpenAction.where(link_id: links).count,
         sell_count: SellAction.where(link_id: links).count,
         commission_count: SellAction.where(link_id: links).sum('price * (commission/100)'),
-        new_sell_count: SellAction.where(link_id: links, paid: true).count,
+        new_sell_count: SellAction.where(link_id: links, paid: false).count,
         new_commission_count: SellAction.where(link_id: links, paid: false).sum('price * (commission/100)'),
       }
     end
