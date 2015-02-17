@@ -1,11 +1,32 @@
+<style>
+  .hide {
+    display: none !important;
+  }
+  .pull-right {
+    float: right;
+  }
+</style>
+<script>
+  $(document).ready(function() {
+    $('#total-switch').on('click', function(e) {
+      e.preventDefault();
+      $('.total-value-block').removeClass('hide');
+      $('.new-value-block').addClass('hide');
+    });
+    $('#new-switch').on('click', function(e) {
+      e.preventDefault();
+      $('.total-value-block').addClass('hide');
+      $('.new-value-block').removeClass('hide');
+    });
+  });
+</script>
+
 <%= content_for :page_title, 'Zdieľané odkazy' %>
 
-<%
-   total_commission = 0
-   @links.group_by(&:campaign).each do |campaign, links|
-     total_commission += SellAction.where(link_id: links).sum(:price) * campaign.zero_based_commission
-   end
-%>
+<div class="pull-right">
+  <a href="#" id="total-switch">Celkovo</a>,
+  <a href="#" id="new-switch">Nevyplatene</a>
+</div>
 
 <h1>Zdieľané odkazy</h1>
 
@@ -13,43 +34,59 @@
 
   <div class="col-4 centered">
     <span class="icon icon-publish big-icon"></span><br>
-    <strong><%= OpenAction.where(link_id: @links).count %></strong> návštev
+    <strong><%= @data[:total_open] %></strong> návštev
   </div>
 
   <div class="col-4 centered">
     <span class="icon icon-shopping-basket big-icon"></span><br>
-    <strong><%= SellAction.where(link_id: @links).count %></strong> predajov
+    <strong><%= @data[:total_sell] %></strong> predajov
   </div>
 
   <div class="col-4 centered">
     <div class="highlighted-icon">
       <span class="icon icon-wallet big-icon"></span><br>
-      <strong><%= total_commission %>€</strong> provízia
+      <span class="hide total-value-block"><strong><%= @data[:total_commission] %>€</strong> provízia</span>
+      <span class="new-value-block"><strong><%= @data[:new_total_commission] %>€</strong> provízia</span>
     </div>
   </div>
-
 </div>
 
 <ul class="campaigns-list">
-  <% @links.group_by(&:campaign).each do |campaign, links| %>
+  <% @data[:campaigns].each do |campaign| %>
     <li class="one-campaign">
-      <span class="name"><%= campaign.name %></span><br>
+      <span class="name"><%= campaign[:name] %></span><br>
 
       <span class="number">
-        <%= links.count %>
+        <%= campaign[:links_count] %>
       </span> <span class="description">Odkazov</span> <span class="separator">|</span>
 
       <span class="number">
-        <%= OpenAction.where(link_id: links).count %>
+        <%= campaign[:open_count] %>
       </span> <span class="description">Otvorení</span> <span class="separator">|</span>
 
-      <span class="number">
-        <%= SellAction.where(link_id: links).count %>
-      </span> <span class="description">Predajov</span> <span class="separator">|</span>
+      <span class="hide total-value-block">
+        <span class="number">
+          <%= campaign[:sell_count] %>
+        </span> <span class="description">Predajov</span> <span class="separator">|</span>
+      </span>
 
-      <span class="number">
-        <%= SellAction.where(link_id: links).sum(:price) * campaign.zero_based_commission %> &euro;
-      </span> <span class="description">Provizie</span>
+      <span class="new-value-block">
+        <span class="number">
+          <%= campaign[:new_sell_count] %>
+        </span> <span class="description">Predajov</span> <span class="separator">|</span>
+      </span>
+
+      <span class="hide total-value-block">
+        <span class="number">
+          <%= campaign[:commission_count] %> &euro;
+        </span> <span class="description">Provizie</span>
+      </span>
+
+      <span class="new-value-block">
+        <span class="number">
+          <%= campaign[:new_commission_count] %> &euro;
+        </span> <span class="description">Provizie</span>
+      </span>
     </li>
   <% end %>
 </ul>
