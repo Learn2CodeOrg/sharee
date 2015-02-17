@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :campaigns
   resources :links
   get 'roles/change'
+  resources :commissions do
+    get :pay, on: :collection
+  end
   resources :thanks
 
   namespace :api do

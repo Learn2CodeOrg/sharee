@@ -1,0 +1,9 @@
+<% if @commission > 0 %>
+
+Commission: <%= @commission %> &euro;
+
+<%= link_to 'Vyplat peniaze', pay_commissions_path, remote: true %>
+
+<% else %>
+Your commissions are 0.00 :-)
+<% end %>
