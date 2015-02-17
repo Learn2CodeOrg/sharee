@@ -1,4 +1,4 @@
-class AddIbanAndSwiftAndPaypalToUser < ActiveRecord::Migration
+class AddIbanAndSwiftAndPaypalToUsers < ActiveRecord::Migration
   def change
     add_column :users, :iban, :string
     add_column :users, :swift, :string
