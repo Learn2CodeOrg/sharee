@@ -15,10 +15,9 @@ body {
 .overlay .overlay-close {
   width: 80px;
   height: 80px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  overflow: auto;
+  float: right;
+  padding: 0 5px;
+  overflow: hidden;
   border: none;
   background: asset-url('cross.png') no-repeat center center;
   text-indent: 200%;
@@ -31,6 +30,7 @@ body {
   overflow: auto;
   height: 100%;
   color: white;
+  padding: 10px 20px;
 }
 
 .everything {
