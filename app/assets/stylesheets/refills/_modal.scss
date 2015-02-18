@@ -105,11 +105,7 @@
     @include media($medium-screen) {
       max-height: 70%;
       padding: $modal-padding;
-      width: 60%;
-    }
-
-    @include media($large-screen) {
-      width: 50%;
+      width: 70%;
     }
 
     h1 {
