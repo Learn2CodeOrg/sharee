@@ -1,0 +1,32 @@
+<%= content_for :page_title, 'O projekte' %>
+
+<%= render 'refills/navigation' %>
+<%= render partial: 'layouts/shared/bars', locals: {landing: true} %>
+
+<section class="static-content container">
+
+  <aside class="static-page-nav">
+    <%= link_to 'O projekte', page_path('about'), class: 'static-page-nav-link active' %>
+    <%= link_to 'Obchodné podmienky', page_path('tos'), class: 'static-page-nav-link' %>
+    <%= link_to 'FAQ', page_path('faq'), class: 'static-page-nav-link' %>
+    <%= link_to 'Kontakt', page_path('contact'), class: 'static-page-nav-link' %>
+  </aside>
+
+  <article class="static-content-text">
+    <h1>O projekte</h1>
+
+    <p>Sharee je jedinečný nástroj na podporu predaja, ktorý umožňuje návštevníkom stránky zdieľať produkty obchodníka a získať tak províziu z ich predaja.</p>
+
+    <p>Sharee sa postará o meranie všetkých zdieľaní, pridelenie provízií konkrétnym užívateľom a ich následné vyplatenie.</p>
+
+    <p>Po prihlásení sa do aplikácie, môžu užívatelia sledovať štatistiky o svojich aktivitách a vyplatiť si svoju províziu.</p>
+
+    <p>Implementácia pre obchodníkov je veľmi jednoduchá a prebieha podobne ako so systémom Google Analytics. </p>
+
+    <p>Obchodník si na sharee.io vytvorí svoju kampaň a stanoví jej parametre. Provízia z predaja je jediný náklad na službu, čiže zaplatí až potom, ako predal svoj produkt, bez skrytých poplatkov a rizika.
+
+    <p>Sharee zvyšuje predaj obchodníkom a odmeňuje za to užívateľov, ktorí produkty zdieľali a pomohli propagovať. </p>
+
+  </article>
+
+</section>

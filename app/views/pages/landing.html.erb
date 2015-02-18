@@ -1,6 +1,5 @@
 <%= content_for :page_title, 'Domov' %>
 
-<div class="everything">
 <%= render 'refills/navigation' %>
 <%= render partial: 'layouts/shared/bars', locals: {landing: true} %>
 
@@ -144,24 +143,13 @@
 
     <nav class="footer-nav">
       <ul>
-        <li><a href="javascript:void(0)" class="trigger-overlay" id="contact-overlay">Kontakt</a></li>
-        <li><a href="javascript:void(0)" class="trigger-overlay" id="tos-overlay">Obchodné podmienky</a></li>
-        <li><a href="javascript:void(0)" class="trigger-overlay" id="faq-overlay">FAQ</a></li>
-        <li><a href="javascript:void(0)" class="trigger-overlay" id="about-overlay">O projekte</a></li>
+        <li><%= link_to 'O projekte', page_path('about') %></li>
+        <li><%= link_to 'Obchodné podmienky', page_path('tos') %></li>
+        <li><%= link_to 'FAQ', page_path('faq') %></li>
+        <li><%= link_to 'Kontakt', page_path('contact') %></li>
       </ul>
     </nav>
   </div>
 
   <p class="copyright">&copy; Learn2Code 2015</p>
 </section>
-
-</div> <!-- Everything container -->
-
-<div class="overlay overlay-contentscale">
-  <div class="overlay-content">
-    <div class="container">
-      <button type="button" class="overlay-close">Close</button>
-      <div id="js-overlay-content" class="overlay-column"></div>
-    </div>
-  </div>
-</div>

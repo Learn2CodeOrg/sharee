@@ -1,0 +1,20 @@
+<%= content_for :page_title, 'Obchodné podmienky' %>
+
+<%= render 'refills/navigation' %>
+<%= render partial: 'layouts/shared/bars', locals: {landing: true} %>
+
+<section class="static-content container">
+
+  <aside class="static-page-nav">
+    <%= link_to 'O projekte', page_path('about'), class: 'static-page-nav-link' %>
+    <%= link_to 'Obchodné podmienky', page_path('tos'), class: 'static-page-nav-link active' %>
+    <%= link_to 'FAQ', page_path('faq'), class: 'static-page-nav-link' %>
+    <%= link_to 'Kontakt', page_path('contact'), class: 'static-page-nav-link' %>
+  </aside>
+
+  <article class="static-content-text">
+    <h1>Obchodné podmienky</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque natus numquam veritatis eligendi, maiores, consectetur aut explicabo dolores inventore ullam amet consequuntur eaque dolore omnis, saepe distinctio quisquam! Rem, ducimus.</p>
+  </article>
+
+</section>

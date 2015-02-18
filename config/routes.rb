@@ -18,6 +18,11 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'about' => 'high_voltage/pages#show', id: 'about'
+  get 'tos' => 'high_voltage/pages#show', id: 'tos'
+  get 'faq' => 'high_voltage/pages#show', id: 'faq'
+  get 'contact' => 'high_voltage/pages#show', id: 'contact'
+
   get '*path', to: 'redirects#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

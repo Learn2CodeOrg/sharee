@@ -1,0 +1,60 @@
+<%= content_for :page_title, 'FAQ' %>
+
+<%= render 'refills/navigation' %>
+<%= render partial: 'layouts/shared/bars', locals: {landing: true} %>
+
+<section class="static-content container">
+
+  <aside class="static-page-nav">
+    <%= link_to 'O projekte', page_path('about'), class: 'static-page-nav-link' %>
+    <%= link_to 'Obchodné podmienky', page_path('tos'), class: 'static-page-nav-link' %>
+    <%= link_to 'FAQ', page_path('faq'), class: 'static-page-nav-link active' %>
+    <%= link_to 'Kontakt', page_path('contact'), class: 'static-page-nav-link' %>
+  </aside>
+
+  <article class="static-content-text">
+    <h1>Často kladené otázky</h1>
+
+    <p>Zoznam častých otázok a odpovedí na ne. V prípade, že predsa nenájdete odpoveď, určite nás kontaktujte.</p>
+
+    <h2>Pre obchodníkov</h2>
+
+    <h3 class="question">Ako mi môže Sharee pomôcť?</h3>
+    <p class="answer">Sharee pomáha obchodníkom zvyšovať predaj, a to jednoducho prostredníctvom svojich návštevníkov, ktorí zdieľajú jeho produtky a služby.</p>
+
+    <h3 class="question">Koľko stojí Sharee?</h3>
+    <p class="answer">Obchodník si zvolí sám výšku provízie z predaja, ktorý sprostredkovali užívatelia Sharee. To je jediný náklad.</p>
+
+    <h3 class="question">Ako prebieha vyplácanie provízie?</h3>
+    <p class="answer">Províziu účtuje Sharee vždy ku koncu mesiaca. Obchodník si môže vo svojom účte pozrieť jej výšku a stiahnuť daňový doklad.</p>
+
+    <h3 class="question">Ako prebieha implementácia na môj web?</h3>
+    <p class="answer">Prebieha v 2 krokoch. Najprv je potrebné vytvoriť kampaň a stanoviť jej parametre a v druhom kroku vložiť časť kódu do vašej webstránky. Implementáciu je možné prirovnať k bežným službám ako napr. Google Analytics. V prípade potreby vám službu implementujeme bezplatne.</p>
+
+    <h3 class="question">Prečo sa mám rozhodnúť práve pre Sharee?</h3>
+    <p class="answer">Sharee vám umožňuje spraviť zo svojich návštevníkov partnerov a zvýšiť tak predaj. Ďalšou výhodou je jeho jednoduchosť, bezplatná implementácia a nulové riziko, pretože platíte iba províziu z predaja.</p>
+
+
+    <h2>Pre sprostredkovateľov</h2>
+
+    <h3 class="question">Čo je to Sharee?</h3>
+    <p class="answer">Sharee je služba, prostredníctvom ktorej môžete zdieľať rôzne produkty a služby a následne zarábať províziu z ich predaja</p>
+
+    <h3 class="question">Ako to funguje?</h3>
+    <p class="answer">Jednoducho, kliknete na tlačidlo "Propagovať" umiestnenom na stránke obchodníka, zadáte svoj email a zdieľate link na sociálnych sieťach. Z každého predaja, ktorý príde z vami zdieľaného odkazu, získavate províziu. </p>
+
+    <h3 class="question">Ako zistím, koľko som zarobil?</h3>
+    <p class="answer">Zdieľaním prvého odkazu vám príde na email odkaz na registráciu do sharee.io, kde môžete sledovať prehľad kampaní, zdieľaní, koľko ste zarobili a samozrejme si peniaze aj vyplatiť.</p>
+
+    <h3 class="question">Kedy si môžem vyplatiť peniaze?</h3>
+    <p class="answer">Keď dosiahnete minimálnu sumu provízie 50 eur. Výplata prebieha v mesačných intervaloch na váš paypal účet, ktorý zadáte po prihlásení do Sharee.io.</p>
+
+    <h3 class="question">Ake sú formy vyplatenia peňazí?</h3>
+    <p class="answer">Peniaze si môžete nechať vyplatiť na bankový účet (IBAN, SWIFT) alebo cez paypal (email).</p>
+
+    <h3 class="question">Ako dlho trvá prevod na môj účet?</h3>
+    <p class="answer">Vyplatenie sumy trvá 14 dní.</p>
+
+  </article>
+
+</section>

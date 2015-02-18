@@ -1,0 +1,36 @@
+<%= content_for :page_title, 'Kontakt' %>
+
+<%= render 'refills/navigation' %>
+<%= render partial: 'layouts/shared/bars', locals: {landing: true} %>
+
+<section class="static-content container">
+
+  <aside class="static-page-nav">
+    <%= link_to 'O projekte', page_path('about'), class: 'static-page-nav-link' %>
+    <%= link_to 'Obchodné podmienky', page_path('tos'), class: 'static-page-nav-link' %>
+    <%= link_to 'FAQ', page_path('faq'), class: 'static-page-nav-link' %>
+    <%= link_to 'Kontakt', page_path('contact'), class: 'static-page-nav-link active' %>
+  </aside>
+
+  <article class="static-content-text">
+    <h1>Kontaktné informácie</h1>
+    <p>
+      Sharee <br>
+      Nám. SNP 30 <br>
+      811 01 Bratislava <br>
+      <br>
+      <a href="mailto:info@sharee.io">info@sharee.io</a> <br>
+      Infolinka: 0948 828 228
+    </p>
+
+    <p class="sicons">
+      <a href="#"><span class="icon icon-facebook-with-circle facebook-color"></span></a>
+      <a href="#"><span class="icon icon-twitter-with-circle twitter-color"></span></a>
+    </p>
+
+    <h2>Kde nás nájdete</h2>
+
+    Sem mapu
+  </article>
+
+</section>

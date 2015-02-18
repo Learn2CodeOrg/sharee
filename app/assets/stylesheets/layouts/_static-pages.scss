@@ -1,0 +1,62 @@
+$large-screen: em(860) !default;
+$base-spacing: 1.5em !default;
+
+.static-page-nav {
+  @include media($large-screen) {
+    @include span-columns(4);
+  }
+
+  .static-page-nav-link {
+    border-bottom: 1px solid transparentize($primary-blue, 0.8);
+    display: block;
+    margin-right: $base-spacing;
+    outline: none;
+    padding: ($base-spacing / 2);
+
+    &:last-child {
+      margin-bottom: $base-spacing;
+    }
+  }
+
+  .active {
+    color: $primary-green;
+    background: transparentize($primary-blue, 0.98);
+  }
+}
+
+.static-content {
+  background-color: white;
+  margin-top: 30px;
+  box-shadow: $base-box-shadow;
+  border-radius: $base-border-radius;
+  padding: 1.5em;
+  position: relative;
+
+  h1 {
+    margin-top: 0;
+  }
+
+  .static-content-text {
+    @include media($large-screen) {
+      @include span-columns(8);
+    }
+  }
+
+  .sicons {
+    font-size: 35px;
+    margin-top: 0;
+
+    a:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .question {
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+
+  .answer {
+    margin-top: 5px;
+  }
+}
