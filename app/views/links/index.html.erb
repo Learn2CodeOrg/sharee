@@ -1,12 +1,17 @@
 <%= content_for :page_title, 'Zdieľané odkazy' %>
+<% eligible_for_payoff = false # ak je moznost vyplatit, tak true %>
 
 <h1>Zdieľané odkazy</h1>
 
 <div class="controls tooltip-item">
-  <%= button_to 'Vyplatiť', commissions_path, class: "btn-big btn-primary-green", disabled: true %>
-  <div class="tooltip">
-    <p>Ešte nemôžeš, man.</p>
-  </div>
+  <% if eligible_for_payoff %>
+    <%= link_to 'Vyplatiť', commissions_path, class: "btn-big btn-primary-green" %>
+  <% else %>
+    <%= button_to 'Vyplatiť', commissions_path, class: "btn-big btn-primary-green", disabled: 'true' %>
+    <div class="tooltip">
+      <p>Ešte nemôžeš, man.</p>
+    </div>
+  <% end %>
 </div>
 
 <div class="container overview-icons">
