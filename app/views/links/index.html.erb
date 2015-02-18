@@ -1,34 +1,13 @@
-<style>
-  .hide {
-    display: none !important;
-  }
-  .pull-right {
-    float: right;
-  }
-</style>
-<script>
-  $(document).ready(function() {
-    $('#total-switch').on('click', function(e) {
-      e.preventDefault();
-      $('.total-value-block').removeClass('hide');
-      $('.new-value-block').addClass('hide');
-    });
-    $('#new-switch').on('click', function(e) {
-      e.preventDefault();
-      $('.total-value-block').addClass('hide');
-      $('.new-value-block').removeClass('hide');
-    });
-  });
-</script>
-
 <%= content_for :page_title, 'Zdieľané odkazy' %>
 
-<div class="pull-right">
-  <a href="#" id="total-switch">Celkovo</a>,
-  <a href="#" id="new-switch">Nevyplatene</a>
-</div>
-
 <h1>Zdieľané odkazy</h1>
+
+<div class="controls tooltip-item">
+  <%= button_to 'Vyplatiť', commissions_path, class: "btn-big btn-primary-green", disabled: true %>
+  <div class="tooltip">
+    <p>Ešte nemôžeš, man.</p>
+  </div>
+</div>
 
 <div class="container overview-icons">
 
@@ -43,10 +22,10 @@
   </div>
 
   <div class="col-4 centered">
-    <div class="highlighted-icon">
+    <div class="">
       <span class="icon icon-wallet big-icon"></span><br>
-      <span class="hide total-value-block"><strong><%= @data[:total_commission] %>€</strong> provízia</span>
-      <span class="new-value-block"><strong><%= @data[:new_total_commission] %>€</strong> provízia</span>
+      <span class="new-value-block"><strong><%= @data[:new_total_commission] %>€</strong> provízia</span><br>
+      <span class="new-value-block"><strong>14€</strong> schválené</span>
     </div>
   </div>
 </div>
