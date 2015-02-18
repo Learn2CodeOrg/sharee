@@ -1,5 +1,5 @@
 <%= content_for :page_title, 'Zdieľané odkazy' %>
-<% eligible_for_payoff = false # ak je moznost vyplatit, tak true %>
+<% eligible_for_payoff = true # ak je moznost vyplatit, tak true %>
 
 <h1>Zdieľané odkazy</h1>
 
@@ -27,11 +27,10 @@
   </div>
 
   <div class="col-4 centered">
-    <div class="">
-      <span class="icon icon-wallet big-icon"></span><br>
-      <span class="new-value-block"><strong><%= @data[:new_total_commission] %>€</strong> provízia</span><br>
-      <span class="new-value-block"><strong>14€</strong> schválené</span>
-    </div>
+    <span class="icon icon-wallet big-icon"></span><br>
+    <span class="new-value-block"><strong><%= @data[:new_total_commission] %>€</strong> provízia</span><br>
+    <span class="new-value-block"><strong>14€</strong> schválené</span>
+      <% if eligible_for_payoff %><span class="icon icon-check green-color"></span><% end %>
   </div>
 </div>
 
