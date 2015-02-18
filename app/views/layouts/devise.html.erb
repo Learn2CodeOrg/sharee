@@ -6,9 +6,14 @@
   <%= render 'layouts/shared/bars' %>
 
   <div class="container centered">
-    <h1><%= yield(:page_heading) %></h1>
 
-    <div class="col-4 col-offset-4">
+    <div class="devise-logo">
+      <%= link_to root_path do %>
+        <%= image_tag asset_path 'logo.svg' %>
+      <% end %>
+    </div>
+
+    <div class="devise-box">
       <%= yield %>
     </div>
   </div>

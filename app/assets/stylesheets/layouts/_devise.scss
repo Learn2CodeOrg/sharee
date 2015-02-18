@@ -1,3 +1,19 @@
+.devise-logo {
+  margin-top: 30px;
+
+  img {
+    height: 30px;
+  }
+}
+
+.devise-box {
+  margin: 30px auto 0 auto;
+  background: white;
+  padding: 20px;
+  box-shadow: $base-box-shadow;
+  max-width: 400px;
+}
+
 .devise-body {
   background-color: #F3F3F3;
 
