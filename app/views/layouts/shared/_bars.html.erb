@@ -1,2 +1,9 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% landing ||= false %>
+
+<% if notice %>
+  <p class="flash-notice<% if landing %> landing-flash<% end %>"><%= notice %></p>
+<% end %>
+
+<% if alert %>
+  <p class="flash-alert<% if landing %> landing-flash<% end %>"><%= alert %></p>
+<% end %>
