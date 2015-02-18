@@ -1,5 +1,5 @@
 <%= content_for :page_title, 'Zdieľané odkazy' %>
-<% eligible_for_payoff = true if @data[:new_total_commission] > 50 # ak je moznost vyplatit, tak true %>
+<% eligible_for_payoff = @data[:unpaid_total_commission] > 50 # ak je moznost vyplatit, tak true %>
 
 <h1>Zdieľané odkazy</h1>
 
