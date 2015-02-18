@@ -144,11 +144,10 @@
 
     <nav class="footer-nav">
       <ul>
-        <li><a href="javascript:void(0)" id="trigger-overlay">Kontakt</a></li>
-        <li><a href="#">Obchodné podmienky</a></li>
-        <li><a href="#">Ochrana osobných údajov</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">O projekte</a></li>
+        <li><a href="javascript:void(0)" class="trigger-overlay" id="contact-overlay">Kontakt</a></li>
+        <li><a href="javascript:void(0)" class="trigger-overlay" id="tos-overlay">Obchodné podmienky</a></li>
+        <li><a href="javascript:void(0)" class="trigger-overlay" id="faq-overlay">FAQ</a></li>
+        <li><a href="javascript:void(0)" class="trigger-overlay" id="about-overlay">O projekte</a></li>
       </ul>
     </nav>
   </div>
@@ -162,7 +161,7 @@
   <div class="overlay-content">
     <div class="container">
       <button type="button" class="overlay-close">Close</button>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui odio similique voluptas recusandae, laborum, accusamus fugit consectetur. Ipsum reiciendis aspernatur, in magni, architecto ducimus facilis voluptates non, perferendis corporis necessitatibus!</p>
+      <div id="js-overlay-content" class="overlay-column"></div>
     </div>
   </div>
 </div>

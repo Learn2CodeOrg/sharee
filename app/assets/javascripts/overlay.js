@@ -74,7 +74,7 @@ ready = function() {
   if (!container) {
       return false;
   }
-  var triggerBttn = document.getElementById( 'trigger-overlay' ),
+  var triggerBttn = $( 'a.trigger-overlay' ),
     overlay = document.querySelector( 'div.overlay' ),
     body = document.querySelector( 'body' ),
     closeBttn = overlay.querySelector( 'button.overlay-close' );
@@ -119,7 +119,10 @@ ready = function() {
     }
   }
 
-  triggerBttn.addEventListener( 'click', toggleOverlay );
+  for (var i = 0; i < triggerBttn.length; i++) {
+    triggerBttn[i].addEventListener( 'click', toggleOverlay );
+  }
+
   closeBttn.addEventListener( 'click', toggleOverlay );
 
 };

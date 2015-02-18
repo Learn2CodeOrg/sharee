@@ -33,6 +33,11 @@ body {
   padding: 10px 20px;
 }
 
+.overlay-column {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 .everything {
   background: $bg-gray;
   -webkit-transition: -webkit-transform 0.5s;
