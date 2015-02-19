@@ -12,11 +12,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="/sharee.js"></script>
   <script>
-    <% if Rails.env.production? %>
-      Sharee.setHost('http://' + 'www.sharee.io');
-    <% else %>
-      Sharee.setHost('http://' + '<%= request.host_with_port %>');
-    <% end %>
+    Sharee.setHost('http://' + '<%= request.host_with_port %>');
   </script>
   <%= csrf_meta_tags %>
 </head>
