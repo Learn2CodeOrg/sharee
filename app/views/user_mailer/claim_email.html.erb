@@ -1,0 +1,16 @@
+<h1>Sharee.io</h1>
+<h3>Claim request</h3>
+
+<p>We have processed your request.</p>
+
+<p>Claiming commission is <b><%= @commission %> &euro;</b>.</p>
+
+<p>The payment withdrawal will be done soon to the following account:</p>
+
+<ul>
+  <li>IBAN: <strong><%= @user.iban %></strong></li>
+  <li>SWIFT: <strong><%= @user.swift %></strong></li>
+  <li>PAYPAL: <strong><%= @user.paypal %></strong></li>
+</ul>
+
+<p>Wishing a good day!</p>

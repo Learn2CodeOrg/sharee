@@ -1,0 +1,16 @@
+<h1>Sharee.io</h1>
+<h3>New claim</h3>
+
+<p>This is new claim from <b><%= @claimer.email %></b></p>
+
+<p>Claiming commission is <b><%= @commission %> &euro;</b>.</p>
+
+<p>The payment withdrawal has to be done to the following account:</p>
+
+<ul>
+  <li>IBAN: <strong><%= @claimer.iban %></strong></li>
+  <li>SWIFT: <strong><%= @claimer.swift %></strong></li>
+  <li>PAYPAL: <strong><%= @claimer.paypal %></strong></li>
+</ul>
+
+<p>Wishing a good day!</p>
