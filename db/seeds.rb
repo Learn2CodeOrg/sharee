@@ -37,7 +37,7 @@ campaign5 = Campaign.create!(user: user1, name: 'Rebelik',   url: 'http://webreb
       sell_action = SellAction.getOrCreate("sell_#{link.id}_#{number}", link, 'buyer@sharee.io', rand(50..300))
 
       if (number % 8 == 0)
-        sell_action.pay
+        sell_action.approved_at = nil
       end
 
       sell_action.save!

@@ -1,5 +1,5 @@
 <%= content_for :page_title, 'Zdieľané odkazy' %>
-<% eligible_for_payoff = @data[:unpaid_total_commission] > 50 # ak je moznost vyplatit, tak true %>
+<% eligible_for_payoff = @data[:links][:eligible_commission] > 50 # ak je moznost vyplatit, tak true %>
 
 <h1>Zdieľané odkazy</h1>
 
@@ -16,20 +16,24 @@
 
 <div class="container overview-icons">
 
-  <div class="col-4 centered">
+  <div class="col-3 centered">
+    <span class="icon icon-list big-icon"></span><br>
+    <strong><%= @data[:links][:count] %></strong> linkov
+  </div>
+
+  <div class="col-3 centered">
     <span class="icon icon-publish big-icon"></span><br>
-    <strong><%= @data[:total_open] %></strong> návštev
+    <strong><%= @data[:links][:opens] %></strong> návštev
   </div>
 
-  <div class="col-4 centered">
+  <div class="col-3 centered">
     <span class="icon icon-shopping-basket big-icon"></span><br>
-    <strong><%= @data[:total_sell] %></strong> predajov
+    <strong><%= @data[:links][:sells] %></strong> predajov
   </div>
 
-  <div class="col-4 centered">
+  <div class="col-3 centered">
     <span class="icon icon-wallet big-icon"></span><br>
-    <span class="new-value-block"><strong><%= @data[:new_total_commission] %>€</strong> provízia</span><br>
-    <span class="new-value-block"><strong>?€</strong> schválené</span>
+    <span class="new-value-block"><strong><%= @data[:links][:commission] %>€</strong> provízia</span>
       <% if eligible_for_payoff %><span class="icon icon-check green-color"></span><% end %>
   </div>
 </div>
@@ -40,34 +44,22 @@
       <span class="name"><%= campaign[:name] %></span><br>
 
       <span class="number">
-        <%= campaign[:links_count] %>
+        <%= campaign[:links][:count] %>
       </span> <span class="description">Odkazov</span> <span class="separator">|</span>
 
       <span class="number">
-        <%= campaign[:open_count] %>
+        <%= campaign[:links][:opens] %>
       </span> <span class="description">Otvorení</span> <span class="separator">|</span>
 
-      <span class="hide total-value-block">
+      <span class="new-value-block">
         <span class="number">
-          <%= campaign[:sell_count] %>
+          <%= campaign[:links][:sells] %>
         </span> <span class="description">Predajov</span> <span class="separator">|</span>
       </span>
 
       <span class="new-value-block">
         <span class="number">
-          <%= campaign[:new_sell_count] %>
-        </span> <span class="description">Predajov</span> <span class="separator">|</span>
-      </span>
-
-      <span class="hide total-value-block">
-        <span class="number">
-          <%= campaign[:commission_count] %> &euro;
-        </span> <span class="description">Provizie</span>
-      </span>
-
-      <span class="new-value-block">
-        <span class="number">
-          <%= campaign[:new_commission_count] %> &euro;
+          <%= campaign[:links][:commission] %> &euro;
         </span> <span class="description">Provizie</span>
       </span>
     </li>

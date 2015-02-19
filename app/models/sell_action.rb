@@ -1,6 +1,8 @@
 class SellAction < ActiveRecord::Base
   belongs_to :link
 
+  before_create :set_approved_at
+
   def self.getOrCreate(code, link, email, price)
     sell_action = SellAction.where(code: code).first
     unless sell_action
@@ -10,7 +12,21 @@ class SellAction < ActiveRecord::Base
     sell_action
   end
 
-  def pay
-    self.paid = true
+  def self.count_links(links)
+    SellAction.where(link_id: links).count
+  end
+
+  def self.commission(links)
+    SellAction.where(link_id: links).where('approved_at IS NOT NULL').sum('price * (commission/100)')
+  end
+
+  def self.eligible_commission(links)
+    SellAction.where(link_id: links, claimed_at: nil, paid_at: nil).where('approved_at IS NOT NULL').sum('price * (commission/100)')
+  end
+
+  private
+
+  def set_approved_at
+    self.approved_at = self.created_at
   end
 end
