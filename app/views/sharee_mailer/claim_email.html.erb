@@ -1,5 +1,4 @@
-<h1>Sharee.io</h1>
-<h3>New claim</h3>
+<%= content_for :title, 'New claim' %>
 
 <p>This is new claim from <b><%= @claimer.email %></b></p>
 
@@ -12,5 +11,3 @@
   <li>SWIFT: <strong><%= @claimer.swift %></strong></li>
   <li>PAYPAL: <strong><%= @claimer.paypal %></strong></li>
 </ul>
-
-<p>Wishing a good day!</p>
