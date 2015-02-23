@@ -29,7 +29,7 @@ module API
         end
 
         # Get user
-        user = User.get_or_create_by_email(email)
+        user = User.get_or_create_by_email(email, :referer)
 
         # Check user
         unless user
