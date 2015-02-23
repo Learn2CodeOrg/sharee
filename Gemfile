@@ -42,6 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'devise_invitable', '~> 1.3.4'
 gem 'rest-client'
 
 group :production do
@@ -72,5 +73,6 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'letter_opener'
 end
 
