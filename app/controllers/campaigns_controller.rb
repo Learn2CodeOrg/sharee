@@ -22,6 +22,26 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
+    @data = {
+      link_count: @campaign.links.count,
+      open_count: OpenAction.where(link_id: @campaign.links.pluck(:id)).count,
+      sell_count: SellAction.where(link_id: @campaign.links.pluck(:id)).count
+    }
+    sell_actions_group = {}
+    @campaign.sell_actions.group_by { |m| m.created_at.beginning_of_month }.each do |time, sell_actions|
+      sell_actions_group[time.year] = {}
+      sell_actions_group[time.year][time.month] = []
+      sell_actions.each do |sell_action|
+        sell_actions_group[time.year][time.month] << {
+          id: sell_action.id,
+          code: sell_action.code,
+          email: sell_action.email,
+          created_at: sell_action.created_at,
+          approved: sell_action.approved_at.present?
+        }
+      end
+    end
+    @data[:sell_actions_group] = sell_actions_group
   end
 
   def edit

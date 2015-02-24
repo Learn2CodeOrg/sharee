@@ -103,3 +103,7 @@ hr {
     @include size(100%);
   }
 }
+
+.sell-table tr td {
+  padding: 5px;
+}
