@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def configure_devise_params
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:email, :iban, :swift, :paypal, :password, :password_confirmation, :current_password)
+      u.permit(:email, :iban_referer, :swift_referer, :paypal_referer, :iban_merchant, :swift_merchant, :paypal_merchant, :password, :password_confirmation, :current_password)
     end
   end
 

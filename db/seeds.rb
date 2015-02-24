@@ -9,8 +9,33 @@ SellAction.delete_all
 
 # Create users
 
-user1 = User.create!(email: 'merchant@sharee.io', password: 'password', password_confirmation: 'password', iban: 'SK31 1200 0000 1987 4263 1111', swift: 'SKBCAB11', paypal: 'merchant@paypal.com')
-user2 = User.create!(email: 'referer@sharee.io',  password: 'password', password_confirmation: 'password', iban: 'SK31 1200 0000 1987 4263 2222', swift: 'SKBCAB22', paypal: 'referer@paypal.com', role: :referer)
+user1 = User.create!(
+  email: 'merchant@sharee.io',
+  password: 'password',
+  password_confirmation: 'password',
+
+  iban_merchant: 'SK11 1111 1111 1111 1111 1111',
+  swift_merchant: 'SK1111',
+  paypal_merchant: 'mail-1111@paypal.com',
+
+  iban_referer: 'SK00 0000 0000 0000 0000 0000',
+  swift_referer: 'SK0000',
+  paypal_referer: 'mail-0000@paypal.com',
+)
+user2 = User.create!(
+  email: 'referer@sharee.io',
+  password: 'password',
+  password_confirmation: 'password',
+
+  iban_referer: 'SK22 2222 2222 2222 2222 2222',
+  swift_referer: 'SK2222',
+  paypal_referer: 'mail-2222@paypal.com',
+
+  iban_merchant: 'SK00 0000 0000 0000 0000 0000',
+  swift_merchant: 'SK0000',
+  paypal_merchant: 'mail-0000@paypal.com',
+  role: :referer
+)
 
 
 # Create campaigns

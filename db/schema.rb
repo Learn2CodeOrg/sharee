@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223101554) do
+ActiveRecord::Schema.define(version: 20150224141358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,15 +44,19 @@ ActiveRecord::Schema.define(version: 20150223101554) do
     t.integer  "link_id"
     t.string   "code"
     t.string   "email"
-    t.decimal  "price",       precision: 8, scale: 2
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.decimal  "commission",  precision: 8, scale: 2
+    t.decimal  "price",          precision: 8, scale: 2
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.decimal  "commission",     precision: 8, scale: 2
     t.datetime "approved_at"
     t.datetime "charged_at"
     t.datetime "balanced_at"
     t.datetime "claimed_at"
     t.datetime "paid_at"
+    t.integer  "payment_method"
+    t.string   "iban"
+    t.string   "swift"
+    t.string   "paypal"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,9 +73,6 @@ ActiveRecord::Schema.define(version: 20150223101554) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role",                   default: 0
-    t.string   "iban"
-    t.string   "swift"
-    t.string   "paypal"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -80,6 +81,12 @@ ActiveRecord::Schema.define(version: 20150223101554) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.string   "iban_referer"
+    t.string   "swift_referer"
+    t.string   "paypal_referer"
+    t.string   "iban_merchant"
+    t.string   "swift_merchant"
+    t.string   "paypal_merchant"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
