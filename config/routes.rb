@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :campaigns
   resources :links
   get 'roles/change'
+  get 'sell_actions/set_approve'
   resources :commissions do
     get :pay, on: :collection
   end
