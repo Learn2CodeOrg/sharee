@@ -107,3 +107,24 @@ hr {
 .sell-table tr td {
   padding: 5px;
 }
+
+.payment-methods li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 20px;
+  margin: 5px;
+  background: #F0F0F0;
+  cursor: pointer;
+}
+
+.payment-methods li.active {
+  background: #FFE2B5;
+}
+
+.payment-methods li:hover {
+  background: #FFE2B5;
+}
+
+.hide {
+  display: none !important;
+}

@@ -9,12 +9,46 @@
 </div>
 
 <div class="centered">
-  <% if @commission > 0 %>
-  Na vyplatenie: <%= @commission %> &euro;
-  <p>
-    <%= link_to 'Odoslať požiadavku', pay_commissions_path, class: 'btn-medium btn-primary-blue', remote: true %>
-  </p>
-  <% else %>
-    <p class="padding-top">Pre vyplatenie potrebujete mať schválených aspoň 50 &euro;</p>
+  <br/>
+
+  <p>Vaša aktuálne vyplatiteľná provízia činí: <b><%= @commission %> &euro;</b></p>
+
+  <p>Minimálna vyplatiteľná čiastka činí: <b><%= @commission_bottom_limit %> &euro;</b></p>
+
+  <p>Tento limit ste: <b><%= @is_commission_bottom_limit_met ? 'splnili' : 'ešte nesplnili' %>.</b></p>
+
+  <% unless @is_payoff_day %>
+    <p>Počkajte prosím, vyplatenie je možné <b>po <%= @payoff_day %>. dni</b> v mesiaci.</p>
+  <% end %>
+
+  <% if @is_payoff_day && @is_commission_bottom_limit_met %>
+    <p>Zvoľte prosím formu vyplatenia:</p>
+    <ul class="payment-methods">
+      <li data-payment="transfer">
+        <b>Prevodom:</b><br/><%= @user.iban_referer %></li>
+      <li data-payment="paypal">
+        <b>Paypalom:</b><br/><%= @user.paypal_referer %></li>
+    </ul>
+    <p>
+      <%= link_to 'Odoslať požiadavku', pay_commissions_path(payment_method: :transfer), class: 'btn-medium btn-primary-blue hide transfer-pay-button pay-button', remote: true %>
+      <%= link_to 'Odoslať požiadavku', pay_commissions_path(payment_method: :paypal), class: 'btn-medium btn-primary-blue hide paypal-pay-button pay-button', remote: true %>
+    </p>
   <% end %>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $('.payment-methods li').on('click', function() {
+      $('.payment-methods li').removeClass('active');
+
+      var $this = $(this);
+      var payment = $this.data('payment');
+
+      $this.addClass('active');
+
+      $('.pay-button').addClass('hide');
+      $('.transfer-pay-button').toggleClass('hide', payment == 'transfer');
+      $('.paypal-pay-button').toggleClass('hide', payment == 'paypal');
+    });
+  });
+</script>
