@@ -1,3 +1,5 @@
+<% active_class = 'active' if current_page?('/reseller-info') %>
+
 <header class="navigation" role="banner">
   <div class="navigation-wrapper">
     <%= link_to root_path, class: 'logo' do %>
@@ -6,19 +8,8 @@
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu">
-        <li class="nav-link">
-          <% if current_page?('/') %>
-            <a href="#steps" class="text-link js-nav-link">Ako to funguje</a>
-          <% else %>
-            <a href="/#steps" class="text-link js-nav-link">Ako to funguje</a>
-          <% end %>
-        </li>
-        <li class="nav-link">
-          <% if current_page?('/') %>
-            <a href="#pricing" class="text-link js-nav-link">Cenník</a>
-          <% else %>
-            <a href="/#pricing" class="text-link js-nav-link">Cenník</a>
-          <% end %>
+        <li class="nav-link <%= active_class %>">
+          <%= link_to 'Informácie pre resellerov', page_path('reseller-info') %>
         </li>
         <div class="on-right">
           <li class="nav-link"><%= link_to "Prihlásenie", new_user_session_path, class: "text-link js-nav-link" %></li>
