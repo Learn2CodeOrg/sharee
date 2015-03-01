@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="130px" height="76px" viewBox="0 0 130 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>btn + search</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#DD5B4D" offset="0%"></stop>
+            <stop stop-color="#C24E41" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="sharee_partner_icons" sketch:type="MSArtboardGroup" transform="translate(-191.000000, -218.000000)">
+            <g id="btn-+-search" sketch:type="MSLayerGroup" transform="translate(191.000000, 218.000000)">
+                <g id="btn" transform="translate(14.000000, 20.000000)">
+                    <rect id="Rectangle-1" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="0" y="0" width="116" height="20" rx="2"></rect>
+                    <text id="Zdieľaj-a-zarábaj" sketch:type="MSTextLayer" font-family="Arial" font-size="11" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="26" y="13">Zdieľaj a zarábaj</tspan>
+                    </text>
+                    <g id="symbol" transform="translate(6.000000, 3.000000)">
+                        <ellipse id="Oval-15" stroke="#FFFFFF" sketch:type="MSShapeGroup" cx="5.90379009" cy="6.89285714" rx="5.90379009" ry="5.89285714"></ellipse>
+                        <text id="S" sketch:type="MSTextLayer" font-family="Lobster Two" font-size="11" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="3" y="11">S</tspan>
+                        </text>
+                        <rect id="Rectangle-3" fill="#FFFFFF" sketch:type="MSShapeGroup" x="5.5" y="1" width="1" height="2"></rect>
+                        <rect id="Rectangle-4" fill="#FFFFFF" sketch:type="MSShapeGroup" x="5.5" y="11" width="1" height="2"></rect>
+                    </g>
+                </g>
+                <path d="M47.0869216,54.1021633 C42.2128629,57.5752238 36.2491184,59.6180346 29.8082493,59.6180346 C13.345607,59.6180346 0,46.2724276 0,29.8097853 C0,13.3471429 13.345607,0.00153596279 29.8082493,0.00153596279 C46.2708917,0.00153596279 59.6164987,13.3471429 59.6164987,29.8097853 C59.6164987,36.2506543 57.5736878,42.2143988 54.1006273,47.0884576 L73.6857034,66.6735336 C75.6151773,68.6030076 75.5990904,71.6902658 73.6850052,73.604351 L73.6028151,73.6865411 C71.6936258,75.5957304 68.5856971,75.6009388 66.6719977,73.6872394 L47.0869216,54.1021633 L47.0869216,54.1021633 Z M29.8082493,52.6043289 C42.3973289,52.6043289 52.6027929,42.3988649 52.6027929,29.8097853 C52.6027929,17.2207057 42.3973289,7.01524169 29.8082493,7.01524169 C17.2191697,7.01524169 7.01370573,17.2207057 7.01370573,29.8097853 C7.01370573,42.3988649 17.2191697,52.6043289 29.8082493,52.6043289 L29.8082493,52.6043289 L29.8082493,52.6043289 Z" id="search" fill="#959595" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
