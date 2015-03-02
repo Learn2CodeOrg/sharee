@@ -13,103 +13,144 @@
         .sharee-button-block {
             display: inline-block;
             position: relative;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: none;
             color: #111;
         }
 
         .sharee-button-block button,
         .sharee-button-block form input[type=submit] {
-            padding: 4px 6px;
-            border: 1px solid #4AB19D;
+            padding: 8px 11px;
             border-radius: 2px;
-            background: #4AB19D;
+            border: none;
+            background: #DD5B4D;
             color: white;
             cursor: pointer;
             font-family: Arial, sans-serif;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .sharee-button-block .sharee-back-button {
             color: #111;
             background-color: white;
+            border: 1px solid #DD5B4D;
         }
 
         .sharee-button-block input[type="text"] {
-            padding: 4px 6px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 2px;
-            margin: 5px 0;
-            width: 280px;
+            margin: 12px 0;
+            width: 100%;
         }
 
         .sharee-button-core {
             display: inline-block;
             cursor: pointer;
-            background: #4AB19D;
+            background-color: #DD5B4D;
+            background-image: -webkit-linear-gradient(#DD5B4D, #C24E42);
+            background-image: -moz-linear-gradient(#DD5B4D, #C24E42);
+            background-image: -o-linear-gradient(#DD5B4D, #C24E42);
+            background-image: linear-gradient(#DD5B4D, #C24E42);
             color: white;
         }
 
         .sharee-button-core:hover {
-            background: #5EB9A8;
+            background-color: #E17266;
+            background-image: -webkit-linear-gradient(#E17266, #CB685E);
+            background-image: -moz-linear-gradient(#E17266, #CB685E);
+            background-image: -o-linear-gradient(#E17266, #CB685E);
+            background-image: linear-gradient(#E17266, #CB685E);
         }
 
         .sharee-button-core,
         .sharee-button-form,
         .sharee-button-success-block {
             display: inline-block;
-            border: 1px solid #4AB19D;
             border-radius: 2px;
+        }
+
+        .sharee-button-core {
+            max-height: 20px;
         }
 
         .sharee-button-core img {
             height: 15px;
             display: inline-block;
-            margin-top: 3px;
+            margin-top: 2px;
             padding: 0;
-            margin-left: 3px;
+            margin-left: 5px;
         }
 
         .sharee-button-core .sharee-cta {
-            padding-left: 3px;
-            padding-right: 5px;
+            padding-left: 4px;
+            padding-right: 7px;
             position: relative;
-            top: -2px;
+            top: -3px;
+            font-size: 11px;
         }
 
         .sharee-button-form,
         .sharee-button-success-block {
             display: none;
             width: 300px;
-            padding: 8px 8px 5px 8px;
+            padding: 10px;
             position: absolute;
             top: 30px;
-            right: -120px;
+            right: -92px;
             z-index: 99999;
             background-color: white;
         }
 
-        .sharee-close {
+        .sharee-button-form:before,
+        .sharee-button-success-block:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid white;
+            position: absolute;
+            top: -5px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+
+        .sharee-more {
             float: right;
-            font-size: 12px;
+            font-size: 10px;
             padding-top: 9px;
-            color: #111;
+            color: #6F6F6F;
             text-decoration: underline;
         }
 
-        .sharee-close:hover {
-            color: #333;
+        .sharee-more:hover {
             text-decoration: none;
+            color: #DD5B4D;
+        }
+
+        .sharee-close {
+            font-weight: bold;
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 16px;
+            color: #DCDCDC;
+        }
+
+        .sharee-close:hover {
+            color: black;
         }
 
         .sharee-inlinelink {
-            color: #4AB19D;
+            color: #DD5B4D;
             text-decoration: underline;
             font-size: 13px;
         }
 
         .sharee-inlinelink:hover {
-            color: #5EB9A8;
+            color: #DD5B4D;
             text-decoration: none;
         }
 
@@ -130,24 +171,20 @@
 </head>
 
 <div class="sharee-button-block">
-    <div class="sharee-button-core"><img src="" alt="" class="sharee-logo"><span class="sharee-cta">Propaguj</span></div>
+    <div class="sharee-button-core"><img src="" alt="" class="sharee-logo"><span class="sharee-cta">Zdieľaj a zarábaj</span></div>
 
     <form class="sharee-button-form" action="" method="post">
         <input type="hidden" name="campaign" value="">
-        <span class="sharee-info">Vložte e-mail a dostanete odkaz, ktorého zdieľaním získate 20% z predaja. <a href="http://sharee.io" class="sharee-inlinelink">Viac...</a></span>
-        <input type="text" name="email" value="iveta@pekna.sk">
+        <span class="sharee-info">Staň sa partnerom a získaj 25% z predaja. <a href="http://sharee.io" class="js-sharee-close sharee-close">x</a></span>
+        <input type="text" name="email" value="" placeholder="Vlož email a získaj odkaz">
         <input type="submit" value="Získať odkaz">
-        <a href="#" class="sharee-close">Zavrieť</a>
-        <a href="http://sharee.io" class="sharee-poweredby">Powered by Sharee.io</a>
+        <a href="http://sharee.io" class="sharee-more" target="_blank">Viac info na Sharee.io</a>
     </form>
 
     <div class="sharee-button-success-block">
-        <p>Odkaz: <input type="text" value="" class="url"></p>
+        Unikátny odkaz: <input type="text" value="" class="url"> <a href="http://sharee.io" class="js-sharee-close sharee-close">x</a>
         <button class="sharee-back-button">Späť</button>
-        <a href="#" class="facebook" target="_blank">FB</a>
-        <a href="#" class="twitter" target="_blank">TWT</a>
-        <a href="#" class="sharee-close">Zavrieť</a>
-        <a href="http://sharee.io" class="sharee-poweredby">Powered by Sharee.io</a>
+        <a href="http://sharee.io" class="sharee-more" target="_blank">Viac info na Sharee.io</a>
     </div>
 </div>
 

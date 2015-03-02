@@ -100,7 +100,7 @@ window.Sharee = (function () {
             });
         });
 
-        $('.sharee-close').on('click', function(event) {
+        $('.js-sharee-close').on('click', function(event) {
             $('.sharee-button-form').hide();
             $('.sharee-button-success-block').hide();
             return false;
