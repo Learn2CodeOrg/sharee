@@ -66,9 +66,7 @@ window.Sharee = (function () {
 
     var initShareeButtonClickEvent = function() {
         $('.sharee-button-core').on('click', function() {
-            console.log('Clicked on button!');
-            //$(this).hide();
-            $('.sharee-button-form').show();
+            $('.sharee-button-form').toggle();
         });
     };
 
