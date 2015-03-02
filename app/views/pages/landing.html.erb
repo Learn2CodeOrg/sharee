@@ -3,131 +3,36 @@
 <%= render 'refills/navigation' %>
 <%= render partial: 'layouts/shared/bars', locals: {landing: true} %>
 
-<section class="intro">
-  <h1 class="lead">Umožnite svojim návštevníkom stať sa Vašimi partnermi jednoducho</h1>
-  <p class="sublead">Sharee je prehľadný affiliate systém, do ktorého môžete zapojiť každého návštevníka</p>
-
-  <div class="centered padding-top">
-    <a href="#steps" class="btn btn-medium btn-secondary-white">Ako to funguje?</a>
-    <label for="modal-1">
-      <div class="btn btn-medium btn-primary-green">Mám záujem</div>
-    </label>
-  </div>
+<section class="intro small">
+  <h1 class="lead">Zdieľaj a zarábaj</h1>
+  <p class="sublead small">Sharee ti umožňuje stať sa partnerom za minútu. Zdieľaj obľúbený produkt a získaj províziu z jeho predaja.</p>
 </section>
 
-<section class="benefits">
+<section class="benefits padding-bottom-big">
   <div class="container centered">
-    <h2 class="landing-heading">Sharee pomáha zvyšovať Váš predaj</h2>
+    <h2 class="landing-heading">Ako to funguje</h2>
     <hr class="under-heading">
 
     <div class="col-4 column centered">
-      <%= image_tag asset_path('heart.svg') %>
-      <h3>Jednoducho</h3>
-      <p class="light">Žiadne zdĺhavé registrácie, partneri za minútu</p>
+      <%= image_tag asset_path('look_for_btn.svg') %>
+      <h3>1. Nájdi Sharee tlačítko</h3>
+      <p class="light">Po kliknutí naň vlož email a dostaneš jedinečný odkaz</p>
     </div>
     <div class="col-4 column centered">
-      <%= image_tag asset_path('dashboard.svg') %>
-      <h3>Merateľne</h3>
-      <p class="light">Prehľadné štatistiky a flexibilita nastavenia kampane</p>
+      <%= image_tag asset_path('multi_share.svg') %>
+      <h3>2. Zdieľaj získaný odkaz</h3>
+      <p class="light">Pošli odkaz známym, zdieľaj na sociálnych sieťach</p>
     </div>
     <div class="col-4 column centered">
-      <%= image_tag asset_path('shield.svg') %>
-      <h3>Bez rizika</h3>
-      <p class="light">Platíte iba províziu z predaja získaného cez Sharee</p>
+      <%= image_tag asset_path('percent.svg') %>
+      <h3>3. Získaj províziu z predaja</h3>
+      <p class="light">Ak niekto kúpi produkt cez tvoj odkaz, získavaš províziu</p>
     </div>
   </div>
-  <div class="container centered">
-    <label for="modal-1">
-      <div class="btn btn-big btn-primary-green space-around">Mám záujem</div>
-    </label>
-  </div>
-</section>
-
-<section class="steps" id="steps">
-  <div class="container centered">
-    <h2 class="landing-heading">Ako to funguje? 4 kroky k úspechu</h2>
-    <hr class="under-heading">
-
-    <ol class="step-list col-10 col-offset-1">
-      <li class="step-list-item yellow-bullet">
-        <img src="<%= asset_path 'new_campaign_icon.svg' %>" alt="" class="step-img">
-        <h3>Vytvoríte kampaň</h3>
-        <p class="light step-text">V rámci nej Vám bude pridelený kľúč, ktorý bude označovať odkazy smerujúce na Váš produkt.</p>
-      </li>
-
-      <li class="step-list-item green-bullet">
-        <img src="<%= asset_path 'promote_icon.svg' %>" alt="" class="step-img">
-        <h3>K produktu umiestnite Sharee tlačidlo</h3>
-        <p class="light step-text">Môžete si ho upraviť podľa svojich predstáv, jeho použitie je jednoduché.</p>
-      </li>
-
-      <li class="middle-message">
-        <hr class="under-heading">
-        <h4>Hotovo! To je všetko, čo je potrebné spraviť!</h4>
-        <p class="light">Vieme, že sme sľúbili 4, ale zvyšné dva sa už dejú samé!</p>
-        <hr class="under-heading">
-      </li>
-
-      <li class="step-list-item blue-bullet">
-        <img src="<%= asset_path 'post_icon.png' %>" alt="" height="112px" class="step-img">
-        <h3>Návštevník šíri Váš produkt</h3>
-        <p class="light step-text">Po kliknutí na Sharee tlačidlo zákazník zadá svoj email, dostane unikátnu URL na zdieľanie a stáva sa Vaším partnerom.</p>
-      </li>
-
-      <li class="step-list-item red-bullet">
-        <h3>Profit</h3>
-        <p class="light step-text">Sem niečo ešte.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section class="pricing" id="pricing">
-  <div class="container centered">
-    <h2 class="landing-heading">Koľko to bude stáť?</h2>
-    <hr class="under-heading">
-
-    <div class="col-4 column">
-      <div class="box">
-        <div class="box-head">
-          <h4>Mesačný poplatok</h4>
-        </div>
-        <div class="box-body">
-          <span class="price">0€</span>
-          <p class="light">Neplatíte žiadne fixné mesačné poplatky</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-4 column">
-      <div class="box">
-        <div class="box-head">
-          <h4>Implementácia</h4>
-        </div>
-        <div class="box-body">
-          <span class="price">0€</span>
-          <p class="light">Zavedenie Sharee je bezplatné a jednoduché</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-4 column">
-      <div class="box">
-        <div class="box-head">
-          <h4>Celkové náklady</h4>
-        </div>
-        <div class="box-body">
-          <span class="price">%</span>
-          <p class="light">Sami určíte výšku provízie z predaja</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="social" id="social">
   <div class="container">
-    <label for="modal-1">
-      <div class="btn btn-jumbo btn-primary-green cta">Mám záujem</div>
-    </label>
+    <div class="centered padding-top-big">
+      Chcete zvýšiť svoj predaj? &nbsp;<%= link_to "Informácie pre obchodníkov", page_path('merchant-info'), class: 'btn btn-medium btn-secondary-blue' %>
+    </div>
   </div>
 </section>
 

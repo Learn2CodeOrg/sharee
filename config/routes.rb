@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get 'tos' => 'high_voltage/pages#show', id: 'tos'
   get 'faq' => 'high_voltage/pages#show', id: 'faq'
   get 'contact' => 'high_voltage/pages#show', id: 'contact'
-  get 'partner-info' => 'high_voltage/pages#show', id: 'partner-info'
+  get 'merchant-info' => 'high_voltage/pages#show', id: 'merchant-info'
 
   get '*path', to: 'redirects#index'
 

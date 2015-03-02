@@ -1,4 +1,4 @@
-<% reseller_active = current_page?(id: 'partner-info') %>
+<% merchant_active = current_page?(id: 'merchant-info') %>
 
 <header class="navigation" role="banner">
   <div class="navigation-wrapper">
@@ -8,19 +8,17 @@
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu">
-        <li class="nav-link <%= 'active' if reseller_active %>">
-          <%= link_to 'Informácie pre partnerov', page_path('partner-info') %>
+        <li class="nav-link <%= 'active' if merchant_active %>">
+          <%= link_to 'Informácie pre obchodníkov', page_path('merchant-info') %>
         </li>
         <div class="on-right">
-          <% if !reseller_active %>
-            <li class="nav-link"><%= link_to "Prihlásenie", new_user_session_path, class: "text-link js-nav-link" %></li>
+          <li class="nav-link"><%= link_to "Prihlásenie", new_user_session_path, class: "text-link js-nav-link" %></li>
+          <% if merchant_active %>
             <li class="nav-link">
               <label for="modal-1">
                 <div class="btn btn-medium btn-primary-blue js-nav-link">Registrácia</div>
               </label>
             </li>
-          <% else %>
-            <li class="nav-link"><%= link_to "Som obchodník", root_path, class: "text-link js-nav-link" %></li>
           <% end %>
         </div>
       </ul>
