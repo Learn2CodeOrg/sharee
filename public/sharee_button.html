@@ -167,7 +167,57 @@
             color: #333;
             text-decoration: none;
         }
+        
+        #sharee-fb, #sharee-tw, #sharee-gp {
+          color: white;
+          background-color: white;
+          border: 1px solid transparent;
+          padding: 8px 11px;
+          border-radius: 2px;
+          font-family: Arial, sans-serif;
+          font-size: 13px;
+        }
+        
+        #sharee-fb {
+          border-color: rgb(70, 98, 158);
+          background: rgb(70, 98, 158);
+        }
+        
+        #sharee-tw {
+          border-color: rgb(85, 172, 238);
+          background: rgb(85, 172, 238);
+        }
+        
+        #sharee-gp {
+          border-color: rgb(215, 61, 50);
+          background: rgb(215, 61, 50);
+        }
     </style>
+    <script>
+      $(function() {
+        $('#sharee-fb').on('click', function(e) {
+          e.preventDefault();
+          var url = 'https://www.facebook.com/sharer/sharer.php?u=' + getShareeUrl();
+          window.open(url,'_blank','width=800,height=300');
+        });
+        
+        $('#sharee-tw').on('click', function(e) {
+          e.preventDefault();
+          var url = 'http://twitter.com/share?url=' + getShareeUrl() + '&text=Sharing';
+          window.open(url,'_blank','width=800,height=300');
+        });
+        
+        $('#sharee-gp').on('click', function(e) {
+          e.preventDefault();
+          var url = 'https://plus.google.com/share?url=' + getShareeUrl();                    
+          window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=500');
+        });
+        
+        var getShareeUrl = function() {
+          return $('#sharee-link').val();
+        };
+      });
+    </script>
 </head>
 
 <div class="sharee-button-block">
@@ -182,8 +232,12 @@
     </form>
 
     <div class="sharee-button-success-block">
-        Unikátny odkaz: <input type="text" value="" class="url"> <a href="http://sharee.io" class="js-sharee-close sharee-close">x</a>
-        <button class="sharee-back-button">Späť</button>
+        Unikátny odkaz: <input id="sharee-link" type="text" value="" class="url"> <a href="http://sharee.io" class="js-sharee-close sharee-close">x</a>
+        
+        <a id="sharee-fb" href="#">FB</a>
+        <a id="sharee-tw" href="#">TW</a>
+        <a id="sharee-gp" href="#">G+</a>
+        
         <a href="http://sharee.io" class="sharee-more" target="_blank">Viac info na Sharee.io</a>
     </div>
 </div>
