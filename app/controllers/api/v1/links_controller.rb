@@ -21,7 +21,7 @@ module API
         end
 
         # Get campaign
-        campaign = Campaign.find(campaign_id)
+        campaign = Campaign.find_by_id(campaign_id)
 
         # Check campaign
         unless campaign
