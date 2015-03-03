@@ -57,7 +57,7 @@ window.Sharee = (function () {
                 campaign = $button.data('campaign');
 
             $button.html(data).find('input[name="campaign"]').val(campaign);
-            $button.find('.sharee-logo').attr('src', Sharee.getHost() + '/sharee_btn.png');
+            $button.find('.sharee-logo').attr('src', Sharee.getHost() + '/sharee_btn.svg');
 
             initShareeButtonClickEvent();
             initShareeButtonFormsEvents();
