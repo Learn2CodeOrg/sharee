@@ -154,7 +154,7 @@
             text-decoration: none;
         }
 
-        .sharee-info {
+        .sharee-info, .sharee-left {
             margin: 0 !important;
             float: left;
         }
@@ -223,12 +223,12 @@
     </form>
 
     <div class="sharee-button-success-block">
-        Unikátny odkaz: <input id="sharee-link" type="text" value="" class="url"> <a href="http://sharee.io" class="js-sharee-close sharee-close">x</a>
-
-        <a id="sharee-fb" href="#">FB</a>
-        <a id="sharee-tw" href="#">TW</a>
-        <a id="sharee-gp" href="#">G+</a>
-
+        <span class="sharee-left">Unikátny odkaz:</span> <input id="sharee-link" type="text" value="" class="url"> <a href="http://sharee.io" class="js-sharee-close sharee-close">x</a>
+        <span class="sharee-left">
+            <a id="sharee-fb" href="#">FB</a>
+            <a id="sharee-tw" href="#">TW</a>
+            <a id="sharee-gp" href="#">G+</a>
+        </span>
         <a href="http://sharee.io" class="sharee-more" target="_blank">Viac info na Sharee.io</a>
     </div>
 </div>
