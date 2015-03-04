@@ -1,7 +1,13 @@
 <header class="account-navigation" role="banner">
   <div class="navigation-wrapper">
-    <%= link_to campaigns_path, class: 'logo' do %>
-      <%= image_tag asset_path 'logo.svg' %>
+    <% if current_user.merchant? %>
+      <%= link_to campaigns_path, class: 'logo' do %>
+        <%= image_tag asset_path 'logo.svg' %>
+      <% end %>
+    <% else %>
+      <%= link_to links_path, class: 'logo' do %>
+        <%= image_tag asset_path 'logo.svg' %>
+      <% end %>
     <% end %>
     <nav role="navigation">
       <ul class="navigation-menu">
