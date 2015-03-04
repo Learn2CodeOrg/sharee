@@ -35,6 +35,9 @@
         <th>Kód</th>
         <th>Email</th>
         <th>Zaznamenie</th>
+        <th>Cena (€)</th>
+        <th>Provizia (%)</th>
+        <th>Provizia (€)</th>
         <th>Potvrdenie</th>
       </tr>
     <% records.each do |record| %>
@@ -42,6 +45,9 @@
         <td><%= record[:code] %></td>
         <td><%= record[:email] %></td>
         <td><%= record[:created_at].strftime("%d.%m.%Y %H:%M") %></td>
+        <td><%= record[:price] %></td>
+        <td><%= record[:commission_perc] %></td>
+        <td><%= record[:commission_value] %></td>
         <td><input type="checkbox" class="approval-checkbox" <%= 'checked=checked' if record[:approved] %> data-id=<%= record[:id] %>></td>
       </tr>
     <% end %>

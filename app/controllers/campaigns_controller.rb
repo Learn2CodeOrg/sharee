@@ -37,7 +37,10 @@ class CampaignsController < ApplicationController
           code: sell_action.code,
           email: sell_action.email,
           created_at: sell_action.created_at,
-          approved: sell_action.approved_at.present?
+          approved: sell_action.approved_at.present?,
+          price: sell_action.price,
+          commission_perc: sell_action.commission,
+          commission_value: (sell_action.price / 100) * sell_action.commission 
         }
       end
     end
