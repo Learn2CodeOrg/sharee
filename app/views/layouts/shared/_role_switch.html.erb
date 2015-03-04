@@ -3,5 +3,9 @@
 <% if user %>
   <% role = user.merchant? ? :referer : :merchant %>
     <a href="<%= roles_change_path(role: role) %>" data-remote="true" class="text-link">
-    <span class="icon icon-users"></span> <%= role.capitalize %> Účet</a>
+    <% if role.equal? :referer %>
+      <span class="icon icon-users"></span> Prehľad partnera</a>
+    <% else %>
+      <span class="icon icon-users"></span> Prehľad obchodníka</a>
+    <% end %>
 <% end %>
