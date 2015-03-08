@@ -7,16 +7,16 @@
 <div class="col-6">
   <h3>Kód A - Skript</h3>
   <div class="field">
-    <input type="text" class="code-input" value="<%=raw sharee_script_html %>">
+    <input type="text" onClick="this.setSelectionRange(0, this.value.length)" class="code-input" value="<%=raw sharee_script_html %>" readonly="readonly">
   </div>
 
   <h3>Kód B - Tlačítko</h3>
   <div class="field">
-    <input type="text" class="code-input" value="<%=raw sharee_button_html %>">
+    <input type="text" onClick="this.setSelectionRange(0, this.value.length)" class="code-input" value="<%=raw sharee_button_html %>" readonly="readonly">
   </div>
 
   <h3>Kód C - Thank you page</h3>
   <div class="field">
-    <textarea class="code-input" name="Kod C" rows="4"><%=raw sharee_thank_html %></textarea>
+    <textarea class="code-input" name="Kod C" rows="4" onClick="this.setSelectionRange(0, this.value.length)" readonly="readonly"><%=raw sharee_thank_html %></textarea>
   </div>
 </div>
