@@ -29,6 +29,10 @@
   }
 }
 
+.col-12 {
+  @include span-columns(12);
+}
+
 .col-offset-1 {
   @include shift(1 of 12);
 

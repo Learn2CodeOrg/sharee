@@ -1,8 +1,8 @@
 <%= render partial: 'campaigns/partials/header', locals: { step: 1, campaign: campaign } %>
 
-<div class="padding-top col-6">
-  <%= form_for campaign, url: {action: action}, html: {class: ''}, remote: true do |f| %>
+<%= form_for campaign, url: {action: action}, html: {class: ''}, remote: true do |f| %>
 
+  <div class="padding-top col-6">
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
@@ -20,15 +20,18 @@
       <%= f.text_field :commission %>
       <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:commission] } %>
     </div>
+  </div>
 
+  <div class="col-12 centered">
     <%= f.submit "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}",
-        class: "btn-big btn-primary-blue btn-submit",
+        class: "btn-big btn-primary-green btn-submit",
         id: "save-button",
         data: {
           save: "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}",
           saved: "#{t 'buttons.saved'}" } %>
-  <% end %>
-</div>
+  </div>
+
+<% end %>
 
 <div class="controls">
   <%= render partial: 'campaigns/partials/back' %>
