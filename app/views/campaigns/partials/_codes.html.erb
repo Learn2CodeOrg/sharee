@@ -4,11 +4,19 @@
   <%= render partial: 'campaigns/partials/back' %>
 </div>
 
-<h3>Script</h3>
-<code><%=raw sharee_script_html %></code>
+<div class="col-6">
+  <h3>Kód A - Skript</h3>
+  <div class="field">
+    <input type="text" class="code-input" value="<%=raw sharee_script_html %>">
+  </div>
 
-<h3>Button</h3>
-<code><%=raw sharee_button_html %></code>
+  <h3>Kód B - Tlačítko</h3>
+  <div class="field">
+    <input type="text" class="code-input" value="<%=raw sharee_button_html %>">
+  </div>
 
-<h3>Thank</h3>
-<code><%=raw sharee_thank_html %></code>
+  <h3>Kód C - Thank you page</h3>
+  <div class="field">
+    <textarea class="code-input" name="Kod C" rows="4"><%=raw sharee_thank_html %></textarea>
+  </div>
+</div>
