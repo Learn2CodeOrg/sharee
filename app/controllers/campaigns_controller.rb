@@ -67,7 +67,7 @@ class CampaignsController < ApplicationController
   def update
     @campaign = Campaign.find(params[:id])
     if @campaign.update(campaign_params)
-      render nothing: true
+      render :update
     else
       render :edit
     end

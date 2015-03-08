@@ -2,17 +2,23 @@
 
 <div class="padding-top col-4">
   <%= form_for campaign, url: {action: action}, html: {class: ''}, remote: true do |f| %>
+  
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
+      <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:name] } %>
     </div>
+    
     <div class="field">
       <%= f.label :url %><br>
       <%= f.text_field :url %>
+      <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:url] } %>
     </div>
+    
     <div class="field">
       <%= f.label :commission %><br>
       <%= f.text_field :commission %>
+      <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:commission] } %>
     </div>
     <%= f.submit submit, class: "btn-big btn-primary-blue btn-submit" %>
   <% end %>
