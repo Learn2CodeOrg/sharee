@@ -14,3 +14,11 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require_tree .
+#= require_self
+
+
+$(document).on 'ready page:load', ->  
+  $(document).on 'input', 'input', ->
+    $saveButton = $('#save-button')
+    $saveButton.attr('disabled', null).val $saveButton.data('save')
+  

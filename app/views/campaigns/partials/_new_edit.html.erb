@@ -20,7 +20,13 @@
       <%= f.text_field :commission %>
       <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:commission] } %>
     </div>
-    <%= f.submit submit, class: "btn-big btn-primary-blue btn-submit" %>
+
+    <%= f.submit "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}", 
+        class: "btn-big btn-primary-blue btn-submit",
+        id: "save-button",
+        data: {
+          save: "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}", 
+          saved: "#{t 'buttons.saved'}" } %>
   <% end %>
 </div>
 
