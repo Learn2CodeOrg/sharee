@@ -48,6 +48,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'devise_invitable', '~> 1.3.4'
+gem 'devise-async'
 gem 'rest-client'
 
 group :production do
