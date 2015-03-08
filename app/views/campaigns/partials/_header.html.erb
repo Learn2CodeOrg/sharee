@@ -1,31 +1,33 @@
 <% if campaign.new_record? %>
-<%= content_for :page_title, "Nová kampaň" %>
-<h1>Nová kampaň</h1>
+  <%= content_for :page_title, "Nová kampaň" %>
+  <h1>Nová kampaň</h1>
 <% else %>
-<%= content_for :page_title, "Nastavenie kampane" %>
-<h1>Editácia kampane</h1>
+  <%= content_for :page_title, "Nastavenie kampane" %>
+  <h1>Nastavenia kampane</h1>
 <% end %>
 
-<ul>
-  <% if step == 1 %>
-  <li>Základné údaje</li>
-  <% else %>
-  <% if campaign.new_record? %>
-  <li><%= link_to 'Základné údaje', new_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
-  <% else %>
-  <li><%= link_to 'Základné údaje', edit_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
-  <% end %>
-  <% end %>
-  
-  <% if step == 2 || campaign.new_record? %>
-  <li>Platobné údaje</li>
-  <% else %>
-  <li><%= link_to 'Platobné údaje', payments_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
-  <% end %>
-  
-  <% if step == 3 || campaign.new_record? %>
-  <li>Kódy</li>
-  <% else %>
-  <li><%= link_to 'Kódy', codes_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
-  <% end %>
-</ul>
+<div class="centered">
+  <ol class="step-list">
+    <% if step == 1 %>
+      <li class="step-list__item step-list__item--active">1. Základné údaje</li>
+    <% else %>
+      <% if campaign.new_record? %>
+        <li class="step-list__item"><%= link_to '1. Základné údaje', new_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+      <% else %>
+        <li class="step-list__item"><%= link_to '1. Základné údaje', edit_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+      <% end %>
+    <% end %>
+
+    <% if step == 2 || campaign.new_record? %>
+      <li class="step-list__item<% if step == 2 %> step-list__item--active<% end %>">2. Platobné údaje</li>
+    <% else %>
+      <li class="step-list__item"><%= link_to '2. Platobné údaje', payments_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+    <% end %>
+
+    <% if step == 3 || campaign.new_record? %>
+      <li class="step-list__item<% if step == 3 %> step-list__item--active<% end %>">3. Kódy</li>
+    <% else %>
+      <li class="step-list__item"><%= link_to '3. Kódy', codes_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+    <% end %>
+  </ul>
+</div>

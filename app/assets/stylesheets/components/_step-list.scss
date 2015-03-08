@@ -1,0 +1,37 @@
+.step-list {
+  display: inline-block;
+  padding: 0;
+  font-size: 14px;
+
+  .step-list__item {
+    display: block;
+    float: left;
+    padding: 5px 13px;
+    border-right: 1px solid #DCDCDC;
+    border-top: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+    color: transparentize($primary-blue, 0.5);
+
+    &:first-child {
+      border-left: 1px solid #DCDCDC;
+      border-top-left-radius: $base-border-radius;
+      border-bottom-left-radius: $base-border-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $base-border-radius;
+      border-bottom-right-radius: $base-border-radius;
+    }
+  }
+
+  .step-list__item--active {
+    background: $primary-blue;
+    color: white;
+    border-color: $primary-blue;
+    margin-left: -1px; // hack to hide the border
+
+    &:first-child {
+      border-left: 1px solid $primary-blue;
+    }
+  }
+}
