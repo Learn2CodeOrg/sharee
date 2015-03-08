@@ -1,1 +1,2 @@
-web: bundle exec thin start -p $PORT -e $RACK_ENV
+web: bundle exec thin start
+worker: bundle exec sidekiq -q default -q mailers
