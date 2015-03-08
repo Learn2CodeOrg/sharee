@@ -1,0 +1,66 @@
+<%= content_for :page_title, "Kampaň #{campaign.name}" %>
+
+<h1>Kampaň <%= campaign.name %></h1>
+
+<div class="padding-top ">
+  <span class="url"><%= campaign.url %></span><br>
+
+  <span class="number">
+    <%= data[:link_count] %>
+  </span> <span class="description">Zdieľaní</span> <span class="separator">|</span>
+
+  <span class="number">
+    <%= data[:open_count] %>
+  </span> <span class="description">Kliknutí</span> <span class="separator">|</span>
+
+  <span class="number">
+    <%= data[:sell_count] %>
+  </span> <span class="description">Predajov</span>
+</div>
+
+<div class="controls">
+  <%= render partial: 'campaigns/partials/back' %>
+  <%= link_to 'Upraviť', edit_campaign_path(campaign), class: "btn-medium btn-primary-blue", remote: true %>
+</div>
+
+
+<h3>Predaje</h3>
+<% data[:sell_actions_group].each do |year, month_hash| %>
+  <% month_hash.each do |month, records| %>
+    <h4><%= year %> / <%= month %></h4>
+    <table class="sell-table">
+      <tr>
+        <th>Kód</th>
+        <th>Email</th>
+        <th>Zaznamenie</th>
+        <th>Cena (€)</th>
+        <th>Provizia (%)</th>
+        <th>Provizia (€)</th>
+        <th>Potvrdenie</th>
+      </tr>
+    <% records.each do |record| %>
+      <tr>
+        <td><%= record[:code] %></td>
+        <td><%= record[:email] %></td>
+        <td><%= record[:created_at].strftime("%d.%m.%Y %H:%M") %></td>
+        <td><%= record[:price] %></td>
+        <td><%= record[:commission_perc] %></td>
+        <td><%= record[:commission_value] %></td>
+        <td><input type="checkbox" class="approval-checkbox" <%= 'checked=checked' if record[:approved] %> data-id=<%= record[:id] %>></td>
+      </tr>
+    <% end %>
+    </table>
+  <% end %>
+<% end %>
+
+<br/><br/>
+
+<script>
+  $(document).ready(function() {
+    $('.approval-checkbox').on('click', function() {
+      var id = $(this).data('id');
+      var isChecked = $(this).is(':checked');
+      $.get("<%= sell_actions_set_approve_path %>", {id: id, approve: isChecked}).done(function(data) {});
+    });
+  });
+</script>

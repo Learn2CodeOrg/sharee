@@ -1,6 +1,8 @@
 class CampaignsController < ApplicationController
 
   before_action :authenticate_user!
+  
+  respond_to :html, :js
 
   def index
     @campaigns = Campaign.where(user: current_user).order(:name)
@@ -9,12 +11,23 @@ class CampaignsController < ApplicationController
   def new
     @campaign = Campaign.new
   end
+  
+  def payments
+    @campaign = Campaign.find(params[:id])
+  end
+  
+  def codes
+    @campaign = Campaign.find(params[:id])
+    @sharee_button_html = CGI.escape_html render_to_string 'shared/_sharee_button', layout: false, locals: { campaign: @campaign.id }
+    @sharee_thank_html  = CGI.escape_html render_to_string 'shared/_sharee_thank',  layout: false, locals: { code: '[code]', email: '[email]', price: '[price]'}
+    @sharee_script_html = CGI.escape_html render_to_string 'shared/_sharee_script', layout: false, locals: { host: 'http://' + request.host_with_port }
+  end
 
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-      redirect_to @campaign
+      render :payments
     else
       render :new
     end
@@ -54,7 +67,7 @@ class CampaignsController < ApplicationController
   def update
     @campaign = Campaign.find(params[:id])
     if @campaign.update(campaign_params)
-      redirect_to(@campaign)
+      render nothing: true
     else
       render :edit
     end

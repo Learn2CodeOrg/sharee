@@ -1,0 +1,4 @@
+$('.campaigns.container').html("<%= j render(partial: 'campaigns/partials/edit', locals: { campaign: @campaign }) %>");
+
+history.pushState(null, document.title, '<%= edit_campaign_path(@campaign) %>');
+document.title = 'Nastavenie kampane';

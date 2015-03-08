@@ -1,0 +1,31 @@
+<% if campaign.new_record? %>
+<%= content_for :page_title, "Nová kampaň" %>
+<h1>Nová kampaň</h1>
+<% else %>
+<%= content_for :page_title, "Nastavenie kampane" %>
+<h1>Editácia kampane</h1>
+<% end %>
+
+<ul>
+  <% if step == 1 %>
+  <li>Základné údaje</li>
+  <% else %>
+  <% if campaign.new_record? %>
+  <li><%= link_to 'Základné údaje', new_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+  <% else %>
+  <li><%= link_to 'Základné údaje', edit_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+  <% end %>
+  <% end %>
+  
+  <% if step == 2 || campaign.new_record? %>
+  <li>Platobné údaje</li>
+  <% else %>
+  <li><%= link_to 'Platobné údaje', payments_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+  <% end %>
+  
+  <% if step == 3 || campaign.new_record? %>
+  <li>Kódy</li>
+  <% else %>
+  <li><%= link_to 'Kódy', codes_campaign_path(campaign), remote: true, "data-type" => "script" %></li>
+  <% end %>
+</ul>

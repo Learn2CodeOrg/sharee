@@ -1,0 +1,23 @@
+<%= render partial: 'campaigns/partials/header', locals: { step: 1, campaign: campaign } %>
+
+<div class="padding-top col-4">
+  <%= form_for campaign, url: {action: action}, html: {class: ''}, remote: true do |f| %>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :url %><br>
+      <%= f.text_field :url %>
+    </div>
+    <div class="field">
+      <%= f.label :commission %><br>
+      <%= f.text_field :commission %>
+    </div>
+    <%= f.submit submit, class: "btn-big btn-primary-blue btn-submit" %>
+  <% end %>
+</div>
+
+<div class="controls">
+  <%= render partial: 'campaigns/partials/back' %>
+</div>

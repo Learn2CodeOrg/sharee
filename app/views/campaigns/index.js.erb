@@ -1,0 +1,4 @@
+$('.campaigns.container').html("<%= j render(partial: 'campaigns/partials/index', locals: { campaigns: @campaigns }) %>");
+
+history.pushState(null, document.title, '<%= campaigns_path %>');
+document.title = 'Moje kampane';

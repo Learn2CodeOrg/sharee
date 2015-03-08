@@ -1,0 +1,6 @@
+$('.campaigns.container').html('<%= j render(partial: "campaigns/partials/codes", locals: {
+  campaign: @campaign,
+  sharee_button_html: @sharee_button_html,
+  sharee_thank_html: @sharee_thank_html,
+  sharee_script_html: @sharee_script_html,
+}) %>');

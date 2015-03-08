@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :welcome
-  resources :campaigns
+  resources :campaigns do
+    get :payments, on: :member
+    get :codes, on: :member
+  end
   resources :links
   get 'roles/change'
   get 'sell_actions/set_approve'

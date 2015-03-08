@@ -3,13 +3,13 @@
 <h1>Kampane</h1>
 
 <div class="controls">
-  <%= link_to 'Nová kampaň', new_campaign_path, class: "btn-big btn-primary-green" %>
+  <%= link_to 'Nová kampaň', new_campaign_path, class: "btn-big btn-primary-green", remote: true %>
 </div>
 
 <ul class="campaigns-list">
-  <% @campaigns.each do |campaign| %>
+  <% campaigns.each do |campaign| %>
   <li class="one-campaign">
-    <span class="name"><%= link_to campaign.name, campaign %></span><br>
+    <span class="name"><%= link_to campaign.name, campaign, remote: true %></span><br>
 
     <span class="url"><%= campaign.url %></span><br>
 
@@ -25,8 +25,8 @@
       <%= SellAction.where(link_id: campaign.links.pluck(:id)).count %>
     </span> <span class="description">Predajov</span>
 
-    <%= link_to 'Upraviť', edit_campaign_path(campaign), class: "btn-medium btn-link-blue edit-campaign-btn" %>
-    <%= link_to 'Prehľad', campaign, class: "btn-medium btn-primary-blue show-campaign-btn" %>
+    <%= link_to 'Upraviť', edit_campaign_path(campaign), class: "btn-medium btn-link-blue edit-campaign-btn", remote: true %>
+    <%= link_to 'Prehľad', campaign, class: "btn-medium btn-primary-blue show-campaign-btn", remote: true %>
   </li>
   <% end %>
 </ul>

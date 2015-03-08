@@ -1,0 +1,9 @@
+<%= render partial: 'campaigns/partials/header', locals: { step: 2, campaign: campaign } %>
+
+<div class="controls">
+  <%= render partial: 'campaigns/partials/back' %>
+</div>
+
+PAYMENTS
+
+<%= link_to 'Ďalej', codes_campaign_path(campaign), remote: true, "data-type" => "script" %>
