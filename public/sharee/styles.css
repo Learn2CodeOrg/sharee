@@ -156,7 +156,7 @@
     float: left;
 }
 
-#sharee-fb, #sharee-tw, #sharee-gp {
+.sharee-fb, .sharee-tw, .sharee-gp {
   color: white;
   background-color: white;
   border: 1px solid transparent;
@@ -166,17 +166,21 @@
   font-size: 13px;
 }
 
-#sharee-fb {
+.sharee-fb:hover, .sharee-tw:hover, .sharee-gp:hover {
+  color: white;
+}
+
+.sharee-fb {
   border-color: rgb(70, 98, 158);
   background: rgb(70, 98, 158);
 }
 
-#sharee-tw {
+.sharee-tw {
   border-color: rgb(85, 172, 238);
   background: rgb(85, 172, 238);
 }
 
-#sharee-gp {
+.sharee-gp {
   border-color: rgb(215, 61, 50);
   background: rgb(215, 61, 50);
 }
