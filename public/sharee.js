@@ -10,7 +10,7 @@ $(function() {
 window.Sharee = (function () {
     'use strict';
 
-    var DEFAULT_LANG = 'sk';
+    var DEFAULT_LANG = 'en';
     var HOST = 'http://www.sharee.io';
 
     function Sharee() {
@@ -59,8 +59,8 @@ window.Sharee = (function () {
           var campaign   = $button.data('campaign');
           var commission = $button.data('commission');
           var lang       = $button.data('lang') || DEFAULT_LANG;
-          var buttonUrl  = Sharee.getHost() + (lang == 'cz' ? '/sharee/btn_cz.html' : '/sharee/btn_sk.html');
-          var logoUrl    = Sharee.getHost() + (lang == 'cz' ? '/sharee/btn_cz.svg' : '/sharee/btn_sk.svg');
+          var buttonUrl  = Sharee.getHost() + '/sharee/btn_' + lang + '.html';
+          var logoUrl    = Sharee.getHost() + '/sharee/btn_' + lang + '.svg';
           
           $.get(buttonUrl, function(data) {
             $button.html(data);
@@ -76,7 +76,7 @@ window.Sharee = (function () {
         appendScripts();
         appendStyles();
     };
-    
+
     var appendScripts = function() {
       var head = getDocumentHead();
       var script= document.createElement("script");
