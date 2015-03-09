@@ -1,0 +1,182 @@
+.bold {
+    font-weight: bold;
+}
+
+.sharee-button {
+    display: inline-block;
+    margin: 4px;
+}
+
+.sharee-button-block {
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+    text-transform: none;
+    color: #111;
+}
+
+.sharee-button-block button,
+.sharee-button-block form input[type=submit] {
+    padding: 8px 11px;
+    border-radius: 2px;
+    border: none;
+    background: #DD5B4D;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    float: left;
+}
+
+.sharee-button-block .sharee-back-button {
+    color: #111;
+    background-color: white;
+    border: 1px solid #DD5B4D;
+}
+
+.sharee-button-block input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 12px 0;
+    width: 100%;
+}
+
+.sharee-button-core {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sharee-button-core:hover {
+    opacity: 0.9;
+}
+
+.sharee-button-core,
+.sharee-button-form,
+.sharee-button-success-block {
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.sharee-button-core {
+    max-height: 20px;
+}
+
+.sharee-button-core img {
+    height: 22px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.sharee-button-core {
+    position: relative;
+}
+
+.sharee-button-form,
+.sharee-button-success-block {
+    display: none;
+    width: 300px;
+    padding: 10px;
+    position: absolute;
+    top: 30px;
+    right: -100px;
+    z-index: 99999;
+    background-color: white;
+}
+
+.sharee-button-form:before,
+.sharee-button-success-block:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid white;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+
+.sharee-more {
+    float: right;
+    font-size: 10px;
+    padding-top: 9px;
+    color: #6F6F6F;
+    text-decoration: underline;
+}
+
+.sharee-more:hover {
+    text-decoration: none;
+    color: #DD5B4D;
+}
+
+.sharee-close {
+    font-weight: bold;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 16px;
+    color: #DCDCDC;
+}
+
+.sharee-close:hover {
+    color: black;
+}
+
+.sharee-inlinelink {
+    color: #DD5B4D;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.sharee-inlinelink:hover {
+    color: #DD5B4D;
+    text-decoration: none;
+}
+
+.sharee-poweredby {
+    display: block;
+    width: 280px;
+    margin-top: 5px;
+    font-size: 9px;
+    text-align: center;
+    color: #111;
+}
+
+.sharee-poweredby:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.sharee-info, .sharee-left {
+    margin: 0 !important;
+    float: left;
+}
+
+#sharee-fb, #sharee-tw, #sharee-gp {
+  color: white;
+  background-color: white;
+  border: 1px solid transparent;
+  padding: 8px 11px;
+  border-radius: 2px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+#sharee-fb {
+  border-color: rgb(70, 98, 158);
+  background: rgb(70, 98, 158);
+}
+
+#sharee-tw {
+  border-color: rgb(85, 172, 238);
+  background: rgb(85, 172, 238);
+}
+
+#sharee-gp {
+  border-color: rgb(215, 61, 50);
+  background: rgb(215, 61, 50);
+}

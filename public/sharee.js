@@ -10,6 +10,7 @@ $(function() {
 window.Sharee = (function () {
     'use strict';
 
+    var DEFAULT_LANG = 'sk';
     var HOST = 'http://www.sharee.io';
 
     function Sharee() {
@@ -52,18 +53,25 @@ window.Sharee = (function () {
     };
 
     var getShareeButtonHtml = function() {
-        $.get(Sharee.getHost() + '/sharee_button.html', function(data) {
-            var $button = $('.sharee-button'),
-                campaign = $button.data('campaign'),
-                commission = $button.data('commission');
-
+        var $buttons = $('.sharee-button');
+        
+        $buttons.each(function (index, button) {
+          var $button    = $(button);
+          var campaign   = $button.data('campaign');
+          var commission = $button.data('commission');
+          var lang       = $button.data('lang') || DEFAULT_LANG;
+          var buttonUrl  = Sharee.getHost() + (lang == 'cz' ? '/sharee/btn_cz.html' : '/sharee/btn_sk.html');
+          var logoUrl    = Sharee.getHost() + (lang == 'cz' ? '/sharee/btn_cz.svg' : '/sharee/btn_sk.svg');
+          
+          $.get(buttonUrl, function(data) {
             $button.html(data);
             $button.find('input[name="campaign"]').val(campaign);
             $button.find('.sharee-commission').text(commission);
-            $button.find('.sharee-logo').attr('src', Sharee.getHost() + '/sharee_btn.svg');
+            $button.find('.sharee-logo').attr('src', logoUrl);
 
             initShareeButtonClickEvent();
             initShareeButtonFormsEvents();
+          });
         });
     };
 
