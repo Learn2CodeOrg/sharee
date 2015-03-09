@@ -20,7 +20,6 @@ window.Sharee = (function () {
         }
         saveCookies();
         getShareeButtonHtml();
-        initShareeButtonFormsEvents();
         createSellAction();
     }
 
@@ -70,7 +69,7 @@ window.Sharee = (function () {
             $button.find('.sharee-logo').attr('src', logoUrl);
 
             initShareeButtonClickEvent();
-            initShareeButtonFormsEvents();
+            initShareeButtonFormsEvents(button);
           });
         });
     };
@@ -81,28 +80,28 @@ window.Sharee = (function () {
         });
     };
 
-    var initShareeButtonFormsEvents = function() {
-        $('.sharee-button-form').on('submit', function(event) {
+    var initShareeButtonFormsEvents = function(button) {
+        $(button).find('.sharee-button-form').on('submit', function(event) {
             event.preventDefault();
             console.log('Clicked on submit button!');
 
-            var $form = $(event.target),
-                actionUrl = Sharee.getHost() + '/api/v1/links',
-                campaign = $form.find("input[name='campaign']").val(),
-                email = $form.find("input[name='email']").val(),
-                url = getUrl(),
-                sharing_url = getSharingUrl();
+            var $form      = $(event.target);
+            var campaign   = $form.find("input[name='campaign']").val();
+            var email      = $form.find("input[name='email']").val();
+            var sharingUrl = getSharingUrl();
+            var actionUrl  = Sharee.getHost() + '/api/v1/links';
 
             var posting = $.post(actionUrl, {
                 campaign: campaign,
-                url: sharing_url,
+                url: sharingUrl,
                 email: email
             });
 
-            posting.done(function( data ) {
-                $('.sharee-button-form').hide();
-                var $shareButtonSuccessBlock = $('.sharee-button-success-block');
-                $shareButtonSuccessBlock.show().find(".url").val(data.special_url).select();
+            posting.done(function(data) {
+                var specialUrl = data.special_url;
+
+                $(button).find('.sharee-button-form').hide();
+                $(button).find('.sharee-button-success-block').show().find(".sharee-link").val(specialUrl).select();
             });
         });
 
