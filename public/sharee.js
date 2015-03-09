@@ -89,12 +89,9 @@ window.Sharee = (function () {
             });
 
             posting.done(function( data ) {
-                console.log(data);
                 $('.sharee-button-form').hide();
                 var $shareButtonSuccessBlock = $('.sharee-button-success-block');
                 $shareButtonSuccessBlock.show().find(".url").val(data.special_url).select();
-                $shareButtonSuccessBlock.find(".twitter").attr('href', 'https://twitter.com/intent/tweet?text=' + data.special_url);
-                $shareButtonSuccessBlock.find(".facebook").attr('href', 'https://www.facebook.com/dialog/share?app_id=868290063229962&display=popup&href=' + data.special_url + '&redirect_uri=' + data.special_url);
             });
         });
 
