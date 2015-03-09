@@ -19,7 +19,7 @@ window.Sharee = (function () {
             return false;
         }
         saveCookies();
-        getShareeButtonHtml();
+        getShareeButtons();
         createSellAction();
     }
 
@@ -51,7 +51,7 @@ window.Sharee = (function () {
         document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     };
 
-    var getShareeButtonHtml = function() {
+    var getShareeButtons = function() {
         var $buttons = $('.sharee-button');
         
         $buttons.each(function (index, button) {
@@ -72,6 +72,27 @@ window.Sharee = (function () {
             initShareeButtonFormsEvents(button);
           });
         });
+        
+        appendScripts();
+        appendStyles();
+    };
+    
+    var appendScripts = function() {
+      var head = getDocumentHead();
+      var script= document.createElement("script");
+      script.type = "text/javascript";
+      script.src= Sharee.getHost() + "/sharee/scripts.js";
+      head.appendChild(script);
+    };
+    
+    var appendStyles = function() {
+      var head = getDocumentHead();
+      var filename = Sharee.getHost() + "/sharee/styles.css";
+      $(head).append("<link rel='stylesheet' id='sharee-css' href='" + filename + "' type='text/css' />"); 
+    };
+    
+    var getDocumentHead = function() {
+      return document.getElementsByTagName('HEAD').item(0);
     };
 
     var initShareeButtonClickEvent = function() {
