@@ -28,6 +28,10 @@
     float: left;
 }
 
+.sharee-button-block form input[type=submit][disabled]{
+    opacity: 0.5;
+}
+
 .sharee-button-block .sharee-back-button {
     color: #111;
     background-color: white;

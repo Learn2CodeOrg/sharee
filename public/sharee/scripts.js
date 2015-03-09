@@ -17,6 +17,19 @@ $(function() {
     window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=500');
   });
 
+  function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  }
+
+  $('#sharee-submit-email').prop('disabled', true);
+  $('#sharee-input-email').keyup(function(){
+      if(($(this).val().length != 0) && isEmail($(this).val()))
+          $('#sharee-submit-email').prop('disabled', false);
+      else
+          $('#sharee-submit-email').prop('disabled', true);
+  });
+
   var getShareeUrl = function(sender) {
     return $(sender).closest('.sharee-button-success-block').find('.sharee-link').val();
   };
