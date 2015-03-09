@@ -18,7 +18,7 @@ class CampaignsController < ApplicationController
   
   def codes
     @campaign = Campaign.find(params[:id])
-    @sharee_button_html = CGI.escape_html render_to_string 'shared/_sharee_button', layout: false, locals: { campaign: @campaign.id }
+    @sharee_button_html = CGI.escape_html render_to_string 'shared/_sharee_button', layout: false, locals: { campaign: @campaign.id, commission: "%g" % @campaign.commission }
     @sharee_thank_html  = CGI.escape_html render_to_string 'shared/_sharee_thank',  layout: false, locals: { code: '[code]', email: '[email]', price: '[price]'}
     @sharee_script_html = CGI.escape_html render_to_string 'shared/_sharee_script', layout: false, locals: { host: 'http://' + request.host_with_port }
   end

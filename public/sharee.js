@@ -54,9 +54,12 @@ window.Sharee = (function () {
     var getShareeButtonHtml = function() {
         $.get(Sharee.getHost() + '/sharee_button.html', function(data) {
             var $button = $('.sharee-button'),
-                campaign = $button.data('campaign');
+                campaign = $button.data('campaign'),
+                commission = $button.data('commission');
 
-            $button.html(data).find('input[name="campaign"]').val(campaign);
+            $button.html(data);
+            $button.find('input[name="campaign"]').val(campaign);
+            $button.find('.sharee-commission').text(commission);
             $button.find('.sharee-logo').attr('src', Sharee.getHost() + '/sharee_btn.svg');
 
             initShareeButtonClickEvent();
