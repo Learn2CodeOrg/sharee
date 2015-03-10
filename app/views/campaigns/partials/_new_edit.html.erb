@@ -9,6 +9,8 @@
         <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:name] } %>
       </div>
 
+      <script>$('#campaign_name').focus();</script>
+
       <div class="field">
         <%= f.label :url %><br>
         <%= f.text_field :url %>
