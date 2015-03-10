@@ -20,6 +20,11 @@
       <%= f.text_field :commission %>
       <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:commission] } %>
     </div>
+    
+    <div class="field">
+      <%= f.label :lang %><br>
+      <%= f.select :lang, Campaign.langs.keys.to_a %>
+    </div>
   </div>
 
   <div class="col-12 centered">
