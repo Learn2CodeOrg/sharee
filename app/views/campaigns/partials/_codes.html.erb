@@ -7,16 +7,37 @@
 <div class="col-6">
   <h3>Kód A - Skript</h3>
   <div class="field">
-    <input type="text" onClick="this.setSelectionRange(0, this.value.length)" class="code-input" value="<%=raw sharee_script_html %>" readonly="readonly">
+    <input type="text" id="code_a" onFocus="this.setSelectionRange(0, this.value.length)" class="code-input" value="<%=raw sharee_script_html %>" readonly="readonly" autofocus="autofocus">
   </div>
+
+  <script>$('#code_a').focus();</script>
 
   <h3>Kód B - Tlačítko</h3>
   <div class="field">
-    <input type="text" onClick="this.setSelectionRange(0, this.value.length)" class="code-input" value="<%=raw sharee_button_html %>" readonly="readonly">
+    <input type="text" id="code_b" onFocus="this.setSelectionRange(0, this.value.length)" class="code-input" value="<%=raw sharee_button_html %>" readonly="readonly">
   </div>
 
   <h3>Kód C - Thank you page</h3>
   <div class="field">
-    <textarea class="code-input" name="Kod C" rows="4" onClick="this.setSelectionRange(0, this.value.length)" readonly="readonly" style="resize: none;"><%=raw sharee_thank_html %></textarea>
+    <textarea id="code_c" class="code-input" name="Kod C" rows="4" onFocus="this.setSelectionRange(0, this.value.length)" readonly="readonly" style="resize: none;"><%=raw sharee_thank_html %></textarea>
+  </div>
+</div>
+
+<div class="padding-top col-6 last-col">
+  <div class="nc-guide">
+    <div class="nc-guide__item">
+      <div class="nc-guide__item__content" id="code_a-help">
+        <h3 class="nc-guide__item__heading">Kód A</h3>
+        <p class="nc-guide__item__content__paragraph">Tento riadok umiestnite na koniec hlavičky <code>head</code>.</p>
+      </div>
+      <div class="nc-guide__item__content" id="code_b-help">
+        <h3 class="nc-guide__item__heading">Kód B</h3>
+        <p class="nc-guide__item__content__paragraph">Tento kód umiestnite na miesto, kde by ste chceli mať Sharee tlačítko.</p>
+      </div>
+      <div class="nc-guide__item__content" id="code_c-help">
+        <h3 class="nc-guide__item__heading">Kód C</h3>
+        <p class="nc-guide__item__content__paragraph">Kód C vložte na každú thank you page, nezabudnite doplniť správne údaje!</p>
+      </div>
+    </div>
   </div>
 </div>
