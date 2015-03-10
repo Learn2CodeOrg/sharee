@@ -7,4 +7,10 @@ class Campaign < ActiveRecord::Base
   validates :name, presence: true
   validates :url, presence: true
   validates :commission, presence: true, numericality: { greater_than: 0, less_than: 100 }
+  
+  enum lang: {
+    en: 0,
+    sk: 1,
+    cz: 2
+  }
 end

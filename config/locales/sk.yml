@@ -7,6 +7,7 @@ sk:
         name: Názov
         url: URL
         commission: Provízia
+        lang: Jazyk
 
   errors:
     messages:
