@@ -1,0 +1,24 @@
+.nc-guide {
+
+  .nc-guide__item {
+    background: white;
+    box-shadow: $base-box-shadow;
+    border: 1px solid $bg-gray;
+    padding: 10px 15px;
+    margin-top: 22px;
+  }
+
+  .nc-guide__item__content {
+    display: none;
+  }
+
+  .nc-guide__item__heading {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+
+  .nc-guide__item__content__paragraph {
+    font-size: 14px;
+  }
+}

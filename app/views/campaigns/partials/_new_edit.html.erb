@@ -1,42 +1,62 @@
 <%= render partial: 'campaigns/partials/header', locals: { step: 1, campaign: campaign } %>
 
-<%= form_for campaign, url: {action: action}, html: {class: ''}, remote: true do |f| %>
+<div class="container">
+  <%= form_for campaign, url: {action: action}, html: {class: ''}, remote: true do |f| %>
+    <div class="padding-top col-6">
+      <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, autofocus: true %>
+        <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:name] } %>
+      </div>
 
-  <div class="padding-top col-6">
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-      <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:name] } %>
+      <div class="field">
+        <%= f.label :url %><br>
+        <%= f.text_field :url %>
+        <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:url] } %>
+      </div>
+
+      <div class="field">
+        <%= f.label :commission %><br>
+        <%= f.text_field :commission %>
+        <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:commission] } %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :lang %><br>
+        <%= f.select :lang, Campaign.langs.keys.to_a %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :url %><br>
-      <%= f.text_field :url %>
-      <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:url] } %>
+    <div class="padding-top col-6 last-col">
+      <div class="nc-guide">
+        <div class="nc-guide__item">
+          <div class="nc-guide__item__content" id="campaign_name-help">
+            <h3 class="nc-guide__item__heading">Názov kampane</h3>
+            <p class="nc-guide__item__content__paragraph">Tento údaj slúži len na rýchlu identifikáciu v zozname kampaní. Nebude nikde zverejnený.</p>
+          </div>
+          <div class="nc-guide__item__content" id="campaign_url-help">
+            <h3 class="nc-guide__item__heading">Adresa webu</h3>
+            <p class="nc-guide__item__content__paragraph">Napíšte adresu webu, na ktorom plánujete používať Sharee.</p>
+          </div>
+          <div class="nc-guide__item__content" id="campaign_commission-help">
+            <h3 class="nc-guide__item__heading">Percento provízie</h3>
+            <p class="nc-guide__item__content__paragraph">Číselný údaj, koľko percent z predaja získava referrer. Údaj vpisujte bez znaku %.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :commission %><br>
-      <%= f.text_field :commission %>
-      <%= render partial: 'campaigns/partials/field_errors', locals: { errors: campaign.errors[:commission] } %>
+    <div class="col-12 centered">
+      <%= f.submit "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}",
+          class: "btn-big btn-primary-green btn-submit",
+          id: "save-button",
+          data: {
+            save: "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}",
+            saved: "#{t 'buttons.saved'}" } %>
     </div>
-    
-    <div class="field">
-      <%= f.label :lang %><br>
-      <%= f.select :lang, Campaign.langs.keys.to_a %>
-    </div>
-  </div>
 
-  <div class="col-12 centered">
-    <%= f.submit "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}",
-        class: "btn-big btn-primary-green btn-submit",
-        id: "save-button",
-        data: {
-          save: "#{t (action == 'create' ? 'buttons.next' : 'buttons.save')}",
-          saved: "#{t 'buttons.saved'}" } %>
-  </div>
-
-<% end %>
+  <% end %>
+</div>
 
 <div class="controls">
   <%= render partial: 'campaigns/partials/back' %>
