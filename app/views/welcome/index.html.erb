@@ -14,7 +14,21 @@
 <h3>You are ready to go!</h3>
 
 <% if @samples %>
-<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <%= render partial: 'shared/sharee_button', locals: { campaign: @samples[:campaign_id], commission: @samples[:campaign_commission] } %> Labore reprehenderit a esse iste sequi, officia quia aspernatur, odit libero delectus, quaerat deleniti ad quos doloribus magni, nihil minus cum sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex laborum ut doloremque libero est nulla quos reiciendis porro, praesentium, laboriosam alias esse optio ab sint odit saepe, impedit. Alias, officiis.</div>
+<%
+  sharee_button = render partial: 'shared/sharee_button', locals: {
+    campaign: @samples[:campaign_id],
+    commission: @samples[:campaign_commission],
+    lang: @samples[:lang],
+  }
+  
+  sharee_thank = render partial: 'shared/sharee_thank', locals: {
+    code: @samples[:code],
+    email: @samples[:email],
+    price: @samples[:price],
+  }
+%>
 
-<%= render partial: 'shared/sharee_thank', locals: { code: @samples[:code], email: @samples[:email], price: @samples[:price] } %>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <%= sharee_button %> Labore reprehenderit a esse iste sequi, officia quia aspernatur, odit libero delectus, quaerat deleniti ad quos doloribus magni, nihil minus cum sit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex laborum ut doloremque libero est nulla quos reiciendis porro, praesentium, laboriosam alias esse optio ab sint odit saepe, impedit. Alias, officiis.</div>
+
+<%= sharee_thank %>
 <% end %>
