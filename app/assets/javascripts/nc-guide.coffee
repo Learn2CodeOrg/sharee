@@ -1,28 +1,20 @@
 # New campaign setting guide
 
 ready = ->
-  nameField = $('#campaign_name')
-  urlField = $('#campaign_url')
-  commissionField = $('#campaign_commission')
+  $(document).on 'focus', '#campaign_name', (event) ->
+    $('#campaign_url-help').hide()
+    $('#campaign_commission-help').hide()
+    $('#campaign_name-help').fadeIn()
 
-  nameHelp = $('#campaign_name-help')
-  urlHelp = $('#campaign_url-help')
-  commissionHelp = $('#campaign_commission-help')
+  $(document).on 'focus', '#campaign_url', (event) ->
+    $('#campaign_name-help').hide()
+    $('#campaign_commission-help').hide()
+    $('#campaign_url-help').fadeIn()
 
-  nameField.focus ->
-    urlHelp.hide()
-    commissionHelp.hide()
-    nameHelp.fadeIn()
-
-  urlField.focus ->
-    nameHelp.hide()
-    commissionHelp.hide()
-    urlHelp.fadeIn()
-
-  commissionField.focus ->
-    nameHelp.hide()
-    urlHelp.hide()
-    commissionHelp.fadeIn()
+  $(document).on 'focus', '#campaign_commission', (event) ->
+    $('#campaign_name-help').hide()
+    $('#campaign_url-help').hide()
+    $('#campaign_commission-help').fadeIn()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
