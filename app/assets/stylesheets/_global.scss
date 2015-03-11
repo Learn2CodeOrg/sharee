@@ -96,6 +96,15 @@ textarea {
   color: $primary-green;
 }
 
+.inverted-link {
+  color: $primary-green;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-blue;
+  }
+}
+
 .facebook-color {
   color: #435F9A;
 }
