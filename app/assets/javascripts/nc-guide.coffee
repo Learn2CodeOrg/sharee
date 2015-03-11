@@ -1,6 +1,8 @@
 # New campaign setting guide
 
 ready = ->
+  $('#campaign_name-help').show()
+
   $(document).on 'focus', '#campaign_name', (event) ->
     $('#campaign_url-help').hide()
     $('#campaign_commission-help').hide()
