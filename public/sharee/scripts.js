@@ -23,7 +23,7 @@ $(function() {
   }
 
   $('#sharee-submit-email').prop('disabled', true);
-  $('#sharee-input-email').keyup(function(){
+  $('#sharee-input-email').on('input', function(){
       if(($(this).val().length != 0) && isEmail($(this).val()))
           $('#sharee-submit-email').prop('disabled', false);
       else
