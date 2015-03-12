@@ -22,8 +22,11 @@ $(function() {
     return regex.test(email);
   }
 
-  $('#sharee-submit-email').prop('disabled', true);
-  $('#sharee-input-email').on('input', function(){
+  $( document ).ready(function() {
+      $('#sharee-submit-email').prop('disabled', true);
+  });
+
+  $('.sharee-button-block').on('input', '#sharee-input-email', function(){
       if(($(this).val().length != 0) && isEmail($(this).val()))
           $('#sharee-submit-email').prop('disabled', false);
       else
