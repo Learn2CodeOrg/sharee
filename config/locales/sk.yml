@@ -1,13 +1,29 @@
 sk:
   activerecord:
     models:
+      user: Používateľ
       campaign: Kampaň
+      billing_info: Platobné údaje
     attributes:
+      user:
+        email: Email
+        password: Nové heslo
+        password_confirmation: Potvrdenie nového hesla
+        current_password: Aktuálne heslo
       campaign:
         name: Názov
         url: URL
         commission: Provízia
         lang: Jazyk
+      billing_info:
+        billing_contact: Obchodné meno
+        address_line_1: Ulica
+        zip_code: PSČ
+        city: Mesto
+        state: Štát
+        company_identification_number: IČO
+        tax_identification_number: DIČ
+        vat_identification_number: IČ DPH
 
   errors:
     messages:
@@ -15,8 +31,20 @@ sk:
       not_a_number: musí byť číslo!
       greater_than: musí byť väčšie ako %{count}
       less_than: musí byť menšie ako %{count}
+
+  headings:
+    profile:
+      basic_info: Základné údaje
+      payment_info: Platobné údaje
+      password_change: Zmena hesla
+      save_changes: Uloženie zmien
       
+  paragraphs:
+    profile:
+      save_changes_alert: Pre uloženie zmien zadajte Vaše aktuálne heslo.
+
   buttons:
     save: Uložiť
     saved: Uložené
     next: Ďalej
+    back_long: Návrat na predchádzajúcu stránku

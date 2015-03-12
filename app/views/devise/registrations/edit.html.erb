@@ -3,52 +3,86 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+
+  <% if resource.billing_info.present? %>
+  <h2><%= t 'headings.profile.payment_info' %></h2>
+  <hr>
+  <%= f.fields_for :billing_info do |bi| %>
+  <div class="field">
+    <%= bi.label :billing_contact %><br />
+    <%= bi.text_field :billing_contact %>
+  </div>
+  <div class="field">
+    <%= bi.label :address_line_1 %><br />
+    <%= bi.text_field :address_line_1 %>
+  </div>
+  <div class="field">
+    <%= bi.label :zip_code %><br />
+    <%= bi.text_field :zip_code %>
+  </div>
+  <div class="field">
+    <%= bi.label :city %><br />
+    <%= bi.text_field :city %>
+  </div>
+  <div class="field">
+    <%= bi.label :state %><br />
+    <%= bi.text_field :state %>
+  </div>
+  <div class="field">
+    <%= bi.label :company_identification_number %><br />
+    <%= bi.text_field :company_identification_number %>
+  </div>
+  <div class="field">
+    <%= bi.label :tax_identification_number %><br />
+    <%= bi.text_field :tax_identification_number %>
+  </div>
+  <div class="field">
+    <%= bi.label :vat_identification_number %><br />
+    <%= bi.text_field :vat_identification_number %>
+  </div>
+  <% end %>
+  <% end %>
+
+
+  <h2><%= t 'headings.profile.basic_info' %></h2>
+  <hr>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
-
-  <div class="field">
-    <%= f.label :iban %><br />
-    <%= f.text_field (resource.role == 'referer' ? :iban_referer : :iban_merchant), autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :swift %><br />
-    <%= f.text_field (resource.role == 'referer' ? :swift_referer : :swift_merchant), autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :paypal %><br />
-    <%= f.text_field (resource.role == 'referer' ? :paypal_referer : :paypal_merchant), autocomplete: "off" %>
-  </div>
-
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+
+  <h2><%= t 'headings.profile.password_change' %></h2>
+  <hr>
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
-
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+
+  <h2><%= t 'headings.profile.save_changes' %></h2>
+  <hr>
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+
+  <p><%= t 'paragraphs.profile.save_changes_alert' %></p>
+  <br/>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit (t 'buttons.save'), class: 'btn-jumbo btn-primary-blue' %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<br/>
+<span class="icon icon-level-up"></span>
+<%= link_to (t 'buttons.back_long'), :back %>

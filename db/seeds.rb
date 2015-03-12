@@ -1,6 +1,7 @@
 # Reset
 
 User.delete_all
+BillingInfo.delete_all
 Campaign.delete_all
 Link.delete_all
 OpenAction.delete_all
@@ -13,28 +14,26 @@ user1 = User.create!(
   email: 'merchant@sharee.io',
   password: 'password',
   password_confirmation: 'password',
-
-  iban_merchant: 'SK11 1111 1111 1111 1111 1111',
-  swift_merchant: 'SK1111',
-  paypal_merchant: 'mail-1111@paypal.com',
-
-  iban_referer: 'SK00 0000 0000 0000 0000 0000',
-  swift_referer: 'SK0000',
-  paypal_referer: 'mail-0000@paypal.com',
 )
 user2 = User.create!(
   email: 'referer@sharee.io',
   password: 'password',
   password_confirmation: 'password',
+)
 
-  iban_referer: 'SK22 2222 2222 2222 2222 2222',
-  swift_referer: 'SK2222',
-  paypal_referer: 'mail-2222@paypal.com',
 
-  iban_merchant: 'SK00 0000 0000 0000 0000 0000',
-  swift_merchant: 'SK0000',
-  paypal_merchant: 'mail-0000@paypal.com',
-  role: :referer
+# Create billing info
+
+BillingInfo.create!(
+  user: user1,
+  billing_contact: 'ABC s.r.o.',
+  address_line_1: 'Znievska 14',
+  zip_code: '851 01',
+  city: 'Bratislava',
+  state: 'Slovakia',
+  company_identification_number: 'number 1',
+  tax_identification_number: 'number 2',
+  vat_identification_number: 'number 3',
 )
 
 

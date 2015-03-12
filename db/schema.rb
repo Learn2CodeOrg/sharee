@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310100328) do
+ActiveRecord::Schema.define(version: 20150312120810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billing_infos", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "billing_contact"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "state"
+    t.string   "company_identification_number"
+    t.string   "tax_identification_number"
+    t.string   "vat_identification_number"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "billing_infos", ["user_id"], name: "index_billing_infos_on_user_id", using: :btree
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "name"
@@ -82,12 +99,6 @@ ActiveRecord::Schema.define(version: 20150310100328) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
-    t.string   "iban_referer"
-    t.string   "swift_referer"
-    t.string   "paypal_referer"
-    t.string   "iban_merchant"
-    t.string   "swift_merchant"
-    t.string   "paypal_merchant"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
