@@ -14,6 +14,7 @@ class CampaignsController < ApplicationController
   
   def payments
     @campaign = Campaign.find(params[:id])
+    @billing_info = current_user.billing_info
   end
   
   def codes

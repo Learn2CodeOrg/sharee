@@ -1,1 +1,1 @@
-$('.campaigns.container').html('<%= j render(partial: "campaigns/partials/payments", locals: { campaign: @campaign }) %>');
+$('.campaigns.container').html('<%= j render(partial: "campaigns/partials/payments", locals: { campaign: @campaign, billing_info: @billing_info }) %>');

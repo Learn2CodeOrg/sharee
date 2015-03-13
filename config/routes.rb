@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :commissions do
     get :pay, on: :collection
   end
+  resources :billing_infos
   resources :thanks
 
   namespace :api do
