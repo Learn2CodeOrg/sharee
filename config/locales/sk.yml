@@ -52,14 +52,14 @@ sk:
     back_long: Návrat na predchádzajúcu stránku
 
   mailers:
-    any_questions_message: Ak máte akékoľvek otázky, odpíšte na tento email.
+    any_questions_message: Ak máš akékoľvek otázky, odpíš na tento email.
     regards: S pozdravom,
     sharee_team: tím Sharee.io.
     
   devise:
     mailer:
       invitation_instructions:
-        subject: Pozvánka
+        subject: Pozvánka do sharee.io
         title: Vitaj!
         thank_you_again_message: Ďakujeme Ti za zdieľanie prvého linku!
         created_via_message: "Link bol vytvorený prostredníctvom tohto emailu:"
@@ -68,16 +68,16 @@ sk:
 
   sharee_mailer:
     claim_email:
-      subject: Žiadost o vyplatenie od %{email}
-      title: Žiadost o vyplatenie
+      subject: Žiadosť o vyplatenie od %{email}
+      title: Žiadosť o vyplatenie
       new_claim_from_message: "Toto je žiadosť o vyplatenie od:"
       claiming_commission_message: "Výška provízie je:"
       payment_withdrawal_message: "Suma má byť vyplatená na tento účet:"
 
   user_mailer:
     claim_email:
-      subject: Žiadost o vyplatenie
-      title: Žiadost o vyplatenie
+      subject: Žiadosť o vyplatenie
+      title: Žiadosť o vyplatenie
       processed_message: Zaznamenali sme tvoju požiadavku o vyplatenie.
       claiming_commission_message: "Výška provízie je:"
       payment_withdrawal_message: "Suma má byť vyplatená na tento účet:"
