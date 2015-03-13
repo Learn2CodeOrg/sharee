@@ -1,10 +1,9 @@
-<%= content_for :title, 'Thank you!' %>
+<%= content_for :title, t('.title') %>
 
-<p>Thank you for creating your first sharee link!</p>
+<p><%= t('.thank_you_again_message') %></p>
 
-<p>You have created the link using email: <strong><%= @resource.email %></strong>.</p>
+<p><%= t('.created_via_message') %> <strong><%= @resource.email %></strong>.</p>
 
-<p>We are sending you an invitation to the email so you can easily start using <b>sharee.io</b>!<br>
-By opening the following link you can activate the account that is prepared just for you.</p>
+<p><%= t('.activation_message') %></p>
 
-<p><%= link_to I18n.t("devise.mailer.invitation_instructions.accept"), accept_invitation_url(@resource, :invitation_token => @token) %></p>
+<p><%= link_to t('.activate_account'), accept_invitation_url(@resource, :invitation_token => @token) %></p>

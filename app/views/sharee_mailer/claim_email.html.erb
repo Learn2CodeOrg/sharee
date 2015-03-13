@@ -1,13 +1,9 @@
-<%= content_for :title, 'New claim' %>
+<%= content_for :title, t('.title') %>
 
-<p>This is new claim from <b><%= @claimer.email %></b></p>
+<p><%= t('.new_claim_from_message') %> <b><%= @user.email %>.</b></p>
 
-<p>Claiming commission is <b><%= @commission %> &euro;</b>.</p>
+<p><%= t('.claiming_commission_message') %> <b><%= @commission %> &euro;.</b></p>
 
-<p>The payment withdrawal has to be done to the following account:</p>
+<p><%= t('.payment_withdrawal_message') %></p>
 
-<ul>
-  <li>IBAN: <strong><%= @claimer.iban_referer %></strong></li>
-  <li>SWIFT: <strong><%= @claimer.swift_referer %></strong></li>
-  <li>PAYPAL: <strong><%= @claimer.paypal_referer %></strong></li>
-</ul>
+<p>IBAN: <b><%= @user.iban %></b></p>

@@ -11,9 +11,10 @@
 
     <%= yield %>
 
-    <p>If you have any questions just reply to this email.</p>
-
-    <p>Regards,<br>
-    Sharee.io team.</p>
+    <p><%= t('mailers.any_questions_message') %></p>
+    <p>
+      <%= t('mailers.regards') %><br>
+      <%= t('mailers.sharee_team') %>
+    </p>
   </body>
 </html>

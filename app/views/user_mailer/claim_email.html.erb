@@ -1,13 +1,9 @@
-<%= content_for :title, 'Claim request' %>
+<%= content_for :title, t('.title') %>
 
-<p>We have processed your request.</p>
+<p><%= t('.processed_message') %></p>
 
-<p>Claiming commission is <b><%= @commission %> &euro;</b>.</p>
+<p><%= t('.claiming_commission_message') %> <b><%= @commission %> &euro;.</b></p>
 
-<p>The payment withdrawal will be done soon to the following account:</p>
+<p><%= t('.payment_withdrawal_message') %></p>
 
-<ul>
-  <li>IBAN: <strong><%= @user.iban_referer %></strong></li>
-  <li>SWIFT: <strong><%= @user.swift_referer %></strong></li>
-  <li>PAYPAL: <strong><%= @user.paypal_referer %></strong></li>
-</ul>
+<p>IBAN: <b><%= @user.iban %></b></p>

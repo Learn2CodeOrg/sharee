@@ -1,23 +1,83 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      user: User
+      campaign: Campaign
+      billing_info: Billing info
+    attributes:
+      user:
+        email: Email
+        password: New password
+        password_confirmation: New password confirmation
+        current_password: Current password
+        iban: IBAN
+      campaign:
+        name: Name
+        url: URL
+        commission: Commission
+        lang: Language
+      billing_info:
+        billing_contact: Billing contact
+        address_line_1: Address line
+        zip_code: ZIP code
+        city: City
+        state: State
+        company_identification_number: Company identification number
+        tax_identification_number: Tax identification number
+        vat_identification_number: VAT identification number
+
+  errors:
+    messages:
+      blank: cannot be blank!
+      not_a_number: must be a number!
+      greater_than: must be greater than %{count}
+      less_than: must be smaller than %{count}
+
+  headings:
+    profile:
+      billing_info: Billing info
+      payment_info: Payment info
+      basic_info: Basic info
+      password_change: Password change
+      save_changes: Save changes
+      
+  paragraphs:
+    profile:
+      save_changes_alert: To save the changes, enter your current password.
+
+  buttons:
+    save: Save
+    saved: Saved
+    next: Next
+    back_long: Back to previous page
+
+  mailers:
+    any_questions_message: If you have any questions just reply to this email.
+    regards: Regards,
+    sharee_team: Sharee.io team.
+    
+  devise:
+    mailer:
+      invitation_instructions:
+        subject: Invitation instructions
+        title: Thank you!
+        thank_you_again_message: Thank you for creating your first sharee link!
+        created_via_message: "You have created the link via this email:"
+        activation_message: By opening the following link you can activate the account, track and pay-off your commisions.
+        activate_account: Activate account
+
+  sharee_mailer:
+    new_claim:
+      subject: Claim from %{email}
+      title: New claim
+      new_claim_from_message: "This is a new claim from:"
+      claiming_commission_message: "Claiming commission is:"
+      payment_withdrawal_message: "The payment withdrawal has to be done to the following account:"
+
+  user_mailer:
+    new_claim:
+      subject: Claim request
+      title: Claim request
+      processed_message: We have processed your request.
+      claiming_commission_message: "Claiming commission is:"
+      payment_withdrawal_message: "The payment withdrawal will be done soon to the following account:"

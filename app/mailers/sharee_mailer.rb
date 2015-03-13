@@ -1,8 +1,8 @@
 class ShareeMailer < ApplicationMailer
-  def claim_email(claimer, commission)
-    @claimer = claimer
+  def claim_email(user, commission)
+    @user = user
     @commission = commission
-    mail(to: recipient, subject: "Claim from #{claimer.email}!")
+    mail(to: recipient, subject: default_i18n_subject(email: @user.email))
   end
 
   private
