@@ -4,8 +4,8 @@
   <%= devise_error_messages! %>
 
 
-  <% if resource.billing_info.present? %>
-  <h2><%= t 'headings.profile.payment_info' %></h2>
+  <% if resource.role == 'merchant' && resource.billing_info.present? %>
+  <h2><%= t 'headings.profile.billing_info' %></h2>
   <hr>
   <%= f.fields_for :billing_info do |bi| %>
   <div class="field">
@@ -41,6 +41,16 @@
     <%= bi.text_field :vat_identification_number %>
   </div>
   <% end %>
+  <% end %>
+
+
+  <% if resource.role == 'referer' %>
+  <h2><%= t 'headings.profile.payment_info' %></h2>
+  <hr>
+  <div class="field">
+    <%= f.label :iban %><br />
+    <%= f.text_field :iban, autofocus: true %>
+  </div>
   <% end %>
 
 

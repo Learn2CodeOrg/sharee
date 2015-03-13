@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
         :password_confirmation,
         :current_password,
         :billing_contact,
+        :iban,
         
         billing_info_attributes: [
           :billing_contact,
