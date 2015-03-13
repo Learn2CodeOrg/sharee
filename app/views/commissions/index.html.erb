@@ -22,17 +22,15 @@
   <% end %>
 
   <% if @is_payoff_day && @is_commission_bottom_limit_met %>
-    <p>Zvoľte prosím formu vyplatenia:</p>
-    <ul class="payment-methods">
-      <li data-payment="transfer">
-        <b>Prevodom:</b><br/><%= @user.iban_referer %></li>
-      <li data-payment="paypal">
-        <b>Paypalom:</b><br/><%= @user.paypal_referer %></li>
-    </ul>
-    <p>
-      <%= link_to 'Odoslať požiadavku', pay_commissions_path(payment_method: :transfer), class: 'btn-medium btn-primary-blue hide transfer-pay-button pay-button', remote: true %>
-      <%= link_to 'Odoslať požiadavku', pay_commissions_path(payment_method: :paypal), class: 'btn-medium btn-primary-blue hide paypal-pay-button pay-button', remote: true %>
-    </p>
+    <br/>
+    <% if @user.iban.blank? %>
+      <p>Vyplatenie bude možné po nastavení vášho <b>IBAN-u</b> <%= link_to 'v profile', edit_user_registration_path %>.</p>
+    <% else %>
+      <p>Peniaze Vám budú vyplatené na účet: <b><%= @user.iban %></b></p>
+      <p>
+        <%= link_to 'Odoslať požiadavku', pay_commissions_path(payment_method: :transfer), class: 'btn-medium btn-primary-blue', remote: true %>
+      </p>
+    <% end %>
   <% end %>
 </div>
 

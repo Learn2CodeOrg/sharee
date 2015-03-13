@@ -29,9 +29,7 @@ class CommissionsController < ApplicationController
     SellAction.where(id: sell_action_ids).update_all(
       {
         claimed_at: Time.now,
-        iban: user.iban_referer,
-        swift: user.swift_referer,
-        paypal: user.paypal_referer,
+        iban: user.iban,
         payment_method: payment_method,
       })
     UserMailer.claim_email(user, commission.to_s).deliver_later
