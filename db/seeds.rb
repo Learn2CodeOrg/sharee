@@ -19,6 +19,7 @@ user2 = User.create!(
   email: 'referer@sharee.io',
   password: 'password',
   password_confirmation: 'password',
+  role: :referer,
 )
 
 
