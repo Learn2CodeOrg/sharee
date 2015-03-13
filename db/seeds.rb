@@ -14,27 +14,22 @@ user1 = User.create!(
   email: 'merchant@sharee.io',
   password: 'password',
   password_confirmation: 'password',
+  billing_info: BillingInfo.create!(
+    billing_contact: 'ABC s.r.o.',
+    address_line_1: 'Znievska 14',
+    zip_code: '851 01',
+    city: 'Bratislava',
+    state: 'Slovakia',
+    company_identification_number: 'number 1',
+    tax_identification_number: 'number 2',
+    vat_identification_number: 'number 3',
+  )
 )
 user2 = User.create!(
   email: 'referer@sharee.io',
   password: 'password',
   password_confirmation: 'password',
   role: :referer,
-)
-
-
-# Create billing info
-
-BillingInfo.create!(
-  user: user1,
-  billing_contact: 'ABC s.r.o.',
-  address_line_1: 'Znievska 14',
-  zip_code: '851 01',
-  city: 'Bratislava',
-  state: 'Slovakia',
-  company_identification_number: 'number 1',
-  tax_identification_number: 'number 2',
-  vat_identification_number: 'number 3',
 )
 
 
