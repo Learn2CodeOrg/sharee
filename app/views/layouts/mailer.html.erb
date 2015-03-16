@@ -6,7 +6,6 @@
       }
     </style>
 
-    <a href="http://www.sharee.io" target="_blank" title="Sharee.io"><img src="<%= asset_url('logo.png') %>" alt="Logo" height="18px"></a>
     <h3><%= yield :title %></h3>
 
     <%= yield %>
@@ -16,5 +15,10 @@
       <%= t('mailers.regards') %><br>
       <%= t('mailers.sharee_team') %>
     </p>
+    
+    <br/>
+    <a href="http://www.sharee.io" target="_blank" title="Sharee.io">
+      <img src="<%= asset_url('logo.png') %>" alt="Logo" height="18px">
+    </a>
   </body>
 </html>
