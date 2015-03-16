@@ -2,8 +2,7 @@
 
 <p><%= t('.processed_message') %></p>
 
-<p><%= t('.claiming_commission_message') %> <b><%= @commission %> &euro;.</b></p>
-
-<p><%= t('.payment_withdrawal_message') %></p>
-
-<p>IBAN: <b><%= @user.iban %></b></p>
+<p>
+  <%= t('.claiming_commission_message') %> <b><%= @commission %> &euro;</b><br/>
+  <%= t('.payment_withdrawal_message') %> <b><%= @user.iban %></b>
+</p>

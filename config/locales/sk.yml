@@ -71,13 +71,13 @@ sk:
       subject: Žiadosť o vyplatenie od %{email}
       title: Žiadosť o vyplatenie
       new_claim_from_message: "Toto je žiadosť o vyplatenie od:"
-      claiming_commission_message: "Výška provízie je:"
-      payment_withdrawal_message: "Suma má byť vyplatená na tento účet:"
+      claiming_commission_message: "Výška provízie:"
+      payment_withdrawal_message: "Bankový účet:"
 
   user_mailer:
     claim_email:
       subject: Žiadosť o vyplatenie
       title: Žiadosť o vyplatenie
-      processed_message: Zaznamenali sme tvoju požiadavku o vyplatenie.
-      claiming_commission_message: "Výška provízie je:"
-      payment_withdrawal_message: "Suma má byť vyplatená na tento účet:"
+      processed_message: Zaznamenali sme Tvoju požiadavku o vyplatenie provízie.
+      claiming_commission_message: "Výška provízie:"
+      payment_withdrawal_message: "Bankový účet:"
