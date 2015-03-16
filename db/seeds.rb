@@ -30,6 +30,7 @@ user2 = User.create!(
   password: 'password',
   password_confirmation: 'password',
   role: :referer,
+  iban: 'my iban',
 )
 
 
