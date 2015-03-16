@@ -38,6 +38,7 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
+    @billing_info = @campaign.user.billing_info
     if @campaign.save
       render :payments
     else
