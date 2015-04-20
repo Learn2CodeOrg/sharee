@@ -39,6 +39,7 @@
 }
 
 .sharee-button-block input[type="text"] {
+    box-sizing: border-box;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 2px;
