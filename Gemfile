@@ -37,10 +37,9 @@ group :production do
 end
 
 group :development do
-  #gem 'better_errors'
-  #gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'hirb'
-  #gem 'letter_opener'
   gem 'quiet_assets'
   gem 'populator'
   gem 'faker'
