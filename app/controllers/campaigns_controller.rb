@@ -1,7 +1,7 @@
 class CampaignsController < ApplicationController
 
   before_action :authenticate_user!
-  
+
   respond_to :html, :js
 
   def index
@@ -11,12 +11,12 @@ class CampaignsController < ApplicationController
   def new
     @campaign = Campaign.new
   end
-  
+
   def payments
     @campaign = Campaign.find(params[:id])
     @billing_info = current_user.billing_info
   end
-  
+
   def codes
     @campaign = Campaign.find(params[:id])
 
@@ -53,24 +53,24 @@ class CampaignsController < ApplicationController
       open_count: OpenAction.where(link_id: @campaign.links.pluck(:id)).count,
       sell_count: SellAction.where(link_id: @campaign.links.pluck(:id)).count
     }
-    sell_actions_group = {}
-    @campaign.sell_actions.group_by { |m| m.created_at.beginning_of_month }.each do |time, sell_actions|
-      sell_actions_group[time.year] = {}
-      sell_actions_group[time.year][time.month] = []
-      sell_actions.each do |sell_action|
-        sell_actions_group[time.year][time.month] << {
-          id: sell_action.id,
-          code: sell_action.code,
-          email: sell_action.email,
-          created_at: sell_action.created_at,
-          approved: sell_action.approved_at.present?,
-          price: sell_action.price,
-          commission_perc: sell_action.commission,
-          commission_value: (sell_action.price / 100) * sell_action.commission 
-        }
-      end
-    end
-    @data[:sell_actions_group] = sell_actions_group
+    # sell_actions_group = {}
+    # @campaign.sell_actions.group_by { |m| m.created_at.beginning_of_month }.each do |time, sell_actions|
+    #   sell_actions_group[time.year] = {}
+    #   sell_actions_group[time.year][time.month] = []
+    #   sell_actions.each do |sell_action|
+    #     sell_actions_group[time.year][time.month] << {
+    #       id: sell_action.id,
+    #       code: sell_action.code,
+    #       email: sell_action.email,
+    #       created_at: sell_action.created_at,
+    #       approved: sell_action.approved_at.present?,
+    #       price: sell_action.price,
+    #       commission_perc: sell_action.commission,
+    #       commission_value: (sell_action.price / 100) * sell_action.commission
+    #     }
+    #   end
+    # end
+    @sell_actions = @campaign.sell_actions
   end
 
   def edit

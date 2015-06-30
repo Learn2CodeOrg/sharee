@@ -25,35 +25,29 @@
 
 
 <h3>Predaje</h3>
-<% data[:sell_actions_group].each do |year, month_hash| %>
-  <% month_hash.each do |month, records| %>
-    <h4><%= year %> / <%= month %></h4>
-    <table class="sell-table">
-      <tr>
-        <th>Kód</th>
-        <th>Email</th>
-        <th>Zaznamenie</th>
-        <th>Cena (€)</th>
-        <th>Provizia (%)</th>
-        <th>Provizia (€)</th>
-        <th>Potvrdenie</th>
-      </tr>
-    <% records.each do |record| %>
-      <tr>
-        <td><%= record[:code] %></td>
-        <td><%= record[:email] %></td>
-        <td><%= record[:created_at].strftime("%d.%m.%Y %H:%M") %></td>
-        <td><%= record[:price] %></td>
-        <td><%= record[:commission_perc] %></td>
-        <td><%= record[:commission_value] %></td>
-        <td><input type="checkbox" class="approval-checkbox" <%= 'checked=checked' if record[:approved] %> data-id=<%= record[:id] %>></td>
-      </tr>
-    <% end %>
-    </table>
-  <% end %>
-<% end %>
 
-<br/><br/>
+<table class="sell-table">
+  <tr>
+    <th>Kód</th>
+    <th>Email</th>
+    <th>Zaznamenie</th>
+    <th>Cena (€)</th>
+    <th>Provizia (%)</th>
+    <th>Provizia (€)</th>
+    <th>Potvrdenie</th>
+  </tr>
+<% @sell_actions.each do |record| %>
+  <tr>
+    <td><%= record[:code] %></td>
+    <td><%= record[:email] %></td>
+    <td><%= record[:created_at].strftime("%d.%m.%Y %H:%M") %></td>
+    <td><%= record[:price] %></td>
+    <td><%= record[:commission] %></td>
+    <td><%= (record[:commission]/100) * record[:price] %></td>
+    <td><input type="checkbox" class="approval-checkbox" <%= 'checked=checked' if record.approved_at.present? %> data-id=<%= record[:id] %>></td>
+  </tr>
+<% end %>
+</table>
 
 <script>
   $(document).ready(function() {
