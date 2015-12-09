@@ -11,7 +11,7 @@ window.Sharee = (function () {
     'use strict';
 
     var DEFAULT_LANG = 'en';
-    var HOST = 'http://www.sharee.io';
+    var HOST = 'https://shareeio.herokuapp.com';
 
     function Sharee() {
         if (!HOST) {
@@ -53,7 +53,7 @@ window.Sharee = (function () {
 
     var getShareeButtons = function() {
         var $buttons = $('.sharee-button');
-        
+
         $buttons.each(function (index, button) {
           var $button    = $(button);
           var campaign   = $button.data('campaign');
@@ -61,7 +61,7 @@ window.Sharee = (function () {
           var lang       = $button.data('lang') || DEFAULT_LANG;
           var buttonUrl  = Sharee.getHost() + '/sharee/btn_' + lang + '.html';
           var logoUrl    = Sharee.getHost() + '/sharee/btn_' + lang + '.svg';
-          
+
           $.get(buttonUrl, function(data) {
             $button.html(data);
             $button.find('input[name="campaign"]').val(campaign);
@@ -72,7 +72,7 @@ window.Sharee = (function () {
             initShareeButtonFormsEvents(button);
           });
         });
-        
+
         appendScripts();
         appendStyles();
     };
@@ -84,13 +84,13 @@ window.Sharee = (function () {
       script.src= Sharee.getHost() + "/sharee/scripts.js";
       head.appendChild(script);
     };
-    
+
     var appendStyles = function() {
       var head = getDocumentHead();
       var filename = Sharee.getHost() + "/sharee/styles.css";
-      $(head).append("<link rel='stylesheet' id='sharee-css' href='" + filename + "' type='text/css' />"); 
+      $(head).append("<link rel='stylesheet' id='sharee-css' href='" + filename + "' type='text/css' />");
     };
-    
+
     var getDocumentHead = function() {
       return document.getElementsByTagName('HEAD').item(0);
     };
