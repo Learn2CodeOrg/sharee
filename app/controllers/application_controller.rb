@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_devise_params, if: :devise_controller?
 
+  http_basic_authenticate_with name: "sharee", password: "cesnak" if ENV['BASIC_AUTH'].present?
+
   protected
 
   def configure_devise_params
