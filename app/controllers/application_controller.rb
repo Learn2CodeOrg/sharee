@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_devise_params, if: :devise_controller?
 
+  http_basic_authenticate_with name: 'sharee', password: 'cesnak' if ENV['BASIC_AUTH'].present?
+
   protected
 
   def configure_devise_params
@@ -15,7 +17,7 @@ class ApplicationController < ActionController::Base
         :password_confirmation,
         :current_password,
         :iban,
-        
+
         billing_info_attributes: [
           :billing_contact,
           :address_line_1,
