@@ -37,5 +37,7 @@ class CommissionsController < ApplicationController
 
     session.delete(:sell_action_ids)
     session.delete(:commission)
+
+    redirect_via_turbolinks_to links_path
   end
 end
