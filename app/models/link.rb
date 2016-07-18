@@ -4,6 +4,8 @@ class Link < ActiveRecord::Base
   has_many :open_actions
   has_many :sell_actions
 
+  delegate :email, to: :user, prefix: true, allow_nil: true
+
   def self.get_by_code(code)
     Link.where(code: code).first
   end
