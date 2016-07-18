@@ -3,6 +3,8 @@ class SellAction < ActiveRecord::Base
 
   before_create :set_approved_at
 
+  delegate :user_email, to: :link, allow_nil: true
+
   enum payment_method: { transfer: 0, paypal: 1 }
 
   def self.getOrCreate(code, link, email, price)

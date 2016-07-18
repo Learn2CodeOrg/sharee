@@ -30,6 +30,7 @@
   <tr>
     <th>Kód</th>
     <th>Email</th>
+    <th>Email referer</th>
     <th>Zaznamenie</th>
     <th>Cena (€)</th>
     <th>Provizia (%)</th>
@@ -40,6 +41,7 @@
   <tr>
     <td><%= record[:code] %></td>
     <td><%= record[:email] %></td>
+    <td><%= record.user_email %></td>
     <td><%= record[:created_at].strftime("%d.%m.%Y %H:%M") %></td>
     <td><%= record[:price] %></td>
     <td><%= record[:commission] %></td>
