@@ -1,12 +1,3 @@
-$(function() {
-    var ready = function() {
-        new Sharee();
-    };
-
-    $(document).ready(ready);
-    $(document).on('page:load', ready);
-})();
-
 window.Sharee = (function () {
     'use strict';
 
@@ -224,3 +215,12 @@ window.Sharee = (function () {
 
     return Sharee;
 })();
+
+$(function() {
+    var ready = function() {
+        new Sharee();
+    };
+
+    $(document).ready(ready);
+    $(document).on('page:load', ready);
+});
