@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :campaigns
   has_many :links
   has_one :billing_info
-  
+
   accepts_nested_attributes_for :billing_info
 
   enum role: { merchant: 0, referer: 1 }
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     end
     user
   end
-  
+
   after_initialize do |user|
     if user.merchant? && user.billing_info.blank?
       user.billing_info = BillingInfo.create!

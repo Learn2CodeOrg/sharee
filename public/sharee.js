@@ -5,7 +5,7 @@ $(function() {
 
     $(document).ready(ready);
     $(document).on('page:load', ready);
-});
+})();
 
 window.Sharee = (function () {
     'use strict';
