@@ -63,17 +63,47 @@ window.Sharee = (function () {
             initShareeButtonFormsEvents(button);
           });
         });
+        
+        $(document).on('click', '.sharee-fb', function(e) {
+            e.preventDefault();
+            var url = 'https://www.facebook.com/sharer/sharer.php?u=' + getShareeUrl(this);
+            window.open(url,'_blank','width=800,height=300');
+        });
 
-        appendScripts();
+        $(document).on('click', '.sharee-tw', function(e) {
+            e.preventDefault();
+            var url = 'http://twitter.com/share?url=' + getShareeUrl(this) + '&text=Sharing';
+            window.open(url,'_blank','width=800,height=300');
+        });
+
+        $(document).on('click', '.sharee-gp', function(e) {
+            e.preventDefault();
+            var url = 'https://plus.google.com/share?url=' + getShareeUrl(this);
+            window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=500');
+        });
+
+        function isEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+        }
+
+        $( document ).ready(function() {
+            $('#sharee-submit-email').prop('disabled', true);
+        });
+
+        $('.sharee-button').on('input', '#sharee-input-email', function(){
+            console.log($(this).val());
+            if(($(this).val().length != 0) && isEmail($(this).val()))
+                $('#sharee-submit-email').prop('disabled', false);
+            else
+                $('#sharee-submit-email').prop('disabled', true);
+        });
+
+        var getShareeUrl = function(sender) {
+            return $(sender).closest('.sharee-button-success-block').find('.sharee-link').val();
+        };
+        
         appendStyles();
-    };
-
-    var appendScripts = function() {
-      var head = getDocumentHead();
-      var script= document.createElement("script");
-      script.type = "text/javascript";
-      script.src= Sharee.getHost() + "/sharee/scripts.js";
-      head.appendChild(script);
     };
 
     var appendStyles = function() {
@@ -216,11 +246,9 @@ window.Sharee = (function () {
     return Sharee;
 })();
 
-$(function() {
-    var ready = function() {
-        new Sharee();
-    };
+var ready = function() {
+    new Sharee();
+};
 
-    $(document).ready(ready);
-    $(document).on('page:load', ready);
-});
+$(document).ready(ready);
+$(document).on('page:load', ready);
