@@ -92,7 +92,6 @@ window.Sharee = (function () {
         });
 
         $('.sharee-button').on('input', '#sharee-input-email', function(){
-            console.log($(this).val());
             if(($(this).val().length != 0) && isEmail($(this).val()))
                 $('#sharee-submit-email').prop('disabled', false);
             else
